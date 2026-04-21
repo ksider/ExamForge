@@ -1,6 +1,7 @@
 const appState = {
   tests: [],
   selectedFile: null,
+  loadedFile: null,
   test: null,
   activeSectionId: null,
   answers: {},
@@ -251,15 +252,19 @@ async function startExam() {
 }
 
 async function enterExam(file, sectionId = null, push = true, reset = false) {
-  const needsLoad = !appState.test || appState.selectedFile !== file;
+  const needsLoad = !appState.test || appState.loadedFile !== file;
 
   if (needsLoad) {
     const response = await fetch(`/api/tests/${encodeURIComponent(file)}`);
     appState.test = await response.json();
     appState.selectedFile = file;
+    appState.loadedFile = file;
     appState.answers = {};
     appState.checked = {};
     appState.sectionScores = {};
+    appState.activeSectionId = null;
+    appState.timer.savedState = null;
+    appState.timer.restoreOnStart = false;
     loadProgress();
   }
 
