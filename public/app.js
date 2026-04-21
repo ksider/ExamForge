@@ -230,7 +230,7 @@ function renderTestsList() {
       return `
         <button class="test-card ${test.file === appState.selectedFile ? "is-selected" : ""}" type="button" data-file="${escapeHtml(test.file)}" ${test.invalid ? "disabled" : ""}>
           <strong>${escapeHtml(test.title)}</strong>
-          <span>${escapeHtml(test.file)} · ${escapeHtml(sections)}</span>
+          <span><!--  ${escapeHtml(test.file)} · -->${escapeHtml(sections)}</span>
           ${test.invalid ? `<p class="feedback bad">${escapeHtml(test.error)}</p>` : ""}
         </button>
       `;
