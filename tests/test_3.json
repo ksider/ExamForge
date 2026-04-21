@@ -1,0 +1,669 @@
+{
+  "id": "test_3",
+  "title": "LanguageCert General Test 3",
+  "source": {
+    "folder": "PDF TEMP/LCG 3 PDFs",
+    "reading_listening_pdf": "LC General Test 3 - Exam Paper (LR).pdf",
+    "writing_pdf": "LC General Test 3 - Exam Paper (W).pdf",
+    "mark_scheme_pdf": "LC General Test 3 - Mark Scheme.pdf"
+  },
+  "timer": {
+    "listening_minutes": 35,
+    "reading_minutes": 50,
+    "writing_minutes": 45
+  },
+  "sections": [
+    {
+      "id": "listening",
+      "title": "Listening",
+      "audio": "/audio/test_3_listening.mp3",
+      "parts": [
+        {
+          "id": "part_1",
+          "title": "Part 1",
+          "type": "multiple_choice",
+          "instructions": "You will hear some short conversations. You will hear each conversation twice. Choose the correct answer to complete each conversation.",
+          "questions": [
+            {
+              "number": 1,
+              "prompt": "Conversation 1",
+              "options": [
+                "a) Do you think so?",
+                "b) Maybe next week?",
+                "c) Is that really necessary?"
+              ],
+              "correct": "a) Do you think so?"
+            },
+            {
+              "number": 2,
+              "prompt": "Conversation 2",
+              "options": [
+                "a) Anyway, I suppose not.",
+                "b) Well, let’s hope so.",
+                "c) I don’t think that’s the reason."
+              ],
+              "correct": "b) Well, let’s hope so."
+            },
+            {
+              "number": 3,
+              "prompt": "Conversation 3",
+              "options": [
+                "a) She agreed to his change in hours, so I guess so.",
+                "b) I don’t think that’s what she actually meant.",
+                "c) So that’s why she was looking so disappointed."
+              ],
+              "correct": "a) She agreed to his change in hours, so I guess so."
+            },
+            {
+              "number": 4,
+              "prompt": "Conversation 4",
+              "options": [
+                "a) I’m sorry but I didn’t know what you wanted.",
+                "b) I had one earlier thanks.",
+                "c) Would you mind getting me one too?"
+              ],
+              "correct": "c) Would you mind getting me one too?"
+            },
+            {
+              "number": 5,
+              "prompt": "Conversation 5",
+              "options": [
+                "a) Thanks, I am really looking forward to it.",
+                "b) I suppose they just don't like celebrating them.",
+                "c) I never actually told you the date, so don’t worry."
+              ],
+              "correct": "c) I never actually told you the date, so don’t worry."
+            },
+            {
+              "number": 6,
+              "prompt": "Conversation 6",
+              "options": [
+                "a) Once his mind’s made up, it’s hard to change it.",
+                "b) He should have agreed it with you much earlier.",
+                "c) Well, I suppose he at least had a good reason, then."
+              ],
+              "correct": "a) Once his mind’s made up, it’s hard to change it."
+            },
+            {
+              "number": 7,
+              "prompt": "Conversation 7",
+              "options": [
+                "a) I really don’t think it’ll make much of a difference.",
+                "b) I’m very sorry if you think that’s the case.",
+                "c) I’m not taking anything for granted at this stage."
+              ],
+              "correct": "c) I’m not taking anything for granted at this stage."
+            }
+          ]
+        },
+        {
+          "id": "part_2",
+          "title": "Part 2",
+          "type": "multiple_choice",
+          "instructions": "You will hear five conversations. Listen to the conversations and answer the questions. Choose the correct answer.",
+          "questions": [
+            {
+              "number": 8,
+              "prompt": "What does the man like about the new manager?",
+              "options": [
+                "a) She listens carefully to everyone’s ideas.",
+                "b) She's good at making challenging decisions.",
+                "c) She explains what she wants them to do clearly."
+              ],
+              "correct": "a) She listens carefully to everyone’s ideas."
+            },
+            {
+              "number": 9,
+              "prompt": "Where did their manager work before starting at their company?",
+              "options": [
+                "a) in a bank",
+                "b) in a very big shop",
+                "c) in a government office"
+              ],
+              "correct": "b) in a very big shop"
+            },
+            {
+              "number": 10,
+              "prompt": "What is the student having problems with?",
+              "options": [
+                "a) He’s unable to get onto the internet",
+                "b) He’s having trouble locating a particular book",
+                "c) He’s looking for a study space where he can concentrate"
+              ],
+              "correct": "c) He’s looking for a study space where he can concentrate"
+            },
+            {
+              "number": 11,
+              "prompt": "The project that he’s doing focuses on an aspect of",
+              "options": [
+                "a) environmental studies.",
+                "b) business studies.",
+                "c) computer studies."
+              ],
+              "correct": "a) environmental studies."
+            },
+            {
+              "number": 12,
+              "prompt": "What aspect of his presentation does the male student ask for help with?",
+              "options": [
+                "a) correcting any language mistakes",
+                "b) deciding how to reduce the overall length",
+                "c) finding a suitable source of information to use"
+              ],
+              "correct": "b) deciding how to reduce the overall length"
+            },
+            {
+              "number": 13,
+              "prompt": "What does the female student say about giving her presentation?",
+              "options": [
+                "a) She’s concerned about forgetting what to say.",
+                "b) She hopes she isn’t asked any difficult questions.",
+                "c) She’ll attempt to take no notice of the audience."
+              ],
+              "correct": "a) She’s concerned about forgetting what to say."
+            },
+            {
+              "number": 14,
+              "prompt": "The friends disagree about",
+              "options": [
+                "a) how much they should spend.",
+                "b) which design they should create.",
+                "c) the materials they should use."
+              ],
+              "correct": "b) which design they should create."
+            },
+            {
+              "number": 15,
+              "prompt": "What does the woman think will be the most challenging part of the project?",
+              "options": [
+                "a) applying paint successfully",
+                "b) connecting electrical components",
+                "c) shaping the body of the instrument"
+              ],
+              "correct": "a) applying paint successfully"
+            },
+            {
+              "number": 16,
+              "prompt": "What surprised the man about the training?",
+              "options": [
+                "a) how smoothly the technology functioned",
+                "b) how many assignments they were asked to complete",
+                "c) how much interaction there was between participants"
+              ],
+              "correct": "c) how much interaction there was between participants"
+            },
+            {
+              "number": 17,
+              "prompt": "What did the course help the woman to realise?",
+              "options": [
+                "a) She avoids situations involving conflict.",
+                "b) She uses her listening skills effectively.",
+                "c) She is sometimes too strict with staff."
+              ],
+              "correct": "c) She is sometimes too strict with staff."
+            }
+          ]
+        },
+        {
+          "id": "part_3",
+          "title": "Part 3",
+          "type": "gap_fill",
+          "instructions": "Complete the information on the notepad. Write short answers of one to three words.",
+          "questions": [
+            {
+              "number": 18,
+              "prompt": "Founded by a local person in 1988",
+              "correct": [
+                "hairdresser"
+              ]
+            },
+            {
+              "number": 19,
+              "prompt": "Removing items found by the river",
+              "correct": [
+                "fallen trees"
+              ]
+            },
+            {
+              "number": 20,
+              "prompt": "Reporting what is seen in or near the river to scientists",
+              "correct": [
+                "rare animal species"
+              ]
+            },
+            {
+              "number": 21,
+              "prompt": "River clean-up sessions take place once every",
+              "correct": [
+                "two weeks"
+              ]
+            },
+            {
+              "number": 22,
+              "prompt": "Volunteers must bring these with them",
+              "correct": [
+                "gardening gloves"
+              ]
+            },
+            {
+              "number": 23,
+              "prompt": "Items of litter found most frequently by the group",
+              "correct": [
+                "paper cups"
+              ]
+            },
+            {
+              "number": 24,
+              "prompt": "The charity currently forming a partnership with the group",
+              "correct": [
+                "tests water quality"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "part_4",
+          "title": "Part 4",
+          "type": "multiple_choice",
+          "instructions": "You will hear a podcast discussion on the subject of urban living. Choose the correct answers.",
+          "questions": [
+            {
+              "number": 25,
+              "prompt": "What point does David make about accommodation in cities?",
+              "options": [
+                "a) There is a decline in the standard of most new housing.",
+                "b) More housing divided into larger units should be built.",
+                "c) The current trend for high-rise living is coming to an end."
+              ],
+              "correct": "b) More housing divided into larger units should be built."
+            },
+            {
+              "number": 26,
+              "prompt": "Violetta and David both think that green spaces in cities should be",
+              "options": [
+                "a) made considerably larger.",
+                "b) connected to each other.",
+                "c) designed by local residents."
+              ],
+              "correct": "b) connected to each other."
+            },
+            {
+              "number": 27,
+              "prompt": "What does David say about public transport in his own city?",
+              "options": [
+                "a) The extent of the network is limited.",
+                "b) The vehicles used require an upgrade.",
+                "c) The frequency of services is unsatisfactory."
+              ],
+              "correct": "a) The extent of the network is limited."
+            },
+            {
+              "number": 28,
+              "prompt": "Violetta suggests that waste management in cities should become",
+              "options": [
+                "a) a good business opportunity.",
+                "b) an increasingly simple process.",
+                "c) the responsibility of individuals."
+              ],
+              "correct": "a) a good business opportunity."
+            },
+            {
+              "number": 29,
+              "prompt": "Why does David refer to Seoul in South Korea?",
+              "options": [
+                "a) to highlight the ineffectiveness of one particular policy",
+                "b) to illustrate how quickly urban environments can change",
+                "c) to suggest a model that other cities should follow"
+              ],
+              "correct": "c) to suggest a model that other cities should follow"
+            },
+            {
+              "number": 30,
+              "prompt": "What effect does Violetta think decentralising cities could have?",
+              "options": [
+                "a) Food production within them could increase.",
+                "b) There could be greater equality across the population.",
+                "c) Residents could have higher overall levels of satisfaction."
+              ],
+              "correct": "b) There could be greater equality across the population."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading",
+      "title": "Reading",
+      "parts": [
+        {
+          "id": "part_1a",
+          "title": "Part 1a",
+          "type": "multiple_choice",
+          "instructions": "Read the sentences below and decide which option can best replace the word in bold so that the meaning remains the same.",
+          "questions": [
+            {
+              "number": 1,
+              "prompt": "While she was working at the cafe, Suzanne learnt how to make many different kinds of coffee.",
+              "options": [
+                "a) ways",
+                "b) sorts",
+                "c) things",
+                "d) models"
+              ],
+              "correct": "b) sorts",
+              "highlight": "kinds"
+            },
+            {
+              "number": 2,
+              "prompt": "We apologise, but the meeting has been postponed until tomorrow because one or two people can’t come.",
+              "options": [
+                "a) got back",
+                "b) taken out",
+                "c) given up",
+                "d) put off"
+              ],
+              "correct": "d) put off",
+              "highlight": "postponed"
+            },
+            {
+              "number": 3,
+              "prompt": "The location of our hotel, right beside the lake, meant it was a wonderful place to stay.",
+              "options": [
+                "a) position",
+                "b) environment",
+                "c) region",
+                "d) place"
+              ],
+              "correct": "a) position",
+              "highlight": "location"
+            },
+            {
+              "number": 4,
+              "prompt": "The museum was able to acquire a rare and beautiful painting for its collection thanks to the generosity of one of its supporters.",
+              "options": [
+                "a) capture",
+                "b) gather",
+                "c) obtain",
+                "d) achieve"
+              ],
+              "correct": "c) obtain",
+              "highlight": "acquire"
+            },
+            {
+              "number": 5,
+              "prompt": "Many career officers allow students to remain in contact with them after leaving school or university, as this extra support can be very helpful.",
+              "options": [
+                "a) hold",
+                "b) maintain",
+                "c) continue",
+                "d) keep"
+              ],
+              "correct": "d) keep",
+              "highlight": "remain"
+            },
+            {
+              "number": 6,
+              "prompt": "I didn’t go home until I was completely satisfied that everyone performing in the show knew exactly what was expected of them.",
+              "options": [
+                "a) proud",
+                "b) certain",
+                "c) thrilled",
+                "d) dedicated"
+              ],
+              "correct": "b) certain",
+              "highlight": "satisfied"
+            }
+          ]
+        },
+        {
+          "id": "part_1b",
+          "title": "Part 1b",
+          "type": "multiple_choice",
+          "instructions": "Read the text and decide which option best fits each gap.",
+          "passage": "Exploring Mars\n\nThe first robots to land on the planet Mars were the two Viking landers, Viking 1 and Viking 2, in the 1970s. The (7) they were sent was to look for signs of life. They were programmed to carry out various experiments, and, at first, it seemed the results were positive. In the end, however, scientists decided the results did not (8) for sure that there was life on the planet.\n\nThere are (9) five robots working on Mars today, and these are called rovers. The advantage of rovers over landers is that rovers can travel across the surface collecting information from different areas. One of these rovers, Curiosity, has been on Mars since 2012. During that time it has discovered that there used to be large (10) of water on the planet, and that the planet’s soil (11) the chemicals that are necessary for life to exist.",
+          "questions": [
+            {
+              "number": 7,
+              "prompt": "Gap 7",
+              "options": [
+                "a) reason",
+                "b) goal",
+                "c) point"
+              ],
+              "correct": "a) reason"
+            },
+            {
+              "number": 8,
+              "prompt": "Gap 8",
+              "options": [
+                "a) justify",
+                "b) define",
+                "c) prove"
+              ],
+              "correct": "c) prove"
+            },
+            {
+              "number": 9,
+              "prompt": "Gap 9",
+              "options": [
+                "a) currently",
+                "b) lately",
+                "c) recently"
+              ],
+              "correct": "a) currently"
+            },
+            {
+              "number": 10,
+              "prompt": "Gap 10",
+              "options": [
+                "a) numbers",
+                "b) amounts",
+                "c) sums"
+              ],
+              "correct": "b) amounts"
+            },
+            {
+              "number": 11,
+              "prompt": "Gap 11",
+              "options": [
+                "a) consists",
+                "b) involves",
+                "c) contains"
+              ],
+              "correct": "c) contains"
+            }
+          ]
+        },
+        {
+          "id": "part_2",
+          "title": "Part 2",
+          "type": "sentence_insert",
+          "instructions": "Use sentences A-G to complete the text. There is one extra sentence you will not need.",
+          "passage": "Is there a future for plastic?\n\nWhen plastic was first invented, it initially seemed to be a miracle material that would solve many of the world’s problems. However, we now know it is a serious threat to the health of the planet. A new exhibition at the V&A museum in Dundee looks back at the history of plastic and asks us to think about its future.\n\n“Until the middle of the 19th century, people turned to the natural world for materials that would perform the functions that plastics now carry out,” explains museum curator Charlotte Hale. (12) For this reason, attempts to create similar materials in the laboratory began. There were some scientific advances but early attempts were not commercially successful.\n\nThe breakthrough came in the early 20th century when Belgian chemist Leo Baekeland invented a type of plastic he called Bakelite. Bakelite was hard and strong, heat resistant, and attractive. It was used to make everything from telephones to jewellery to chess pieces. (13) This appreciation is easy to understand when you look at the stunning examples in the exhibition.\n\nSoon nylon and polyethylene were invented, and in the 1940s companies began to use plastics to produce items for domestic use. (14) These had the desired effect, and soon homes were filled with radios, lamps, clocks and telephones in futuristic curved shapes and bright colours.\n\nAs the 1950s and 60s went on, the increased availability of cheaper items and plastic packaging marked a change in attitudes towards plastic. (15) It’s therefore unlikely to be a coincidence that around this time, marine biologists first published articles on the problem of plastic making its way into the sea.\n\nSince then, the understanding of its environmental impact has grown. (16) For example, it is vital to modern telecommunications and medicine and many other essential aspects of life. When used to wrap food, it can help prevent food waste. It’s true that substitutes made from things like vegetable matter, paper or cotton do now exist. (17) This is why Charlotte Hale is not demanding a zero-plastic world. Instead, she asks governments to introduce strict laws to control its use so we can continue to benefit from this amazing material for decades to come.",
+          "options": [
+            "A) It began to be thought of as something to be thrown away and replaced, rather than cared for.",
+            "B) However, it’s becoming clear that the environmental costs attached to these alternatives are also significant.",
+            "C) These objects were highly valued at the time and many went on to become collectors’ pieces.",
+            "D) That meant it could be used to create a wide range of luxury items.",
+            "E) But the rewards of plastic are still there, and in many ways it remains the wonderful material it always was.",
+            "F) The problem was that these were difficult to obtain, and therefore expensive.",
+            "G) At the same time, they ran huge marketing campaigns to promote the goods."
+          ],
+          "questions": [
+            {
+              "number": 12,
+              "prompt": "Gap 12",
+              "correct": "F) The problem was that these were difficult to obtain, and therefore expensive."
+            },
+            {
+              "number": 13,
+              "prompt": "Gap 13",
+              "correct": "C) These objects were highly valued at the time and many went on to become collectors’ pieces."
+            },
+            {
+              "number": 14,
+              "prompt": "Gap 14",
+              "correct": "G) At the same time, they ran huge marketing campaigns to promote the goods."
+            },
+            {
+              "number": 15,
+              "prompt": "Gap 15",
+              "correct": "A) It began to be thought of as something to be thrown away and replaced, rather than cared for."
+            },
+            {
+              "number": 16,
+              "prompt": "Gap 16",
+              "correct": "E) But the rewards of plastic are still there, and in many ways it remains the wonderful material it always was."
+            },
+            {
+              "number": 17,
+              "prompt": "Gap 17",
+              "correct": "B) However, it’s becoming clear that the environmental costs attached to these alternatives are also significant."
+            }
+          ]
+        },
+        {
+          "id": "part_3",
+          "title": "Part 3",
+          "type": "matching",
+          "instructions": "Read the four texts about memory. Which text gives you the answer to each question?",
+          "passage": "A\nWhen I told people I was going to write a book on memory, I saw “Good luck with that!” written on a few faces. Memory is such a massive topic. My interest is in what is called autobiographical memory - the memories we have for the events of our own lives. Several decades of research tell us that every time we recall these kinds of memories, our brains re-invent them slightly to match our current beliefs. However, survey after survey tells us that many people remain convinced that memories once made, are forever fixed. Why is this the case? One possible reason is that memories are precious to us: they define us in many ways, and so we are horrified by the idea that they are unreliable. That is what I wanted to explore in my book.\n\nB\nThe techniques we teach on this memory course are relatively easy to learn and their effectiveness is backed up by research. Some people are of the view that being able to hold information in your brain is not necessary in an age where so much information is immediately available online. We disagree: our memories work by linking different ideas to each other. As well as being crucial to memory, this is also the basis of creative thinking. Since careers in the future are likely to be less concerned with repetitive tasks that can be done by computers and more about being creative, having a good memory will become more, not less, important in the future.\n\nC\nWe’re living in the most photographed era of history and as a psychologist I’m fascinated by the effect this is having on our memories. I’ve long wondered whether the act of taking pictures affects the way we make memories of our experiences. And it now seems this may be the case. In a recent experiment, a scientist took people around a museum and asked them to take photos of some exhibits but not others. They found people had worse memories of the things they had photographed than the things they hadn’t. It’s as if having a picture of something means you don’t need to make a strong memory of it. Your brain seems to be saying, “It’s OK, I can always look at the picture if I need the information.”\n\nD\nThis new book on the science of memory explores the reasons why we retain so few memories from early childhood. From about the age of 6 or 7, many of the early autobiographical memories we’ve made begin to gradually fade away. Scientists have known about this for more than a century but it’s only in the past decade that they’ve begun to figure out why it happens. As you will discover within the pages of this book, it seems to be because the brain systems responsible for autobiographical memory aren’t fully formed in young children. It’s not that they don’t work at all, it’s just that they don’t work as well as they are going to in later childhood and in adulthood.",
+          "options": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "questions": [
+            {
+              "number": 18,
+              "prompt": "Mention a suspicion they had that turns out to be correct.",
+              "correct": "C"
+            },
+            {
+              "number": 19,
+              "prompt": "Suggest that developing our memory can improve another skill.",
+              "correct": "B"
+            },
+            {
+              "number": 20,
+              "prompt": "Point out that most of us hold a mistaken belief about how one kind of memory works.",
+              "correct": "A"
+            },
+            {
+              "number": 21,
+              "prompt": "Explain the likely cause of a certain type of memory loss.",
+              "correct": "D"
+            },
+            {
+              "number": 22,
+              "prompt": "Argue against the idea that being able to remember things matters less these days.",
+              "correct": "B"
+            },
+            {
+              "number": 23,
+              "prompt": "Explain why the brain may sometimes choose not to remember something.",
+              "correct": "C"
+            },
+            {
+              "number": 24,
+              "prompt": "Describe the reaction they got after revealing a plan.",
+              "correct": "A"
+            }
+          ]
+        },
+        {
+          "id": "part_4",
+          "title": "Part 4",
+          "type": "multiple_choice",
+          "instructions": "Read the review of a book about the internet and answer the questions.",
+          "passage": "Andrew Miller reviews: “How a Generation Shaped, Destroyed and Survived the Internet” by Marie Le Conte\n\nThere are, broadly speaking, three generations of humans alive right now with distinct experiences of the internet. There are people - such as myself - of middle age and upwards, who reached adulthood without googling anything, sending an email, having a social media account or owning a mobile phone. At the opposite end of the spectrum are people in their mid-20s and younger, for whom the online world is as taken for granted as electric light. The author and journalist Marie Le Conte is of the generation between.\n\nShe was born in 1991, and reckons she probably went online for the first time towards the end of that decade. New technologies are usually adopted first by the young, and it seems Le Conte was no exception to this rule. She launched a blog when she was 12, and a website about rock music when she was 15. She now has over 90,000 followers on Twitter. “Mine has been a life lived online,” she says in the introduction to her book, “and if you remove the life I have led on there, it leaves me with no life at all.”\n\nThis is in no way a complaint. Le Conte is clear that her time online has largely been tremendous fun, and she has many amusing stories to prove it. But her view of the internet now is similar to that of an early fan of a once unknown rock band that has become immensely famous. The fan finds themselves crowded into the back of some huge arena, thinking, “Who are all these awful people?”\n\nLe Conte uses a mixture of interviews and personal reflections to chart the internet’s course from its initial arrangement as a landscape of small “villages”, each with its own rules, conventions and traditions, to today’s much more centralised arrangement, where much, if not most, online activity is filtered through just a handful of social media platforms. The villages have become cities, and just like city-living in the real world, this has advantages and disadvantages. In the physical world, humanity has learnt to cope with city life by allowing our fellow citizens to say, do, believe, wear, and consume what they please so long as they don’t bother us with it. Online, you may have noticed, it does not work like that: social media is full of people for whom being angry in public, very often about nothing at all, has become a hobby, if not a job.\n\nLe Conte takes issue, and persuasively so, with the conventional wisdom that social media places us all into “echo chambers”, where our own views are reflected back at us. The actual difficulty, she suggests, is the opposite. By way of example, she describes a recent social media storm she accidentally set off. She posted what she thought was an amusing tweet about living within earshot of an opera singer. It was soon shared with another opera singer, and before long Le Conte found herself under attack by many opera singers who objected furiously to her tweet. For Le Conte it is a cause of much sorrow that the internet spaces we occupy these days make us feel tense because we never feel truly safe in them.",
+          "questions": [
+            {
+              "number": 25,
+              "prompt": "What does Andrew Miller say about young people in the first paragraph?",
+              "options": [
+                "a) They don’t give the existence of the internet a great deal of thought.",
+                "b) They can’t understand how people managed their lives before the internet.",
+                "c) They aren’t aware of the difficulties older people have when using the internet."
+              ],
+              "correct": "a) They don’t give the existence of the internet a great deal of thought."
+            },
+            {
+              "number": 26,
+              "prompt": "What do we learn about Marie Le Conte from the second paragraph?",
+              "options": [
+                "a) She made full use of the internet as soon as she was able to.",
+                "b) Her early confidence in the internet was unusual for the time.",
+                "c) She has no memory of the period before the internet was invented."
+              ],
+              "correct": "a) She made full use of the internet as soon as she was able to."
+            },
+            {
+              "number": 27,
+              "prompt": "Andrew Miller refers to “villages” in the fourth paragraph in order to",
+              "options": [
+                "a) highlight the lack of privacy that’s always been a feature of online world.",
+                "b) give an idea of the kind of people who were initially attracted to the internet.",
+                "c) illustrate how online communities used to be separate from one another."
+              ],
+              "correct": "c) illustrate how online communities used to be separate from one another."
+            },
+            {
+              "number": 28,
+              "prompt": "What is the writer’s main point in the fourth paragraph?",
+              "options": [
+                "a) It is difficult to predict the outcome when large numbers of people connect online.",
+                "b) It is likely that over time internet users will become more tolerant of one another.",
+                "c) It is unfortunate that people don’t behave online as they would in person."
+              ],
+              "correct": "c) It is unfortunate that people don’t behave online as they would in person."
+            },
+            {
+              "number": 29,
+              "prompt": "What problem with social media does the writer describe in the final paragraph?",
+              "options": [
+                "a) how it pushes people to hold certain views",
+                "b) the way comments can spread quickly across it",
+                "c) the lack of agreement among experts as to how to improve it"
+              ],
+              "correct": "b) the way comments can spread quickly across it"
+            },
+            {
+              "number": 30,
+              "prompt": "What impression do we get of Marie Le Conte from this text as a whole?",
+              "options": [
+                "a) She is sad that most people have not benefited much from the internet.",
+                "b) She has some regrets about the way she has used the internet in the past.",
+                "c) She is grateful that she experienced the internet as it was in its early days."
+              ],
+              "correct": "c) She is grateful that she experienced the internet as it was in its early days."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "writing",
+      "title": "Writing",
+      "parts": [
+        {
+          "id": "part_1",
+          "title": "Part 1",
+          "type": "long_text",
+          "min_words": 100,
+          "max_words": 150,
+          "prompt": "You see the following job advertisement online. Write an email applying for one of the jobs. In your email: say which job you’re interested in; give details of any experience you have; say why you think you’d be good at the job.\n\nCome and work at Hi Bean Cafe and Food Store. We need waiters, shop assistants and kitchen staff. We’re looking for full-time and part-time staff to join our team. Choose when you work! Generous pay and a great working environment. Apply to Jake.Brown@hibean.click by 29th January."
+        },
+        {
+          "id": "part_2",
+          "title": "Part 2",
+          "type": "long_text",
+          "min_words": 150,
+          "max_words": 200,
+          "prompt": "Write an article for a travel magazine about a beautiful natural location that you like to visit. Describe what you can see and do there, as well as the atmosphere at the location."
+        }
+      ]
+    }
+  ]
+}

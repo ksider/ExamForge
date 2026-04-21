@@ -1,0 +1,20 @@
+{
+  "name": "examforge",
+  "version": "1.0.0",
+  "description": "LanguageCert preparation trainer with JSON-driven exams generated from PDF materials",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "language-tests",
+    "exam",
+    "json"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}

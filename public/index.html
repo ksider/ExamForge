@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ExamForge</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">LanguageCert Practice</p>
+          <h1>ExamForge</h1>
+        </div>
+        <div id="timerPanel" class="timer-panel is-hidden" aria-live="polite"></div>
+      </header>
+
+      <main>
+        <section id="startScreen" class="screen start-screen">
+          <div class="section-head">
+            <div>
+              <h2>Choose a test variant</h2>
+              <p>The list is built automatically from JSON files in <code>tests/</code>.</p>
+            </div>
+            <button id="refreshTests" class="icon-button" type="button" title="Refresh list">↻</button>
+          </div>
+
+          <div id="testsList" class="tests-grid"></div>
+
+          <div class="settings-grid">
+            <fieldset>
+              <legend>Timer mode</legend>
+              <label class="radio-card">
+                <input type="radio" name="timerMode" value="exam" checked />
+                <span>
+                  <strong>Exam mode</strong>
+                  <small>Countdown timer with section lock/check on timeout.</small>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="timerMode" value="practice" />
+                <span>
+                  <strong>Practice mode</strong>
+                  <small>Count-up timer without hard locking.</small>
+                </span>
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Timer scope</legend>
+              <label class="radio-card">
+                <input type="radio" name="timerScope" value="section" checked />
+                <span>
+                  <strong>Per section</strong>
+                  <small>Listening, Reading and Writing each use their own time limit.</small>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="timerScope" value="test" />
+                <span>
+                  <strong>Whole test</strong>
+                  <small>Total time is calculated from all section limits.</small>
+                </span>
+              </label>
+            </fieldset>
+          </div>
+
+          <button id="startBtn" class="primary-button" type="button" disabled>Start test</button>
+
+          <section class="local-results">
+            <h3>Recent local results</h3>
+            <div id="resultHistory" class="result-history"></div>
+          </section>
+        </section>
+
+        <section id="examScreen" class="screen is-hidden">
+          <nav id="sectionTabs" class="tabs" aria-label="Exam sections"></nav>
+          <div id="examContent"></div>
+        </section>
+
+        <section id="resultsScreen" class="screen is-hidden">
+          <div class="section-head">
+            <div>
+              <h2>Test results</h2>
+              <p id="resultSubtitle"></p>
+            </div>
+            <button id="restartBtn" class="secondary-button" type="button">Back to tests</button>
+          </div>
+          <div id="resultsContent" class="results-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>

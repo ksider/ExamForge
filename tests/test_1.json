@@ -1,0 +1,682 @@
+{
+  "id": "test_1",
+  "title": "LanguageCert General Practice Paper 1",
+  "source": {
+    "folder": "PDF TEMP/LCG PP1",
+    "reading_listening_pdf": "LC General Practice Paper 1 - Exam Paper (LR).pdf",
+    "writing_pdf": "LC General Practice Paper 1 - Exam Paper (W).pdf",
+    "mark_scheme_pdf": "LC General Practice Paper 1 - Mark Scheme.pdf"
+  },
+  "timer": {
+    "listening_minutes": 35,
+    "reading_minutes": 50,
+    "writing_minutes": 45
+  },
+  "sections": [
+    {
+      "id": "listening",
+      "title": "Listening",
+      "audio": "/audio/test_1_listening.mp3",
+      "parts": [
+        {
+          "id": "part_1",
+          "title": "Part 1",
+          "type": "multiple_choice",
+          "instructions": "You will hear some short conversations. You will hear each conversation twice. Choose the correct answer to complete each conversation.",
+          "questions": [
+            {
+              "number": 1,
+              "prompt": "Conversation 1",
+              "options": [
+                "a) Shall we look it up later?",
+                "b) OK, how about a coffee, then?",
+                "c) Well, it was good to catch up."
+              ],
+              "correct": "b) OK, how about a coffee, then?"
+            },
+            {
+              "number": 2,
+              "prompt": "Conversation 2",
+              "options": [
+                "a) I don't know you. What would you like?",
+                "b) I can speak with you later.",
+                "c) Her line's engaged. Will you hold?"
+              ],
+              "correct": "c) Her line's engaged. Will you hold?"
+            },
+            {
+              "number": 3,
+              "prompt": "Conversation 3",
+              "options": [
+                "a) It's a dream come true!",
+                "b) Well, think hard before you accept.",
+                "c) I don't know if that's what they meant."
+              ],
+              "correct": "b) Well, think hard before you accept."
+            },
+            {
+              "number": 4,
+              "prompt": "Conversation 4",
+              "options": [
+                "a) So, you didn't know?",
+                "b) Just a couple of days, I think.",
+                "c) Actually, not until next week."
+              ],
+              "correct": "c) Actually, not until next week."
+            },
+            {
+              "number": 5,
+              "prompt": "Conversation 5",
+              "options": [
+                "a) We'd save money in the long run, though.",
+                "b) What's the most we can make out of it?",
+                "c) We've created a very good impression."
+              ],
+              "correct": "a) We'd save money in the long run, though."
+            },
+            {
+              "number": 6,
+              "prompt": "Conversation 6",
+              "options": [
+                "a) I'm pretty sure that's what he said.",
+                "b) Will you tell us what you've found?",
+                "c) I'll see if his secretary knows anything."
+              ],
+              "correct": "c) I'll see if his secretary knows anything."
+            },
+            {
+              "number": 7,
+              "prompt": "Conversation 7",
+              "options": [
+                "a) After all, there's no harm in trying, is there?",
+                "b) It's a shame because their samples were tasty enough.",
+                "c) I seem to have developed quite a taste for it."
+              ],
+              "correct": "b) It's a shame because their samples were tasty enough."
+            }
+          ]
+        },
+        {
+          "id": "part_2",
+          "title": "Part 2",
+          "type": "multiple_choice",
+          "instructions": "You will hear five conversations. Listen to the conversations and answer the questions. Choose the correct answer.",
+          "questions": [
+            {
+              "number": 8,
+              "prompt": "What does the owner say about the table in the apartment?",
+              "options": [
+                "a) She'll find out who damaged it.",
+                "b) She agrees that it needs replacing.",
+                "c) She wasn't aware of a problem with it."
+              ],
+              "correct": "c) She wasn't aware of a problem with it."
+            },
+            {
+              "number": 9,
+              "prompt": "When the man asks about car parking in the area, she explains that",
+              "options": [
+                "a) getting permission is complicated.",
+                "b) public transport may be more convenient than driving.",
+                "c) she doesn't own a car so is unable to give advice about it."
+              ],
+              "correct": "b) public transport may be more convenient than driving."
+            },
+            {
+              "number": 10,
+              "prompt": "How does the man know the visitor?",
+              "options": [
+                "a) They studied in the same place.",
+                "b) They've worked together before.",
+                "c) They met at a marketing conference."
+              ],
+              "correct": "b) They've worked together before."
+            },
+            {
+              "number": 11,
+              "prompt": "What does the woman want him to do?",
+              "options": [
+                "a) give the visitor a tour of the factory",
+                "b) prepare a presentation for the visitor",
+                "c) collect the visitor from the airport"
+              ],
+              "correct": "a) give the visitor a tour of the factory"
+            },
+            {
+              "number": 12,
+              "prompt": "What do we learn about the man from the conversation?",
+              "options": [
+                "a) He works in a different shop from the woman.",
+                "b) He is already working with a friend.",
+                "c) He has had his job for under a year."
+              ],
+              "correct": "c) He has had his job for under a year."
+            },
+            {
+              "number": 13,
+              "prompt": "What does the man say about his induction?",
+              "options": [
+                "a) He expected to spend more time in the shop itself.",
+                "b) He thought it was useful training.",
+                "c) He found some of it a bit boring."
+              ],
+              "correct": "a) He expected to spend more time in the shop itself."
+            },
+            {
+              "number": 14,
+              "prompt": "In the woman's opinion, the changes will",
+              "options": [
+                "a) allow them to seat more customers.",
+                "b) make the interior feel bigger.",
+                "c) give the restaurant a unique look."
+              ],
+              "correct": "b) make the interior feel bigger."
+            },
+            {
+              "number": 15,
+              "prompt": "What does the man regret not doing?",
+              "options": [
+                "a) involving all the staff in the first phase",
+                "b) adding more storage spaces",
+                "c) seeking additional finance"
+              ],
+              "correct": "b) adding more storage spaces"
+            },
+            {
+              "number": 16,
+              "prompt": "They agree that",
+              "options": [
+                "a) being new makes people reluctant to trust you.",
+                "b) it's a problem if managers don't make things clear.",
+                "c) not being familiar with everything can be worrying."
+              ],
+              "correct": "c) not being familiar with everything can be worrying."
+            },
+            {
+              "number": 17,
+              "prompt": "When they are discussing the new contract, the woman",
+              "options": [
+                "a) decides that she needs to change the subject.",
+                "b) realises that she's said something inaccurate.",
+                "c) offers two possible explanations for something."
+              ],
+              "correct": "b) realises that she's said something inaccurate."
+            }
+          ]
+        },
+        {
+          "id": "part_3",
+          "title": "Part 3",
+          "type": "gap_fill",
+          "instructions": "You will hear someone talking. Complete the information on the notepad. Write short answers of one to three words.",
+          "questions": [
+            {
+              "number": 18,
+              "prompt": "Key thing interviewers are looking for",
+              "correct": [
+                "interest in knowledge",
+                "an interest in knowledge"
+              ]
+            },
+            {
+              "number": 19,
+              "prompt": "As a child, Sandra particularly loved visiting",
+              "correct": [
+                "art galleries"
+              ]
+            },
+            {
+              "number": 20,
+              "prompt": "Section of museum Sandra has spent most time in",
+              "correct": [
+                "local history",
+                "the local history",
+                "local history section",
+                "the local history section",
+                "local history one"
+              ]
+            },
+            {
+              "number": 21,
+              "prompt": "Preferred task among museum assistants",
+              "correct": [
+                "making displays",
+                "making new displays"
+              ]
+            },
+            {
+              "number": 22,
+              "prompt": "What Sandra enjoyed doing with young children",
+              "correct": [
+                "treasure hunt",
+                "a treasure hunt",
+                "organising treasure hunt",
+                "organising a treasure hunt"
+              ]
+            },
+            {
+              "number": 23,
+              "prompt": "Current exhibition at Sandra's museum",
+              "correct": [
+                "world maps",
+                "the world maps",
+                "world maps exhibition",
+                "the world maps exhibition"
+              ]
+            },
+            {
+              "number": 24,
+              "prompt": "Topic of new qualification a museum employee has taken",
+              "correct": [
+                "visitor services",
+                "diploma in visitor services"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "part_4",
+          "title": "Part 4",
+          "type": "multiple_choice",
+          "instructions": "You will hear a conversation. You will hear the conversation twice. Choose the correct answers.",
+          "questions": [
+            {
+              "number": 25,
+              "prompt": "What point is made about the swimming pool in town?",
+              "options": [
+                "a) The glass windows aren't popular with swimmers.",
+                "b) The changing rooms are sometimes dirty.",
+                "c) The water could be a bit warmer."
+              ],
+              "correct": "c) The water could be a bit warmer."
+            },
+            {
+              "number": 26,
+              "prompt": "The man and woman both say that the sports centre",
+              "options": [
+                "a) is well used by the local community.",
+                "b) has a perfect location.",
+                "c) is better than others in their region."
+              ],
+              "correct": "b) has a perfect location."
+            },
+            {
+              "number": 27,
+              "prompt": "An Olympic rower was chosen to open the sports centre because",
+              "options": [
+                "a) he had grown up in the area.",
+                "b) his sport was important in the area.",
+                "c) he was in the area for a big sports event."
+              ],
+              "correct": "a) he had grown up in the area."
+            },
+            {
+              "number": 28,
+              "prompt": "Why was the man fined in the town's main car park?",
+              "options": [
+                "a) He parked in the wrong place.",
+                "b) He left his car there for too long.",
+                "c) He failed to show the necessary document."
+              ],
+              "correct": "c) He failed to show the necessary document."
+            },
+            {
+              "number": 29,
+              "prompt": "The man and woman agree that the library",
+              "options": [
+                "a) can get too crowded.",
+                "b) has some badly trained staff.",
+                "c) isn't available as often as it could be."
+              ],
+              "correct": "c) isn't available as often as it could be."
+            },
+            {
+              "number": 30,
+              "prompt": "When talking about the recycling centre, what surprises the man?",
+              "options": [
+                "a) that the woman had to pay when she used it",
+                "b) that the woman doesn't go there more often",
+                "c) that the woman had trouble finding it"
+              ],
+              "correct": "b) that the woman doesn't go there more often"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading",
+      "title": "Reading",
+      "parts": [
+        {
+          "id": "part_1a",
+          "title": "Part 1a",
+          "type": "multiple_choice",
+          "instructions": "Read the sentences below and decide which option can best replace the word or words in bold so that the meaning remains the same.",
+          "questions": [
+            {
+              "number": 1,
+              "prompt": "Fill in the application form and send it to the email address provided below.",
+              "highlight": "Fill in",
+              "options": [
+                "a) insert",
+                "b) write",
+                "c) inform",
+                "d) complete"
+              ],
+              "correct": "d) complete"
+            },
+            {
+              "number": 2,
+              "prompt": "Tomas keeps himself active all the time - he always has something to do.",
+              "highlight": "active",
+              "options": [
+                "a) energetic",
+                "b) busy",
+                "c) lively",
+                "d) fit"
+              ],
+              "correct": "b) busy"
+            },
+            {
+              "number": 3,
+              "prompt": "Swimming is an extremely effective form of exercise for people of all ages and so should be encouraged in children from a young age.",
+              "highlight": "effective",
+              "options": [
+                "a) helpful",
+                "b) capable",
+                "c) adequate",
+                "d) forceful"
+              ],
+              "correct": "a) helpful"
+            },
+            {
+              "number": 4,
+              "prompt": "People's views on life change as a result of gaining knowledge, therefore ongoing education is essential for personal development.",
+              "highlight": "essential",
+              "options": [
+                "a) positive",
+                "b) suitable",
+                "c) necessary",
+                "d) convenient"
+              ],
+              "correct": "c) necessary"
+            },
+            {
+              "number": 5,
+              "prompt": "Over 70% of global coconut oil production comes from the Philippines and Indonesia, and it is used in products as diverse as medicines, cosmetics and foodstuffs.",
+              "highlight": "diverse",
+              "options": [
+                "a) opposite",
+                "b) separate",
+                "c) varied",
+                "d) differing"
+              ],
+              "correct": "c) varied"
+            },
+            {
+              "number": 6,
+              "prompt": "Effective sports coaches are capable of successfully adapting their coaching style to suit the needs of those they train, and this flexible approach brings rewards.",
+              "highlight": "approach",
+              "options": [
+                "a) capacity",
+                "b) attitude",
+                "c) objective",
+                "d) commitment"
+              ],
+              "correct": "b) attitude"
+            }
+          ]
+        },
+        {
+          "id": "part_1b",
+          "title": "Part 1b",
+          "type": "multiple_choice",
+          "instructions": "Read the text and decide which option best fits each gap.",
+          "passage": "Performance reviews\n\nSome bosses are good at performance reviews, but others dislike them as much as you might. A good boss will not only offer criticism, she'll also (7) you for the things you've done well. If that doesn't happen, try asking her what she thought went well last year. You do need to be cautious if you take this (8), however. You don't want her to (9) the impression that you're completely satisfied with your performance. So, only focus briefly (10) the things you did well and quickly move onto the things you can improve. Use your performance review as an opportunity to (11) what you need to do to really contribute to the company.",
+          "questions": [
+            {
+              "number": 7,
+              "prompt": "Gap 7",
+              "options": [
+                "a) praise",
+                "b) award",
+                "c) celebrate"
+              ],
+              "correct": "a) praise"
+            },
+            {
+              "number": 8,
+              "prompt": "Gap 8",
+              "options": [
+                "a) manner",
+                "b) approach",
+                "c) procedure"
+              ],
+              "correct": "b) approach"
+            },
+            {
+              "number": 9,
+              "prompt": "Gap 9",
+              "options": [
+                "a) make",
+                "b) give",
+                "c) get"
+              ],
+              "correct": "c) get"
+            },
+            {
+              "number": 10,
+              "prompt": "Gap 10",
+              "options": [
+                "a) at",
+                "b) to",
+                "c) on"
+              ],
+              "correct": "c) on"
+            },
+            {
+              "number": 11,
+              "prompt": "Gap 11",
+              "options": [
+                "a) call in",
+                "b) figure out",
+                "c) show off"
+              ],
+              "correct": "b) figure out"
+            }
+          ]
+        },
+        {
+          "id": "part_2",
+          "title": "Part 2",
+          "type": "sentence_insert",
+          "instructions": "Read the text about a visit to Sweden to see the Northern Lights. Use sentences A-G to complete the text. There is one extra sentence.",
+          "passage": "A trip to the Arctic Circle to see the Northern Lights\n\nI had come with a tour group to the Abisko Sky Station in northern Sweden, supposedly the best place to get a sight of the wonderful green patterns in the sky. But our admirable guides were looking upwards with disappointment. We hurried to eat our reindeer steaks and assembled in the reception of our hotel, ready to take the chairlifts up to the sky station. However, we knew that the clouds created the wrong conditions to see the Lights. (12) Besides, we'd heard that the lights tend to be strongest after 9 pm. But at 10.30 my toes were freezing in minus 25-degree temperatures, and my spirits were dropping. (13) The scenery was lovely and unfamiliar, but it wasn't the purpose of the trip. On the second evening, we weren't scheduled to go up to the station. (14) But after we'd been doing this for an hour, the temperature dropped to minus 38 degrees. We were, therefore, grateful to come across a cabin, in which we lit a fire.\n\nAt about 9 pm, one of the guides called us outside. We looked up at the great Arctic sky. There was a rainbow arc of citrus green which miraculously changed shape. I experienced pure delight, but it was over all too quickly. (15) For the third and last evening, we went for a trip on horseback, bad weather having kept us inside during the day. This turned out to be a good way of seeing the landscape, as the moon was incredibly bright against the snow. (16) Great for imaginative fantasies maybe, but bad for Aurora Borealis. No matter, I'd seen them and wouldn't forget them. (17) It looked like a rock concert was going on. Now the green, wandering lights became a great white sea creature, tinged with pinks and blues, spinning and dancing. Three nights, two light displays - truly it had been the experience of a lifetime.",
+          "options": [
+            "A) The lights faded and vanished.",
+            "B) Even so, hope is a strong emotion and pushed us all on.",
+            "C) It showed up every detail of the trees we passed.",
+            "D) Instead, the plan was for us to do a trip into the forest on snowmobiles.",
+            "E) But as we went back to our hotel room, I glanced up at the sky.",
+            "F) Some of our group had seen the Lights before.",
+            "G) As we walked around the following day, we couldn't help feeling a bit disappointed."
+          ],
+          "questions": [
+            {
+              "number": 12,
+              "prompt": "Gap 12",
+              "correct": "B) Even so, hope is a strong emotion and pushed us all on."
+            },
+            {
+              "number": 13,
+              "prompt": "Gap 13",
+              "correct": "G) As we walked around the following day, we couldn't help feeling a bit disappointed."
+            },
+            {
+              "number": 14,
+              "prompt": "Gap 14",
+              "correct": "D) Instead, the plan was for us to do a trip into the forest on snowmobiles."
+            },
+            {
+              "number": 15,
+              "prompt": "Gap 15",
+              "correct": "A) The lights faded and vanished."
+            },
+            {
+              "number": 16,
+              "prompt": "Gap 16",
+              "correct": "C) It showed up every detail of the trees we passed."
+            },
+            {
+              "number": 17,
+              "prompt": "Gap 17",
+              "correct": "E) But as we went back to our hotel room, I glanced up at the sky."
+            }
+          ]
+        },
+        {
+          "id": "part_3",
+          "title": "Part 3",
+          "type": "matching",
+          "instructions": "Read the four texts about airports. Which text gives you the answer to each question?",
+          "passage": "A\nPlans to build a third runway at the airport are causing controversy. Expanding the airport would result in it becoming the largest source of carbon dioxide in the country. The effect on the health of local residents would be a high price to pay. It would also make it impossible for the country to fulfil its commitment to reduce greenhouse gases by 80% by 2050. On the other hand, the airport is already running at 99% capacity, meaning that any minor problem can mean long delays for customers. The chief executive claims it is losing business to four runway airports at other major European cities, at an estimated annual cost of 14 billion pounds.\n\nB\nThe airport is open 24 hours, so don't worry about not having access to the terminal. However, bear in mind that the shops and eating places all have their own opening hours and not a standard one. To find your way around, you can visit or download the Airport Terminal Map. Our facilities were comprehensively reviewed and given a 150m pound redevelopment two years ago, with the aim of improving the customer experience. This includes the addition of some retail units, selling clothing and gifts, and eight more boarding gates.\n\nC\nIt's hard to fault the overall organisation of the place - everything ran smoothly for me. The queues getting in and out of security control are quite long, but that's understandable and everyone puts up with it. The shops are very good - an excellent range - although the prices for basic things like sandwiches and water seemed very high to me. Some more eating places appear to have been added since I was last there a few years ago. One minor gripe: there was virtually nowhere to sit! I'm pleased to hear they're definitely going to do something about this.\n\nD\nAirports used to be places of departure while cities used to be destinations. Now the situation is reversing as residents and workers increasingly travel to emerging airport cities around the world. A number of initiatives worldwide are aiming to turn the traditional pattern on its head. Now we have the concept of the aerotropolis - basically a fully functional airport city. Airports built on this model will become residential, with schools and workplaces, and a much greater variety of shops and restaurants. The presence of greater competition in such places will have a beneficial effect on pricing.",
+          "options": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "questions": [
+            {
+              "number": 18,
+              "prompt": "Which text is a customer review of an airport?",
+              "correct": "C"
+            },
+            {
+              "number": 19,
+              "prompt": "Which text presents two sides of a discussion about a current issue?",
+              "correct": "A"
+            },
+            {
+              "number": 20,
+              "prompt": "Which text is taken from an academic book on airports?",
+              "correct": "D"
+            },
+            {
+              "number": 21,
+              "prompt": "Which text tells you about a future development within a terminal building in one airport?",
+              "correct": "C"
+            },
+            {
+              "number": 22,
+              "prompt": "Which text tells you why flights might sometimes be late?",
+              "correct": "A"
+            },
+            {
+              "number": 23,
+              "prompt": "Which text tells you that more shops have been added recently?",
+              "correct": "B"
+            },
+            {
+              "number": 24,
+              "prompt": "Which text tells you that one airport has some big competitors?",
+              "correct": "A"
+            }
+          ]
+        },
+        {
+          "id": "part_4",
+          "title": "Part 4",
+          "type": "multiple_choice",
+          "instructions": "Read the article about a new cycling app and answer the questions.",
+          "passage": "The cyclist\nMitchell Grant writes about a new cycling app.\n\nEvery Saturday morning 44-year-old lawyer Bill Colworthy gets out of bed and cycles around the countryside near his home in pursuit of gold cups and medals. He leaves at 7am, so that the rest of the day is free, and he can be back in time to take his eldest son to rugby practice. The confusing part for his family is that he has never met his opponents and the trophies don't exist in the real world. Like thousands of other keen cyclists across the UK, Bill is hunting pixelated prizes that can be displayed and stored digitally. These are available on Strava, the phenomenally popular website and app that uses satellite data recorded on smartphones or portable bike computers, enabling cyclists to record their rides and compete against each other for virtual trophies.\n\nThe first thing Bill does when he returns from a ride is upload all his data to Strava to see how many trophies he's won. \"It's ridiculous, I know,\" he says. \"But when you see yourself improving or beating other people, it's very addictive.\" You even hear stories about cyclists secretly using motorised bikes to set faster times. Indeed, competition can be surprisingly fierce, as Bill's experience confirms. \"For weeks I was in competition with a guy on a road near my home. I would set a new time after work then he would try to beat it the next day.\"\n\nStrava is a free tool which already has millions of users and is also used by runners. Its popularity lies in the fact that users of any ability can find something to boast about. Cyclists compete to be named King or Queen of a particular route - for setting the fastest time over any bit of road in the country. While the fittest riders compete over popular routes such as once around Regent's Park in London, others are happy to defend the stretch of road between the local chip shop and the post box.\n\nBill's wife finds it hard to show much enthusiasm. \"He's forever telling me how far he's cycled and how fast, but I just switch off in my mind - it means nothing to me. I often catch him on the laptop looking at expensive bike parts which he thinks might help him go faster. Then Bill shaved his legs, both for improved aerodynamics and to make it easier to take off bandages should he fall off. That was definitely a step too far.\"\n\nConsidering the extremes a minority of riders are prepared to go to in order to win, it's no surprise that Strava has proved controversial. Critics argue that it turns roads into racetracks. \"We take safety extremely seriously,\" counters Strava spokesperson Elena White. \"For example, we allow our members to flag any piece of road they consider unsafe, and we automatically remove any competing on it.\" She also points out that Strava data is being used by planning agencies in big cities to analyse commuter patterns and develop safer routes.",
+          "questions": [
+            {
+              "number": 25,
+              "prompt": "In the first paragraph, the writer suggests that Bill",
+              "options": [
+                "a) would love to become a professional cyclist.",
+                "b) has a strong sense of responsibility to his family.",
+                "c) only uses the technology because his friends do."
+              ],
+              "correct": "b) has a strong sense of responsibility to his family."
+            },
+            {
+              "number": 26,
+              "prompt": "In the second paragraph, the writer explains that using Strava",
+              "options": [
+                "a) can even lead some members to cheat.",
+                "b) caused Bill to get involved in an argument.",
+                "c) brings out the worst side of Bill's personality."
+              ],
+              "correct": "a) can even lead some members to cheat."
+            },
+            {
+              "number": 27,
+              "prompt": "What is the writer's main point in the third paragraph?",
+              "options": [
+                "a) The appeal of Strava is wide-ranging.",
+                "b) Cyclists often use Strava to find new routes.",
+                "c) Runners and cyclists tend to share a certain characteristic."
+              ],
+              "correct": "a) The appeal of Strava is wide-ranging."
+            },
+            {
+              "number": 28,
+              "prompt": "The writer says that Bill's wife gets",
+              "options": [
+                "a) upset when he injures himself cycling.",
+                "b) bored when he gives her lots of statistical details.",
+                "c) annoyed when he spends money on improving his bike."
+              ],
+              "correct": "b) bored when he gives her lots of statistical details."
+            },
+            {
+              "number": 29,
+              "prompt": "Strava has been accused of",
+              "options": [
+                "a) ignoring the views of their members.",
+                "b) failing to share safety information.",
+                "c) encouraging dangerous activities."
+              ],
+              "correct": "c) encouraging dangerous activities."
+            },
+            {
+              "number": 30,
+              "prompt": "From the style of this text, it's clear that the writer",
+              "options": [
+                "a) finds the behaviour of Strava cyclists strange.",
+                "b) is interested in the technology used by Strava.",
+                "c) is impressed by the nature of Bill's achievements."
+              ],
+              "correct": "a) finds the behaviour of Strava cyclists strange."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "writing",
+      "title": "Writing",
+      "parts": [
+        {
+          "id": "part_1",
+          "title": "Part 1",
+          "type": "long_text",
+          "min_words": 100,
+          "max_words": 150,
+          "prompt": "You recently visited City Zoo. Write a review about it for a travel website. Mention: the range of animals; the food and drink facilities; whether you think it is good value for money.\n\nCome to City Zoo! Amazing animals from every continent. Our daily displays include eagles, dolphins, penguins and elephants. Family ticket - 55 euros, with a free map. Have lunch at our Italian restaurant or at one of our food stalls, or enjoy our new picnic and children's play area."
+        },
+        {
+          "id": "part_2",
+          "title": "Part 2",
+          "type": "long_text",
+          "min_words": 150,
+          "max_words": 200,
+          "prompt": "You recently moved to another country to work for one year. Write an email to a friend. Describe where you live, what your job is, and the people you have met."
+        }
+      ]
+    }
+  ]
+}
