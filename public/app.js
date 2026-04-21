@@ -321,7 +321,10 @@ function renderActiveSection() {
           <h2>${escapeHtml(section.title || section.id)}</h2>
           <p>${section.id === "writing" ? "Answers are saved locally. Writing is not auto-checked." : "Answer the questions and check the section when you are ready."}</p>
         </div>
-        ${appState.checked[section.id] ? `<span class="score-pill">${scoreLabel(section.id)}</span>` : ""}
+        <div class="section-head-actions">
+          ${appState.checked[section.id] ? `<span class="score-pill">${scoreLabel(section.id)}</span>` : ""}
+          <button class="secondary-button" type="button" data-action="exit-test">Exit test</button>
+        </div>
       </div>
       ${audio}
       ${renderParts(section, locked)}
@@ -728,6 +731,11 @@ function bindSectionEvents(section) {
     checkButton.addEventListener("click", () => checkSection(section));
   }
 
+  const exitButton = dom.examContent.querySelector("[data-action='exit-test']");
+  if (exitButton) {
+    exitButton.addEventListener("click", exitTest);
+  }
+
   const saveWritingButton = dom.examContent.querySelector("[data-action='save-writing']");
   if (saveWritingButton) {
     saveWritingButton.addEventListener("click", () => {
@@ -739,6 +747,14 @@ function bindSectionEvents(section) {
 
   const finishButton = dom.examContent.querySelector("[data-action='finish-test']");
   if (finishButton) finishButton.addEventListener("click", showResults);
+}
+
+function exitTest() {
+  pausePracticeTimer();
+  saveProgress();
+  window.clearInterval(appState.timer.intervalId);
+  showStartScreen(true);
+  loadTests();
 }
 
 function bindDragDropEvents() {

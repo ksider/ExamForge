@@ -147,6 +147,14 @@ main:has(#examScreen.is-wide) {
   margin-bottom: 0;
 }
 
+.section-head-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .tests-grid,
 .settings-grid,
 .results-grid {
