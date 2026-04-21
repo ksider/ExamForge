@@ -1,14 +1,8 @@
 {
-  "id": "test_5",
-  "title": "LC Academic 2",
-  "source": {
-    "folder": "PDF TEMP/LCA PP1 2",
-    "reading_listening_pdf": "LC Academic Practice Paper 1 - Exam Paper (LR).pdf",
-    "writing_pdf": "LC Academic Practice Paper 1 - Exam Paper (W).pdf",
-    "mark_scheme_pdf": "LC Academic Practice Paper 1 - Mark Scheme.pdf"
-  },
+  "id": "test_4",
+  "title": "Language Test 4",
   "timer": {
-    "listening_minutes":42,
+    "listening_minutes": 40,
     "reading_minutes": 50,
     "writing_minutes": 50
   },
@@ -16,7 +10,7 @@
     {
       "id": "listening",
       "title": "Listening",
-      "audio": "/audio/test_5_listening.mp3",
+      "audio": "/audio/test_4_listening.mp3",
       "parts": [
         {
           "id": "part_1",

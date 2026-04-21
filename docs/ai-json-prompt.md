@@ -163,6 +163,7 @@ Use `long_text` only for Writing tasks.
 - For `matching` and `sentence_insert`, put shared answer choices in `part.options` unless a question needs its own `options`.
 - For Reading parts with a shared text, put the full text in `part.passage`.
 - For Writing, do not include `correct`.
+- Use the real Writing word limits from the PDF. General papers commonly use `100-150` and `150-200`; Academic papers commonly use `150-200` and `about 250 words`, which should be represented as a practical range such as `220-280`.
 - Preserve original task wording as closely as possible.
 - If an audio file is known, set `audio` to `/audio/<file-name>.mp3`. If it is unknown, use an empty string.
 - Escape quotation marks correctly.

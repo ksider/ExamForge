@@ -1,11 +1,11 @@
 {
   "id": "test_4",
-  "title": "LanguageCert Academic Practice Paper 1",
+  "title": "LC Academic 1",
   "source": {
-    "folder": "PDF TEMP/LCA PP1",
-    "reading_listening_pdf": "LC Academic Practice Paper 1 - Exam Paper (LR).pdf",
-    "writing_pdf": "LC Academic Practice Paper 1 - Exam Paper (W).pdf",
-    "mark_scheme_pdf": "LC Academic Practice Paper 1 - Mark Scheme.pdf"
+    "folder": "PDF TEMP/LCA 2 PDFs",
+    "reading_listening_pdf": "LC Academic Test 2 - Exam Paper (LR).pdf",
+    "writing_pdf": "LC Academic Test 2 - Exam Paper (W).pdf",
+    "mark_scheme_pdf": "LC Academic Test 2 - Mark Scheme.pdf"
   },
   "timer": {
     "listening_minutes": 42,
@@ -22,77 +22,77 @@
           "id": "part_1",
           "title": "Part 1",
           "type": "multiple_choice",
-          "instructions": "You will hear some short conversations. Choose the correct answer to complete each conversation.",
+          "instructions": "You will hear some short conversations. You will hear each conversation twice. Choose the correct answer to complete each conversation.",
           "questions": [
             {
               "number": 1,
               "prompt": "Conversation 1",
               "options": [
-                "a) They need to pay more attention.",
-                "b) Let’s make sure we take advantage of that.",
-                "c) I’m afraid I can’t tell you."
+                "a) Is that up to you to decide?",
+                "b) I won't keep you waiting, I promise.",
+                "c) You're welcome to come over, you know."
               ],
-              "correct": "b) Let’s make sure we take advantage of that."
+              "correct": "b) I won't keep you waiting, I promise."
             },
             {
               "number": 2,
               "prompt": "Conversation 2",
               "options": [
-                "a) OK, I expect it's there now.",
-                "b) As far as I know, everything was correct.",
-                "c) I wouldn't say so... I find it really absorbing."
+                "a) I wouldn't normally, but yes, ok.",
+                "b) Well, that's something of a relief!",
+                "c) I can't promise anything, but I'll try."
               ],
-              "correct": "c) I wouldn't say so... I find it really absorbing."
+              "correct": "b) Well, that's something of a relief!"
             },
             {
               "number": 3,
               "prompt": "Conversation 3",
               "options": [
-                "a) Would it have to take that long?",
-                "b) It means everything to me, I can assure you.",
-                "c) In actual fact, it’s almost done."
+                "a) Don't worry, I'm not going to throw it away!",
+                "b) Sorry... is that what you meant?",
+                "c) You can't blame me for trying!"
               ],
-              "correct": "c) In actual fact, it’s almost done."
+              "correct": "a) Don't worry, I'm not going to throw it away!"
             },
             {
               "number": 4,
               "prompt": "Conversation 4",
               "options": [
-                "a) In that case, I’ll get down to it this afternoon.",
-                "b) It’s just the logical conclusion, isn’t it?",
-                "c) Please, don’t change the subject!"
+                "a) I'm not having much luck on that front, sorry.",
+                "b) Shall we try that? Unless you have a better idea.",
+                "c) Sounds like no big deal, but I guess we should check."
               ],
-              "correct": "a) In that case, I’ll get down to it this afternoon."
+              "correct": "c) Sounds like no big deal, but I guess we should check."
             },
             {
               "number": 5,
               "prompt": "Conversation 5",
               "options": [
-                "a) As a rule of thumb it takes about fifteen minutes.",
-                "b) As usual, that’s easier said than done.",
-                "c) As long as he doesn’t ask me something out of the blue!"
+                "a) Well, I'd get another chance if that did happen.",
+                "b) But I'm not sure you can compare on that basis.",
+                "c) That's the way I've got to look at it, isn't it?"
               ],
-              "correct": "c) As long as he doesn’t ask me something out of the blue!"
+              "correct": "c) That's the way I've got to look at it, isn't it?"
             },
             {
               "number": 6,
               "prompt": "Conversation 6",
               "options": [
-                "a) You need to talk him out of it.",
-                "b) Would you rather I do it instead?",
-                "c) There’s little comfort to be had in that!"
+                "a) By quoting from them, you mean?",
+                "b) I think I'll call it off, if that's ok?",
+                "c) But don't you find it hard to keep up with it all?"
               ],
-              "correct": "a) You need to talk him out of it."
+              "correct": "a) By quoting from them, you mean?"
             },
             {
               "number": 7,
               "prompt": "Conversation 7",
               "options": [
-                "a) Are you going for good?",
-                "b) In that case, count me in.",
-                "c) There’s no clear basis for that."
+                "a) Surely it can't just be a coincidence!",
+                "b) I'll have to give your method a try!",
+                "c) Yeah, maybe some mysteries are best left unsolved!"
               ],
-              "correct": "b) In that case, count me in."
+              "correct": "b) I'll have to give your method a try!"
             }
           ]
         },
@@ -100,107 +100,107 @@
           "id": "part_2",
           "title": "Part 2",
           "type": "multiple_choice",
-          "instructions": "You will hear five conversations. Choose the correct answer.",
+          "instructions": "You will hear five conversations. Listen to the conversations and answer the questions. Choose the correct answer.",
           "questions": [
             {
               "number": 8,
-              "prompt": "When the tutor asks to speak with Jessica,",
+              "prompt": "What does Ruby regret?",
               "options": [
-                "a) she assumes it is about some unfinished work.",
-                "b) she says that she is free to meet him tomorrow.",
-                "c) she reminds him that she will be late for her next lecture."
+                "a) deciding to use electronic equipment",
+                "b) the timing of the practice session",
+                "c) putting Jonathon in charge of the visuals"
               ],
-              "correct": "a) she assumes it is about some unfinished work."
+              "correct": "b) the timing of the practice session"
             },
             {
               "number": 9,
-              "prompt": "Jessica accepts her tutor's offer to",
+              "prompt": "Leo tries to reduce Ruby's anxiety by pointing out that she has",
               "options": [
-                "a) look at her report immediately.",
-                "b) send her an example work schedule.",
-                "c) sign her up for some study skills sessions."
+                "a) a talent for communicating extremely clearly to an audience.",
+                "b) a habit of being unnecessarily pessimistic about things.",
+                "c) an ability to select the right person for each role."
               ],
-              "correct": "c) sign her up for some study skills sessions."
+              "correct": "c) an ability to select the right person for each role."
             },
             {
               "number": 10,
-              "prompt": "How does the student feel about the letter she's received?",
+              "prompt": "The teacher reacts to her student's decision to change majors by",
               "options": [
-                "a) determined to find out why she got it",
-                "b) embarrassed because it's not the first letter she’s had",
-                "c) confused about why it was sent to her old address"
+                "a) reassuring him that it's a common thing to do.",
+                "b) explaining that it's something she also did.",
+                "c) admitting that she was anticipating it."
               ],
-              "correct": "a) determined to find out why she got it"
+              "correct": "c) admitting that she was anticipating it."
             },
             {
               "number": 11,
-              "prompt": "The university employee offers to",
+              "prompt": "The teacher and her student agree that his next step should be to",
               "options": [
-                "a) contact the student's bank.",
-                "b) check the office records.",
-                "c) speak to her family."
+                "a) make a formal application.",
+                "b) register to attend some lessons as a trial.",
+                "c) discuss the issue with his parents."
               ],
-              "correct": "b) check the office records."
+              "correct": "b) register to attend some lessons as a trial."
             },
             {
               "number": 12,
-              "prompt": "What is the tutor aiming to achieve in this meeting?",
+              "prompt": "What are the students doing?",
               "options": [
-                "a) to encourage Ned to think about his goals",
-                "b) to stop Ned repeating the same mistakes in his work",
-                "c) to persuade Ned to try working with others"
+                "a) coming up with possible explanations for some facts",
+                "b) discussing a controversial new piece of evidence",
+                "c) disagreeing with conclusions they have heard"
               ],
-              "correct": "c) to persuade Ned to try working with others"
+              "correct": "a) coming up with possible explanations for some facts"
             },
             {
               "number": 13,
-              "prompt": "Ned is aware that, in his work, he sometimes fails to",
+              "prompt": "The main point being made is that climate change may have",
               "options": [
-                "a) select the best points to make.",
-                "b) spend enough time on his research.",
-                "c) go to a wide enough range of source texts."
+                "a) resulted in a short-term decline in the bird population.",
+                "b) emphasised differences between bird species.",
+                "c) provided the birds with a potential benefit."
               ],
-              "correct": "a) select the best points to make."
+              "correct": "c) provided the birds with a potential benefit."
             },
             {
               "number": 14,
-              "prompt": "What do they agree about face recognition technology?",
+              "prompt": "The male student is annoyed because he realises that",
               "options": [
-                "a) It should be used more widely.",
-                "b) It might be useful in certain situations.",
-                "c) It’s something people need to be concerned about."
+                "a) he failed to receive a message that was sent to him.",
+                "b) he misunderstood when a piece of work had to be completed.",
+                "c) he didn't make good use of the time available to him."
               ],
-              "correct": "b) It might be useful in certain situations."
+              "correct": "a) he failed to receive a message that was sent to him."
             },
             {
               "number": 15,
-              "prompt": "What opinion do they share about the magazine?",
+              "prompt": "What does the female student advise him to do with his project?",
               "options": [
-                "a) The articles make you think.",
-                "b) The interactive section is best.",
-                "c) The topics it deals with have wide appeal."
+                "a) double check it and make a few corrections",
+                "b) get somebody to read it and make suggestions",
+                "c) do a quick review of one part that's troubling him"
               ],
-              "correct": "a) The articles make you think."
+              "correct": "a) double check it and make a few corrections"
             },
             {
               "number": 16,
-              "prompt": "The woman’s initial reaction to the content of the article reveals her",
+              "prompt": "The course tutor reacts to Mark's opinions about online lectures by",
               "options": [
-                "a) wrong assumptions about the research findings.",
-                "b) lack of faith in the research methodology used.",
-                "c) frustration at the attitude of the researchers."
+                "a) seizing on a point he makes that confirms her own view.",
+                "b) acknowledging that his argument is well made.",
+                "c) explaining why his view is misinformed."
               ],
-              "correct": "a) wrong assumptions about the research findings."
+              "correct": "a) seizing on a point he makes that confirms her own view."
             },
             {
               "number": 17,
-              "prompt": "The man feels that the experiment needs",
+              "prompt": "The course tutor suggests that conversations after lectures may be more valuable than",
               "options": [
-                "a) to include other variables.",
-                "b) to reach a far wider audience.",
-                "c) to be repeated on a much larger scale."
+                "a) students assume them to be.",
+                "b) formal follow-up sessions would be.",
+                "c) similar interactions in a work context."
               ],
-              "correct": "c) to be repeated on a much larger scale."
+              "correct": "a) students assume them to be."
             }
           ]
         },
@@ -208,58 +208,60 @@
           "id": "part_3",
           "title": "Part 3",
           "type": "gap_fill",
-          "instructions": "Complete the notes. Write short answers of one to three words.",
+          "instructions": "You will hear a professor giving a presentation about research into ancient cave art in Indonesia. Complete the information on the notepad. Write short answers of one to three words.",
           "questions": [
             {
               "number": 18,
-              "prompt": "Tree detail",
+              "prompt": "This cave art was first brought to public attention in",
               "correct": [
-                "condition"
+                "the 1950s",
+                "1950s",
+                "the 50s",
+                "50s"
               ]
             },
             {
               "number": 19,
-              "prompt": "Legal protection",
+              "prompt": "Adam Brumm dated a Sulawesi cave painting by analysing material found on an image of a",
               "correct": [
-                "tree preservation order",
-                "preservation order"
+                "human hand",
+                "hand"
               ]
             },
             {
               "number": 20,
-              "prompt": "Tree category",
+              "prompt": "There is disagreement about whether one painting represents this in art",
               "correct": [
-                "species"
+                "supernatural beings"
               ]
             },
             {
               "number": 21,
-              "prompt": "Tree part",
+              "prompt": "The artwork found near Makassar is probably intended to show this between pigs",
               "correct": [
-                "trunk"
+                "social interaction"
               ]
             },
             {
               "number": 22,
-              "prompt": "Locations",
+              "prompt": "The picture of pigs may be the earliest known example of this kind of art",
               "correct": [
-                "tourist spots",
-                "tourist attractions"
+                "figurative"
               ]
             },
             {
               "number": 23,
-              "prompt": "Document",
+              "prompt": "Brumm suggests the picture of pigs may be part of a",
               "correct": [
-                "map",
-                "distribution map"
+                "narrative composition",
+                "narrative"
               ]
             },
             {
               "number": 24,
-              "prompt": "People involved",
+              "prompt": "Scientists use this word to describe the calcite deposit",
               "correct": [
-                "volunteers"
+                "popcorn"
               ]
             }
           ]
@@ -268,67 +270,67 @@
           "id": "part_4",
           "title": "Part 4",
           "type": "multiple_choice",
-          "instructions": "You will hear a conversation. Choose the correct answers.",
+          "instructions": "You will hear part of a podcast in which a book of essays on academic research methods is being discussed. Choose the correct answers.",
           "questions": [
             {
               "number": 25,
-              "prompt": "Tanya points out that when Dr Gorman first started thinking about man-made objects in space",
+              "prompt": "Dan Archer quotes from the anthropologist Mary Pratt in order to",
               "options": [
-                "a) she was in a job where her abilities weren’t being fully exploited.",
-                "b) she already possessed the tools she would need to study them.",
-                "c) she briefly experienced a small crisis of confidence."
+                "a) sum up the essential idea discussed in the book.",
+                "b) suggest that the book contains very few original ideas.",
+                "c) challenge an idea put forward by one of the book's authors."
               ],
-              "correct": "b) she already possessed the tools she would need to study them."
+              "correct": "a) sum up the essential idea discussed in the book."
             },
             {
               "number": 26,
-              "prompt": "According to Ken, what mistaken belief did Dr Gorman start out with?",
+              "prompt": "Helena makes the point that the book explores",
               "options": [
-                "a) She was the only one who had thought of studying space artefacts.",
-                "b) She would be able to readily access most of the data she needed.",
-                "c) Her efforts would be fully backed by the relevant space agencies."
+                "a) how academics hope their research will be received by non-academics.",
+                "b) the way attitudes towards research have changed over the years.",
+                "c) both academic methodology and how to raise awareness of research outcomes."
               ],
-              "correct": "a) She was the only one who had thought of studying space artefacts."
+              "correct": "c) both academic methodology and how to raise awareness of research outcomes."
             },
             {
               "number": 27,
-              "prompt": "Tanya tells the story of the Indonesian satellite to illustrate",
+              "prompt": "What effect did parts of the book have on Phil?",
               "options": [
-                "a) the fact that communication is a recurring theme in archaeology.",
-                "b) the international fashion for launching satellites in the 1970s.",
-                "c) the symbolic nature of certain man-made objects in space."
+                "a) They made him realise the importance of parental support in academic success.",
+                "b) They reminded him of his own attempts to share his passion for science.",
+                "c) They evoked memories of what inspired him as a child."
               ],
-              "correct": "c) the symbolic nature of certain man-made objects in space."
+              "correct": "c) They evoked memories of what inspired him as a child."
             },
             {
               "number": 28,
-              "prompt": "What point does Ken make when discussing the need for space archaeology?",
+              "prompt": "When Dan Archer says that researchers could be 'laughed out of the room', he is",
               "options": [
-                "a) Efforts are needed to prevent space becoming the realm of the privileged few.",
-                "b) The majority of people appreciate the benefits space exploration offers.",
-                "c) Archaeologists are restricted by having to work within rules set by government bodies."
+                "a) offering a counter view for discussion.",
+                "b) adding a further example to that given by Phil.",
+                "c) reinforcing his own opinion that humour is underused by academics."
               ],
-              "correct": "a) Efforts are needed to prevent space becoming the realm of the privileged few."
+              "correct": "a) offering a counter view for discussion."
             },
             {
               "number": 29,
-              "prompt": "When NASA advertised for astronauts, Justin Walsh responded with",
+              "prompt": "Both Helena and Phil support Professor Burnard's proposition that academics",
               "options": [
-                "a) surprise at the space agency’s narrow-minded attitude.",
-                "b) annoyance at NASA’s unwillingness to question man’s place in outer space.",
-                "c) determination to get a humanities perspective included on the programme."
+                "a) are fearful of being labelled as rebels.",
+                "b) risk losing their influence and relevance in the digital era.",
+                "c) feel under mounting pressure to increase their research output."
               ],
-              "correct": "c) determination to get a humanities perspective included on the programme."
+              "correct": "b) risk losing their influence and relevance in the digital era."
             },
             {
               "number": 30,
-              "prompt": "Talking about the ISS, Ken and Tanya agree that it’s surprising that",
+              "prompt": "In terms of an interdisciplinary approach to research, Phil suggests that",
               "options": [
-                "a) its inhabitants were so alike from the outset.",
-                "b) nobody saw the value of studying everyday life there.",
-                "c) life on board seems to have been relatively unregulated."
+                "a) universities have been slow to recognise the need for it.",
+                "b) individuals have little control over the way institutions are organised.",
+                "c) the lack of common terminology needn't represent a barrier."
               ],
-              "correct": "b) nobody saw the value of studying everyday life there."
+              "correct": "b) individuals have little control over the way institutions are organised."
             }
           ]
         }
@@ -342,79 +344,79 @@
           "id": "part_1a",
           "title": "Part 1a",
           "type": "multiple_choice",
-          "instructions": "Choose the option that best replaces the word or words in bold.",
+          "instructions": "Read the sentences and decide which option can best replace the word in bold so that the meaning remains the same.",
           "questions": [
             {
               "number": 1,
-              "prompt": "There's no question that as science and technology advance, the world as we know it will change in ways we cannot imagine.",
+              "prompt": "Initially, most Americans experienced air conditioning only in places such as theatres or department stores, where it was seen as an interesting novelty.",
+              "highlight": "novelty",
               "options": [
-                "a) matter",
-                "b) doubt",
-                "c) idea",
-                "d) issue"
+                "a) reform",
+                "b) introduction",
+                "c) innovation",
+                "d) advance"
               ],
-              "correct": "b) doubt",
-              "highlight": "question"
+              "correct": "c) innovation"
             },
             {
               "number": 2,
-              "prompt": "The use of technology in education has increased enormously in the last decade and now impacts on many facets of academic study, such as online teaching and internet research.",
+              "prompt": "Today's lecture about bird migration has been postponed until next Thursday, but some notes will be available online.",
+              "highlight": "postponed",
               "options": [
-                "a) conditions",
-                "b) senses",
-                "c) aspects",
-                "d) sides"
+                "a) sent back",
+                "b) written off",
+                "c) taken back",
+                "d) put off"
               ],
-              "correct": "c) aspects",
-              "highlight": "facets"
+              "correct": "d) put off"
             },
             {
               "number": 3,
-              "prompt": "The research expedition encountered very changeable weather, a mix of cold, wet days and hot, sunny weather.",
+              "prompt": "The news that the funding for wave research may be cut constitutes a real problem for Professor Andres and her team.",
+              "highlight": "constitutes",
               "options": [
-                "a) unpredictable",
-                "b) alternative",
-                "c) inaccessible",
-                "d) flexible"
+                "a) engages",
+                "b) represents",
+                "c) appoints",
+                "d) expresses"
               ],
-              "correct": "a) unpredictable",
-              "highlight": "changeable"
+              "correct": "b) represents"
             },
             {
               "number": 4,
-              "prompt": "The market researchers altered the data to make the product appear more popular than it actually was.",
+              "prompt": "As soon as a fight erupts, all the members of a gorilla group turn to the alpha male to see how he is going to handle it.",
+              "highlight": "erupts",
               "options": [
-                "a) influenced",
-                "b) conducted",
-                "c) guided",
-                "d) manipulated"
+                "a) breaks away",
+                "b) breaks off",
+                "c) breaks up",
+                "d) breaks out"
               ],
-              "correct": "d) manipulated",
-              "highlight": "altered"
+              "correct": "d) breaks out"
             },
             {
               "number": 5,
-              "prompt": "The main problem with designing smart artificial intelligence systems is that they could trigger an explosion of intelligence that would quickly surpass human intellect.",
+              "prompt": "In Professor Hyde's opinion, Nitsch's assertion about the likely date of the fossils is open to considerable doubt.",
+              "highlight": "assertion",
               "options": [
-                "a) stand for",
-                "b) call upon",
-                "c) bring about",
-                "d) take up"
+                "a) allegation",
+                "b) notion",
+                "c) claim",
+                "d) application"
               ],
-              "correct": "c) bring about",
-              "highlight": "trigger"
+              "correct": "c) claim"
             },
             {
               "number": 6,
-              "prompt": "Following the 1988 games, the organisers eventually bowed to mounting pressure and decided to allow professional athletes to compete in most categories in future.",
+              "prompt": "The publishers of the science journal were so impressed by Deverux's account of the team's findings that they published extracts from it in consecutive editions.",
+              "highlight": "consecutive",
               "options": [
-                "a) tore in",
-                "b) caved in",
-                "c) butted in",
-                "d) chipped in"
+                "a) continuous",
+                "b) respective",
+                "c) repetitive",
+                "d) successive"
               ],
-              "correct": "b) caved in",
-              "highlight": "bowed to"
+              "correct": "d) successive"
             }
           ]
         },
@@ -423,57 +425,57 @@
           "title": "Part 1b",
           "type": "multiple_choice",
           "instructions": "Read the text and decide which option best fits each gap.",
-          "passage": "The Power of Dance\n\nDance has always played a significant role in human society. Brain-imaging studies of newborn babies have shown that they can already perceive rhythm, whilst the ability to move in time to music has been observed in babies from the age of five months. From then (7), moving to music seems to make the individual feel good.\n\nAccording to neurological studies, this is because the human brain is essentially a predictive machine that constantly guesses what’s going to happen next and then derives pleasure from (8) a successful prediction. A regular beat is therefore (9) satisfying because those predictions become much easier, and the feel-good factor is thereby increased.\n\nThat’s why moving to music can make people happy even if they’re alone. But dancing in the company of others takes things to the next (10). This is because the pleasure of social bonding is added to the (11), which goes some way to explaining why dance features so prominently in many traditional social gatherings and rituals, as well as playing such an important role in modern lifestyles.",
+          "passage": "The importance of having connected city streets\n\nIn the midst of the 2020 pandemic, many cities rediscovered the value of walkable and bike-friendly streets. They converted bus lanes into bike lanes in (7) to the drop in the number of people taking public transport. Traffic cones, paint and signs were all that was required to repurpose street space in the short term. In the long term, however, the layout of a city's street network is a permanent (8). New bike lanes and pedestrian space can have little impact where a city's layout is not up to the (9) of providing connectivity.\n\nIn a disconnected, sprawling network (10) by dead ends, cul-de-sacs and gated housing estates, a grocery store that lies only a hundred metres away when measured in a straight line, might be more than a kilometre by road. In contrast, streets arranged in a grid provide direct routes for pedestrians and cyclists. Street-network connectivity matters because it puts destinations within easy (11), and while this may matter very little to drivers, it definitely matters to those cycling or on foot.",
           "questions": [
             {
               "number": 7,
               "prompt": "Gap 7",
               "options": [
-                "a) onwards",
-                "b) forwards",
-                "c) upwards"
+                "a) return",
+                "b) answer",
+                "c) response"
               ],
-              "correct": "a) onwards"
+              "correct": "c) response"
             },
             {
               "number": 8,
               "prompt": "Gap 8",
               "options": [
-                "a) getting",
-                "b) having",
-                "c) making"
+                "a) confinement",
+                "b) repression",
+                "c) constraint"
               ],
-              "correct": "c) making"
+              "correct": "c) constraint"
             },
             {
               "number": 9,
               "prompt": "Gap 9",
               "options": [
-                "a) highly",
-                "b) strongly",
-                "c) widely"
+                "a) task",
+                "b) effort",
+                "c) function"
               ],
-              "correct": "a) highly"
+              "correct": "a) task"
             },
             {
               "number": 10,
               "prompt": "Gap 10",
               "options": [
-                "a) phase",
-                "b) level",
-                "c) grade"
+                "a) illustrated",
+                "b) featured",
+                "c) characterised"
               ],
-              "correct": "b) level"
+              "correct": "c) characterised"
             },
             {
               "number": 11,
               "prompt": "Gap 11",
               "options": [
-                "a) mix",
-                "b) blend",
-                "c) recipe"
+                "a) touch",
+                "b) reach",
+                "c) stretch"
               ],
-              "correct": "a) mix"
+              "correct": "b) reach"
             }
           ]
         },
@@ -481,48 +483,48 @@
           "id": "part_2",
           "title": "Part 2",
           "type": "sentence_insert",
-          "instructions": "Use sentences A-H to complete the text. There are two extra sentences.",
-          "passage": "Researching wildlife in an area of ocean likely to be affected by deep-sea mining\n\nI’m on board a research cruise ship in the middle of the equatorial Pacific Ocean, the Clarion-Clipperton Zone, to be exact. My research team is one among many. Various groups are surveying the environmental condition of the seas, obtaining data for different organisations. We are sending a remotely operated vehicle 4.5 kilometres down to a flat abyssal plain never explored before.\n\nAs deep-sea biologists, we’re privileged to discover new species and habitats on these research cruises. And this trip is no exception. We are recording an anemone-like animal with three-metre tentacles, plus purple and yellow sea cucumbers and flower-like glass sponges. (12) It’s an understandable reaction for a marine biologist working in an area that may be forever changed within the next few decades.\n\nAs demand for metals increases, such resources are being sought in ever more remote places, and mining will soon be taking place in the deep ocean. We’re here to find out more about wildlife in an area of ocean likely to be affected.\n\nThere are three types of resources being sought from deep-sea habitats: polymetallic nodules on abyssal plains, polymetallic sulphides at hydrothermal vents, and cobalt-rich seamounts throughout the global ocean. Already, 29 exploration permits have been granted by the International Seabed Authority (ISA). (13) Mining is close to happening: exploration regulations are currently being prepared.\n\nThe data we’ve been collecting is ready. We return home to our laboratories to continue working on the samples. (14) For instance, we discover that there are at least 1,000 species of fauna, 90 per cent of them new to science, in a city-sized area in the eastern Clarion-Clipperton Zone.\n\nYet our discoveries are also a cause for concern. Deep-sea mining will result in local extinctions of many creatures, leaving little possibility for their quick re-establishment. (15) Mining will also disturb large areas of the seafloor significantly. There will also be major changes to the geochemistry of the ocean’s food webs. And there are bigger questions, too. The oceans are experiencing stress from all angles: pollution, fishing, nutrient loading and climate change. (16)\n\nDespite this threat, the various endangered habitats have been greatly under-explored. We know little about the species there and how they might cope with the impact of mining activities. At least our three-month voyage has hopefully improved the situation. (17) Nevertheless, our research means that there will be a solid starting point to measure future change against.",
+          "instructions": "Read the article from an international news magazine. Use sentences A-H to complete the text. There are two extra sentences you will not need.",
+          "passage": "The domestication of chickens\n\nFor millions of people around the world, chicken products are a staple food item, and chicken keeping is a common practice. But the question of when exactly chickens became domesticated and how humans have interacted with them over time has never, until now, been satisfactorily addressed. (12) But one new study is changing this perception.\n\nThe study looked at what were thought to be the earliest examples of chicken bones to be found by archaeologists in Europe and northwest Africa. Twenty-three sets of bones underwent radio-carbon dating in an attempt to discover how old they actually were, so that researchers could get a clearer idea of when the species first arrived in Europe, and how the process of domestication may have taken place. (13) The others were much more recent, sometimes by thousands of years.\n\nEarlier hypotheses suggested that chickens were present in Europe up to 7,000 years ago. But these results show they were not introduced until around 2,800 years ago. (14) Cattle and sheep, for example, are thought to have reached Europe around 6,000 years ago.\n\nThe radio-carbon dating also suggests that in many locations there was a gap of several hundred years between the introduction of the species to an area and chicken meat appearing in the local people's diet. Indeed, many of the earliest chickens identified by the radio-carbon dating, including all of those from Britain, seem not to have been kept for their meat. (15) Further evidence for this conclusion comes from an estimate of chicken numbers at the time which remain low, and from the fact that the bones studied are from very mature animals. One specimen even has a well-healed leg fracture, indicating human care. (16) They may have had spiritual significance too.\n\nIn some instances, in the period after chickens were introduced, they were buried alongside humans, perhaps because it was believed that they would lead the person's soul to the afterlife. (17) In later cases, the chickens were used as a food offering for the dead - a practice that became more common in Britain through the Ancient Roman period. Clearly, the relationship between people and chickens has a more complex history than was previously assumed, and it was some time before their current status as a food staple developed.",
           "options": [
-            "A) These problems are long-standing and ocean-wide, and how mining will worsen them is not yet understood.",
-            "B) Failure to do this could potentially change the world's oceans beyond repair.",
-            "C) After all, there are many such benefits that the deep sea provides for humanity.",
-            "D) We may only have sampled the seafloor of one small part of the Pacific Ocean, it’s true.",
-            "E) This body authorises such activity across 1.5 million square kilometres of the world's seafloor.",
-            "F) Around vents, this could take decades or more; with nodules, millions of years.",
-            "G) However, as incredible as all this is, I can’t help but feel some sadness.",
-            "H) And initially, the results we get from this analysis are very exciting."
+            "A) These clues suggest that rather than being considered a source of food, these birds were more likely regarded as rare, exotic creatures.",
+            "B) This makes them a relatively recent arrival compared to other domesticated species.",
+            "C) Despite this, these long-established theories fail to take into account certain crucial factors.",
+            "D) In the event, only five of those tested turned out to be as old as had been claimed.",
+            "E) The skeletons studied were largely complete, and so clearly hadn't been butchered for human consumption.",
+            "F) It is dependent on where the bones are located and what other objects are found with them.",
+            "G) For many people it is difficult to imagine that chickens were ever anything other than a source of food.",
+            "H) Such a role makes sense considering the bird's connection with Mercury, the god of communication and travel."
           ],
           "questions": [
             {
               "number": 12,
               "prompt": "Gap 12",
-              "correct": "G) However, as incredible as all this is, I can’t help but feel some sadness."
+              "correct": "G) For many people it is difficult to imagine that chickens were ever anything other than a source of food."
             },
             {
               "number": 13,
               "prompt": "Gap 13",
-              "correct": "E) This body authorises such activity across 1.5 million square kilometres of the world's seafloor."
+              "correct": "D) In the event, only five of those tested turned out to be as old as had been claimed."
             },
             {
               "number": 14,
               "prompt": "Gap 14",
-              "correct": "H) And initially, the results we get from this analysis are very exciting."
+              "correct": "B) This makes them a relatively recent arrival compared to other domesticated species."
             },
             {
               "number": 15,
               "prompt": "Gap 15",
-              "correct": "F) Around vents, this could take decades or more; with nodules, millions of years."
+              "correct": "E) The skeletons studied were largely complete, and so clearly hadn't been butchered for human consumption."
             },
             {
               "number": 16,
               "prompt": "Gap 16",
-              "correct": "A) These problems are long-standing and ocean-wide, and how mining will worsen them is not yet understood."
+              "correct": "A) These clues suggest that rather than being considered a source of food, these birds were more likely regarded as rare, exotic creatures."
             },
             {
               "number": 17,
               "prompt": "Gap 17",
-              "correct": "D) We may only have sampled the seafloor of one small part of the Pacific Ocean, it’s true."
+              "correct": "H) Such a role makes sense considering the bird's connection with Mercury, the god of communication and travel."
             }
           ]
         },
@@ -530,8 +532,8 @@
           "id": "part_3",
           "title": "Part 3",
           "type": "matching",
-          "instructions": "Read the four texts about electricity generation and storage. Which text gives you the answer?",
-          "passage": "A\nZachary Favors, a graduate student at University of California Riverside, drew inspiration for replacing graphite with silicone at a battery’s anode while he was resting on the sand at the beach. Sand is primarily made up of quartz but concentrations vary depending on the deposit. Favors found a quartz-rich site in Texas, drew some samples and enlisted the help of two engineering professors. Together they milled the sand until it was extremely fine, before taking the granules through a purification process. The purified quartz was then mixed with salt and magnesium and heated. The salt acts like a heat absorber, while the magnesium removes the oxygen, leaving pure silicon instead. To test the resulting powder, the researchers built a coin-sized battery. Performance tests reveal the silicon-anode lithium-ion battery lasts up to three times longer than those using graphite, which could dramatically change how our smartphones and other battery-powered gadgets are employed.\n\nB\nWind and solar power generation differ from conventional thermal power due to their intermittent supply; this type of renewable electricity generation is strictly weather dependent and cannot be regulated to match the demand for electricity. In general, there are four strategies to reduce the impact of this. First, flexible supply can counteract intermittent supply. Second, demand can be shifted over time. Third, energy storage can store surplus electricity in batteries or hydrogen. Finally, trade can even out mismatches between production and load across countries.\n\nC\nCurrently, most batteries are made with lithium. These are expensive, have a large carbon footprint, and are incompatible with long-term power storage. In the Finnish town of Kankaanpää, a team of engineers has completed the first commercial installation of a battery made from sand that they believe can solve the storage problem in a low-cost, low-impact way. The system stores energy as heat in hundreds of tonnes of sand for use in the local heating system whenever there is a dip in renewable energy production. Authorities want to scale up the system.\n\nD\nAccording to research from Lane Clark & Peacock, enough renewable power to supply 800,000 British homes went to waste in 2020 and 2021 when the national grid asked wind farms to switch off. Curtailment occurs when wind energy is available but cannot be used due to transmission constraints. These include insufficient ability to transport energy to areas with greatest demand, or the risk of overloading equipment. Wind power has increased significantly, but investment in processes and infrastructure has not kept pace. The financial and environmental costs make a strong case for long duration energy storage facilities.",
+          "instructions": "Read the four texts about cloud seeding. Which text gives you the answer to each question?",
+          "passage": "A\nCloud seeding techniques that aim to artificially induce rainfall or snowfall only work if the clouds already have sufficient moisture and are accompanied by the right temperature and wind conditions. Any increases in precipitation are likely to be small, however, and it is not always possible to tell whether any rain or snow fell naturally or whether it was triggered by seeding. There are two basic approaches to cloud seeding. One is to seed supercool clouds with silver iodide or dry ice. This causes ice crystals to grow which consume moisture from the cloud and then fall as snow or rain. The dry ice might be shot into the clouds via rockets or sprayed from a plane or a mountaintop. The second approach involves warm clouds and hydroscopic substances, like salt particles. These particles take on water vapor, and therefore become larger so that they fall faster. People have raised a few concerns about possible negative effects of cloud seeding, but any effects appear to be minor. Ionic silver is a toxic heavy metal, but the amount of silver iodide in seeded snow on the ground in mountainous areas is so small that extremely sensitive instrumentation is needed in order to detect its presence.\n\nB\nCloud seeding has been used to mitigate damage caused by hailstorms for years, and also to try to enhance rainfall and snowfall for water storage in reservoirs and underground. These localised projects are not to be confused with geo-engineering schemes which propose tinkering with Earth's weather by modifying the planet's ability to reflect solar energy. Currently, more than 50 countries worldwide participate in cloud-seeding operations. So, it seems odd then that the technique has not actually been proven to work. Various studies have claimed annual precipitation increases of 10% or more. However, all these studies lacked statistical rigor. Some cloud-seeding critics raise concerns about interfering with nature. The amount of moisture in the atmosphere is determined by the balance between evaporation and precipitation. If cloud seeding is done on a large scale, it might lead to increased evaporation from locations outside the seeding area.\n\nC\nIn the 1940s, the atmospheric scientist Bernard Vonnegut found that particles of silver iodide can cause supercool clouds of water vapor to freeze into snow in the lab. Particles like silver iodide can provide a scaffold onto which water molecules can align themselves into a crystalline structure or, in other words, freeze. The technique has been used by governments on and off ever since. But despite decades of these cloud seeding operations, proof that the technique works outside miniature clouds created in the lab has been elusive. One explanation is that the instruments of past decades could not measure water droplet size in clouds in real time. Without knowing how a cloud evolves after seeding, scientists were unsure whether the silver iodide was having any effect. Another explanation is that the chaotic nature of weather makes controlled, natural experiments almost impossible. Once a cloud is seeded, it is contaminated, and the experiment cannot be repeated because the same atmospheric conditions will not reappear.\n\nD\nToday, many entities - including government agencies, utility companies and ski resorts - seed clouds in an effort to boost winter snowfall in the mountains. More snowpack means more spring and summer runoff, which feeds local water supplies, irrigates crops and fuels dams that generate hydroelectric power. Cloud seeding has also been used in efforts to disperse fog at airports, boost summer rainfall and reduce hail. In fact, cloud seeding occurs in more than 50 countries worldwide. Yet despite all this activity, we still do not know whether it works. We are atmospheric scientists, and we recently conducted a field study to evaluate cloud seeding as a means of enhancing mountain snowfall from winter storms. Our results clearly demonstrate that, at least under certain conditions, it is possible to change the evolution and growth of cloud particles, leading to snowfall which otherwise would not have occurred. The next question is whether cloud seeding can be an effective tool for water managers in dry regions.",
           "options": [
             "A",
             "B",
@@ -541,38 +543,38 @@
           "questions": [
             {
               "number": 18,
-              "prompt": "Express some frustration with the way one potential power supply has been under-exploited.",
+              "prompt": "Which text mentions that cloud seeding can also be used to reduce the incidence of certain weather features?",
               "correct": "D"
             },
             {
               "number": 19,
-              "prompt": "List the deficiencies of a particular type of battery.",
-              "correct": "C"
-            },
-            {
-              "number": 20,
-              "prompt": "Explore various measures for offsetting unreliable green electricity production.",
+              "prompt": "Which text implies that increased precipitation from cloud seeding might mean less precipitation elsewhere?",
               "correct": "B"
             },
             {
+              "number": 20,
+              "prompt": "Which text says that the levels of harmful chemicals found in surface precipitation after seeding are insignificant?",
+              "correct": "A"
+            },
+            {
               "number": 21,
-              "prompt": "Go through the stages required in the production of a substance used in batteries.",
+              "prompt": "Which text specifies ways in which seeding materials actually reach the clouds?",
               "correct": "A"
             },
             {
               "number": 22,
-              "prompt": "Suggest that an improvement to everyday technological devices is on the horizon.",
-              "correct": "A"
+              "prompt": "Which text says that it is very difficult to prove the efficacy of cloud seeding in real-world conditions?",
+              "correct": "C"
             },
             {
               "number": 23,
-              "prompt": "Make reference to an international market for energy from renewable sources.",
-              "correct": "B"
+              "prompt": "Which text suggests that the ability to cause precipitation at key periods can have many beneficial effects later on?",
+              "correct": "D"
             },
             {
               "number": 24,
-              "prompt": "Report a disparity between one nation’s wish to exploit green energy and the technological means to realise that aim.",
-              "correct": "D"
+              "prompt": "Which text suggests that cloud seeding is a low-level attempt at weather manipulation when compared with other methods?",
+              "correct": "B"
             }
           ]
         },
@@ -580,74 +582,74 @@
           "id": "part_4",
           "title": "Part 4",
           "type": "multiple_choice",
-          "instructions": "Read the article about language preservation and answer the questions.",
-          "passage": "Why are languages worth preserving?\n\nI met Ariep, the last speaker of Naati, on a beach on Malekula, an island in the South Pacific nation of Vanuatu. He fears that with his death, Naati will soon disappear. Naati’s predicament is not unique. Of the roughly 7,000 languages spoken on the planet today, 50 to 90 per cent are considered vulnerable to extinction by the century’s end. Should Naati’s fate concern the world?\n\nI argue yes. As a linguist who’s worked with endangered language communities, I know that language loss is a critical problem. Consider the injustices and persecutions that have happened over history to people whose language has been forcibly taken from them. Today, despite scarce resources, indigenous communities are making huge investments in reclaiming their languages. Language is the glue that binds communities together. Language loss is a loss of community heritage, from oral storytelling to knowledge of plants and practices codified through words unwritten and untranslated.\n\nThe disappearance of a language may seem like an unfortunate loss only to the people involved. However, the impact for all of us is real and substantial. Understanding language is vital to understanding human cognition. Each language is a piece of the puzzle that we need in order to determine how language works in the mind.\n\nLanguages may appear to differ wildly from one another, but they’re all variations on a theme. The remarkable similarities across languages suggest that there is some cognitive capacity that underlies all human language. The goal of contemporary linguistics is to describe and model this system.\n\nThis research has real implications for our lives. The more we understand about how language functions, the better equipped we are to improve therapies for communication disorders and methods for language teaching. Research on sound patterns is used in speech synthesis software, while models of grammar aid artificial intelligence.",
+          "instructions": "Read the extract from a book by a sociologist called Danielle J. Lindemann and answer the questions.",
+          "passage": "What reality TV says about our culture\n\nYou may call reality TV a guilty pleasure or, if you are feeling less charitable, trash or train-wreck TV, or perhaps, like the respected broadcast journalist Ted Koppel, you may wonder aloud if the genre marks the end of civilization. The truth is that vastly more of us are watching reality TV than not, and those who avert their eyes are still haunted by its apparitions. One study found that college students who claimed not to watch reality TV still knew specific details about these shows. But even for those who really do not watch, these programs have become part of the cultural ether. Elements from them reach us via product lines, online posts, advertisements, snippets of conversation, and references in the media.\n\nWe know why reality TV shows keep getting produced. They are relatively quick and cheap to make, and they are potentially very profitable. From the supply side, it is a no-brainer. But why do we keep tuning in? Research has suggested that people get several different gratifications from these programs. Though we might not wish to admit it, one of these is voyeuristic pleasure. We are excited and curious to watch people in their unguarded moments, particularly when we suspect there might be a disaster on the horizon. But paradoxically, another reason people tune in is for social connection. This connection happens when fans hold viewing parties, chat with their friends about developments on the shows, and engage with the content through interactive websites, social media feeds, and message boards.\n\nOf course, there are other things we could be watching. But one unique appeal of this genre is that it involves real people reacting to more or less real-world stimuli, which facilitates our putting ourselves in the participants' shoes in ways that scripted TV does not. Archetypes, the lifeblood of reality TV, further help us to make connections with these characters. Disparate and over-the-top personalities who fit into broad, easily recognizable social categories are sought out by producers to form the vertebrae of many of these shows. And indeed, the performers themselves grab hold of these archetypes and play up to them.\n\nIt may seem counterintuitive that a genre focused on zany personalities and extreme cases could have anything to teach a sociologist about our own ordinary lives. Yet scholars have long argued that we can learn about core features of society by looking at the extremes. The same behaviors that make reality TV participants fascinating to watch are also present within our culture. These people are larger-than-life versions, for instance, of our own materialism, our obsessions with our bodies, and the steps we take to mold our children in our own images. In presenting these people, the reality genre turns over stones that scripted programming leave undisturbed. These programs cast a searchlight on the center as well as the hidden nooks of society. Reality TV's perimeter is not all-encompassing, but even its absences are instructive.\n\nFor all of its larger-than-life aspects, the genre reflects how dearly we cling to simplistic, collective notions about who and what is legitimate and real. It spotlights the categories and meanings that we take for granted as essential, biological, and unshakable. But in doing so, it allows us to poke at these ideas, revealing the socially constructed natures of what we consider to be true, normal, healthy, legitimate, and good - in areas ranging from relationships to wealth or child rearing. In effect, it exposes reality itself to be a social fiction. To be clear, to point out that many of our everyday distinctions are social fictions is not to suggest they are unimportant. Just the opposite: these fictions shape our experiences of the world in crucial ways. As the sociologists W. I. Thomas and Dorothy Swaine Thomas have pointed out, 'If men define situations as real, they are real in their consequences.' Many of the categories we use to organize our worlds are at once unreal in that they are socially manufactured and real in that they impact our lives. Reality TV has much to teach us about those unreal realities.",
           "questions": [
             {
               "number": 25,
-              "prompt": "What is the writer doing in the first paragraph?",
+              "prompt": "The writer uses the phrase 'haunted by its apparitions' in the first paragraph to emphasise",
               "options": [
-                "a) preparing the reader for an uncomfortable truth",
-                "b) picking up on contradictions in certain opinions",
-                "c) conceding that others have a fair point",
-                "d) presenting some arguments he will go on to reject"
+                "a) the effort some people go to in order to avoid watching reality TV.",
+                "b) the exaggerated language often used to criticise reality TV.",
+                "c) the impossibility of remaining untouched by reality TV.",
+                "d) the horror with which many people regard reality TV."
               ],
-              "correct": "d) presenting some arguments he will go on to reject"
+              "correct": "d) the horror with which many people regard reality TV."
             },
             {
               "number": 26,
-              "prompt": "What point is the writer making about the indigenous communities mentioned in the second paragraph?",
+              "prompt": "What does the writer suggest about people's motivations for watching reality TV?",
               "options": [
-                "a) They are not persuaded by claims about the usefulness of languages.",
-                "b) They have historically struggled to find a common voice.",
-                "c) The younger generations are more open to linguistic change.",
-                "d) Their sense of mistreatment is strongly reflected in their languages."
+                "a) Some are more worthwhile than others.",
+                "b) They are more variable than was once thought.",
+                "c) Not all of them are things people are fully aware of.",
+                "d) They are difficult to identify with any degree of confidence."
               ],
-              "correct": "a) They are not persuaded by claims about the usefulness of languages."
+              "correct": "a) Some are more worthwhile than others."
             },
             {
               "number": 27,
-              "prompt": "The writer suggests that speakers of both Mohawk and Lulamogi use language as a way of",
+              "prompt": "What is the writer implying about reality TV shows in the third paragraph?",
               "options": [
-                "a) explaining their ethical choices.",
-                "b) preserving elements of their culture.",
-                "c) expressing their innermost feelings.",
-                "d) committing themselves to a future action."
+                "a) People's behaviour on them is not always as authentic as it may at first seem.",
+                "b) The producers who create them lack imagination when recruiting participants.",
+                "c) Those who take part often do not fully understand how it will affect them.",
+                "d) Their success depends on viewers being able to identify with those on screen."
               ],
-              "correct": "b) preserving elements of their culture."
+              "correct": "c) Those who take part often do not fully understand how it will affect them."
             },
             {
               "number": 28,
-              "prompt": "The writer uses the image of a puzzle in the fourth paragraph to highlight",
+              "prompt": "In the fourth paragraph, the writer says that the study of reality TV reveals",
               "options": [
-                "a) the unusual range of connections that exist between languages.",
-                "b) the challenge that linguists face in recreating lost languages.",
-                "c) the difficulty of identifying a common ancestry for all languages.",
-                "d) the value of all languages to the study of linguistics."
+                "a) the role the media has in changing people's prejudices.",
+                "b) the attitudes and concerns shared by the majority of people.",
+                "c) the fact that people are becoming more accepting of difference.",
+                "d) the damage that people's fascination with eccentric people can cause."
               ],
-              "correct": "d) the value of all languages to the study of linguistics."
+              "correct": "b) the attitudes and concerns shared by the majority of people."
             },
             {
               "number": 29,
-              "prompt": "In the fifth paragraph, the writer makes the point that",
+              "prompt": "In the fifth paragraph the writer says that watching reality TV",
               "options": [
-                "a) many words are remarkably similar within language families.",
-                "b) the forms of a language aren’t as random and chaotic as they might seem.",
-                "c) grammatical rules are merely attempts to describe systematic patterns.",
-                "d) written language typically involves a stylistic change from spoken language."
+                "a) gives people the chance to question their assumptions.",
+                "b) can cause people to change the way they relate to others.",
+                "c) reinforces many of the old-fashioned ideas that people have.",
+                "d) can make certain things appear less significant than they are."
               ],
-              "correct": "b) the forms of a language aren’t as random and chaotic as they might seem."
+              "correct": "a) gives people the chance to question their assumptions."
             },
             {
               "number": 30,
-              "prompt": "In the last paragraph, the writer is saying that",
+              "prompt": "What idea occurs in successive paragraphs in this text?",
               "options": [
-                "a) early researchers studied languages on the basis of their similarity to English.",
-                "b) indigenous languages are of particular interest to developers of digital technology.",
-                "c) the optimum language analysis would draw on the broadest range of language groups.",
-                "d) the discipline of psycholinguistics is the most fascinating branch of language study today."
+                "a) Reality TV has changed society in ways that are not yet fully understood.",
+                "b) It's time reality TV was taken more seriously as a subject of scholarship.",
+                "c) The exaggerations shown in reality TV are what make it instructive.",
+                "d) The criticisms levelled at reality TV shows are largely unjustified."
               ],
-              "correct": "c) the optimum language analysis would draw on the broadest range of language groups."
+              "correct": "b) It's time reality TV was taken more seriously as a subject of scholarship."
             }
           ]
         }
@@ -663,7 +665,7 @@
           "type": "long_text",
           "min_words": 150,
           "max_words": 200,
-          "prompt": "Your university has a large cafeteria, serving a variety of hot meals. The cafeteria is now used only by staff. As part of a short course in English, you have to write a report on changing use of the cafeteria over time. In your report, describe the main trends, give reasons for these trends, and predict how use of the cafeteria is likely to change in the next five-year period."
+          "prompt": "As part of a pre-sessional university course, your tutor has asked you to write a short report on water quality at bathing beaches in England. Use the information given below, which consists of a bar chart from the Environment Agency in England and three quotes from recent newspaper articles. In your report you should: describe the main trends shown in the bar chart; consider how water quality, pollution and tourism are linked; predict what effects an increase in pollution might have. Write between 150 and 200 words."
         },
         {
           "id": "part_2",
@@ -671,7 +673,7 @@
           "type": "long_text",
           "min_words": 220,
           "max_words": 280,
-          "prompt": "Read the following statement and write an essay about the topic. The internet allows the individual to feel part of a global online community. Some people believe that this community can bring diverse people together and help solve global problems. Others disagree, fearing that it just leads to disagreements that drive people further apart. Discuss both views and give your own opinion. Write about 250 words."
+          "prompt": "Read the following statement and write an essay for your college tutor on the topic. 'Play is the best way for children below the age of five to learn, but is not really suitable in the education of older children, teens or adults.' Discuss this view and give your own opinion. Write about 250 words."
         }
       ]
     }

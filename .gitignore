@@ -6,6 +6,7 @@ work/
 
 # Local tool installs / scratch deps
 .tools/
+.venv/
 
 # Runtime and dependency noise
 node_modules/
