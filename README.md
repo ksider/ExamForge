@@ -117,6 +117,18 @@ test_5.json
 
 5. Refresh the app. The server will detect the new test automatically.
 
+## Static Export
+
+Development still uses `server.js`, so new JSON files are detected directly from `tests/`.
+
+To package the current app state as static files, run:
+
+```bash
+npm run build:static
+```
+
+The command creates `static/` with the frontend, audio files, copied test JSON files, and `static/tests/manifest.json`. That manifest replaces the dev API for static hosting. The generated `static/` folder is ignored by git and can be uploaded to any plain static host.
+
 ## PDF Workflow
 
 ExamForge does not parse PDF files inside the app at runtime.

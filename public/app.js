@@ -157,9 +157,19 @@ function buildResultsPath(file) {
 }
 
 function updateRoute(path) {
+  if (window.location.protocol === "file:") return;
   if (window.location.pathname !== path) {
     history.pushState({}, "", path);
   }
+}
+
+function staticAssetPath(path) {
+  return path.replace(/^\/+/, "");
+}
+
+function resolveMediaPath(path) {
+  if (!appState.staticMode || !path.startsWith("/")) return path;
+  return staticAssetPath(path);
 }
 
 function showStartScreen(push = true) {
@@ -210,12 +220,50 @@ async function loadTests() {
   dom.testsList.innerHTML = "<p class='muted'>Loading test variants...</p>";
   dom.startBtn.disabled = true;
 
-  const response = await fetch("/api/tests");
-  const data = await response.json();
-  appState.tests = data.tests || [];
-  dom.startBtn.disabled = !appState.selectedFile;
-  renderTestsList();
-  renderResultHistory();
+  try {
+    const data = await fetchTestsIndex();
+    appState.tests = data.tests || [];
+    dom.startBtn.disabled = !appState.selectedFile;
+    renderTestsList();
+    renderResultHistory();
+  } catch (error) {
+    dom.testsList.innerHTML = `<p class="feedback bad">Could not load test list. Try running a local static server or rebuild the static export.</p>`;
+    console.error(error);
+  }
+}
+
+async function fetchTestsIndex() {
+  if (window.EXAMFORGE_STATIC_DATA?.manifest) {
+    appState.staticMode = true;
+    return window.EXAMFORGE_STATIC_DATA.manifest;
+  }
+
+  try {
+    const response = await fetch("/api/tests");
+    if (!response.ok) throw new Error(`API returned ${response.status}`);
+    appState.staticMode = false;
+    return await response.json();
+  } catch {
+    const response = await fetch("tests/manifest.json");
+    if (!response.ok) throw new Error(`Static manifest returned ${response.status}`);
+    appState.staticMode = true;
+    return response.json();
+  }
+}
+
+async function fetchTestFile(file) {
+  const embeddedTest = window.EXAMFORGE_STATIC_DATA?.tests?.[file];
+  if (embeddedTest) {
+    appState.staticMode = true;
+    return embeddedTest;
+  }
+
+  const url = appState.staticMode
+    ? `tests/${encodeURIComponent(file)}`
+    : `/api/tests/${encodeURIComponent(file)}`;
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`Unable to load ${file}: ${response.status}`);
+  return response.json();
 }
 
 function renderTestsList() {
@@ -255,8 +303,7 @@ async function enterExam(file, sectionId = null, push = true, reset = false) {
   const needsLoad = !appState.test || appState.loadedFile !== file;
 
   if (needsLoad) {
-    const response = await fetch(`/api/tests/${encodeURIComponent(file)}`);
-    appState.test = await response.json();
+    appState.test = await fetchTestFile(file);
     appState.selectedFile = file;
     appState.loadedFile = file;
     appState.answers = {};
@@ -320,7 +367,7 @@ function renderActiveSection() {
   dom.examScreen.classList.toggle("is-wide", section.id === "reading");
   document.querySelector("main").classList.toggle("is-wide", section.id === "reading");
   const audio = section.audio
-    ? `<div class="audio-box"><strong>Section audio</strong><audio controls src="${escapeHtml(section.audio)}"></audio><p class="muted">${escapeHtml(section.audio)}</p></div>`
+    ? `<div class="audio-box"><strong>Section audio</strong><audio controls src="${escapeHtml(resolveMediaPath(section.audio))}"></audio><p class="muted">${escapeHtml(section.audio)}</p></div>`
     : "";
 
   dom.examContent.innerHTML = `
