@@ -1,0 +1,680 @@
+{
+  "id": "test_6",
+  "title": "LanguageCert Academic Test 3",
+  "source": {
+    "folder": "PDF TEMP/LCA 3 PDFs",
+    "reading_listening_pdf": "LC Academic Test 3 - Exam Paper (LR) .pdf",
+    "writing_pdf": "LC Academic Test 3 - Exam Paper (W).pdf",
+    "mark_scheme_pdf": "LC Academic Test 3 - Mark Scheme.pdf"
+  },
+  "timer": {
+    "listening_minutes": 35,
+    "reading_minutes": 50,
+    "writing_minutes": 50
+  },
+  "sections": [
+    {
+      "id": "listening",
+      "title": "Listening",
+      "audio": "/audio/test_6_listening.mp3",
+      "parts": [
+        {
+          "id": "part_1",
+          "title": "Part 1",
+          "type": "multiple_choice",
+          "instructions": "You will hear some short conversations. Choose the correct answer to complete each conversation.",
+          "questions": [
+            {
+              "number": 1,
+              "prompt": "Conversation 1",
+              "options": [
+                "a) I can’t really see why.",
+                "b) Oh, I’d be so grateful.",
+                "c) I understand – not to worry."
+              ],
+              "correct": "b) Oh, I’d be so grateful."
+            },
+            {
+              "number": 2,
+              "prompt": "Conversation 2",
+              "options": [
+                "a) I guess that might be one way of solving it.",
+                "b) That’s definitely worth thinking about, thanks.",
+                "c) Yeah, I’m trying not to let it get on my nerves."
+              ],
+              "correct": "c) Yeah, I’m trying not to let it get on my nerves."
+            },
+            {
+              "number": 3,
+              "prompt": "Conversation 3",
+              "options": [
+                "a) Well, why not give it a try?",
+                "b) There’s no question about that.",
+                "c) Don’t worry, it’ll be fine once you’re there."
+              ],
+              "correct": "b) There’s no question about that."
+            },
+            {
+              "number": 4,
+              "prompt": "Conversation 4",
+              "options": [
+                "a) Do you think that’s likely?",
+                "b) What’s that got to do with it?",
+                "c) Can you face doing that?"
+              ],
+              "correct": "a) Do you think that’s likely?"
+            },
+            {
+              "number": 5,
+              "prompt": "Conversation 5",
+              "options": [
+                "a) Yes, no doubt they are.",
+                "b) Quite the reverse, actually.",
+                "c) It’s all very well to say that."
+              ],
+              "correct": "b) Quite the reverse, actually."
+            },
+            {
+              "number": 6,
+              "prompt": "Conversation 6",
+              "options": [
+                "a) I suspect you’re right.",
+                "b) You could put it that way.",
+                "c) There’s no harm in asking."
+              ],
+              "correct": "c) There’s no harm in asking."
+            },
+            {
+              "number": 7,
+              "prompt": "Conversation 7",
+              "options": [
+                "a) It’s got to be addressed somehow.",
+                "b) We’ll have to account for it, I guess.",
+                "c) I’m just saying it’s out of the question."
+              ],
+              "correct": "a) It’s got to be addressed somehow."
+            }
+          ]
+        },
+        {
+          "id": "part_2",
+          "title": "Part 2",
+          "type": "multiple_choice",
+          "instructions": "You will hear five conversations. Choose the correct answer.",
+          "questions": [
+            {
+              "number": 8,
+              "prompt": "What does the man say about studying abroad?",
+              "options": [
+                "a) He’s worried he won’t enjoy it very much.",
+                "b) He doesn’t think it will be very educational.",
+                "c) He thinks he’s missed the deadline to apply."
+              ],
+              "correct": "b) He doesn’t think it will be very educational."
+            },
+            {
+              "number": 9,
+              "prompt": "The woman thinks the advantage of studying abroad is",
+              "options": [
+                "a) gaining an awareness of cultural differences.",
+                "b) having the chance to make useful contacts.",
+                "c) Being able to attract a higher salary."
+              ],
+              "correct": "a) gaining an awareness of cultural differences."
+            },
+            {
+              "number": 10,
+              "prompt": "The man thinks that when the woman was writing her patient leaflet,",
+              "options": [
+                "a) she left out some crucial information.",
+                "b) she failed to consider who it was intended for.",
+                "c) she selected an inappropriate condition to write about."
+              ],
+              "correct": "b) she failed to consider who it was intended for."
+            },
+            {
+              "number": 11,
+              "prompt": "The man accepts the woman’s point that some people",
+              "options": [
+                "a) want things explaining more than once.",
+                "b) may turn to the internet in frustration.",
+                "c) have a greater need for facts than others."
+              ],
+              "correct": "c) have a greater need for facts than others."
+            },
+            {
+              "number": 12,
+              "prompt": "What does she say about her room?",
+              "options": [
+                "a) She accepts it has one advantage.",
+                "b) She's annoyed that she had to take it.",
+                "c) She's surprised nobody warned her about it."
+              ],
+              "correct": "a) She accepts it has one advantage."
+            },
+            {
+              "number": 13,
+              "prompt": "Her friend advises her to",
+              "options": [
+                "a) look for a new place to live.",
+                "b) make the most of the situation.",
+                "c) persuade someone to swap with her."
+              ],
+              "correct": "b) make the most of the situation."
+            },
+            {
+              "number": 14,
+              "prompt": "What is the man going to focus on in his project?",
+              "options": [
+                "a) how the health benefits of yoga compare with those of other sports",
+                "b) whether a particular yoga technique is useful in day-to-day life",
+                "c) which aspects of yoga practice are most beneficial"
+              ],
+              "correct": "b) whether a particular yoga technique is useful in day-to-day life"
+            },
+            {
+              "number": 15,
+              "prompt": "What does he say about the data-collection methods he could use?",
+              "options": [
+                "a) Selecting one has proved harder than he expected.",
+                "b) He may lack the skill to use his preferred one.",
+                "c) The simplest ones are often the best."
+              ],
+              "correct": "b) He may lack the skill to use his preferred one."
+            },
+            {
+              "number": 16,
+              "prompt": "How does the student feel about her progress?",
+              "options": [
+                "a) She's unsure why it's been so poor.",
+                "b) She's ashamed by how slow it's been.",
+                "c) She's hopeful she's about to turn a corner."
+              ],
+              "correct": "a) She's unsure why it's been so poor."
+            },
+            {
+              "number": 17,
+              "prompt": "What does the teacher most want to see evidence of in her literature review?",
+              "options": [
+                "a) a clear structure",
+                "b) thorough analysis",
+                "c) original thinking"
+              ],
+              "correct": "b) thorough analysis"
+            }
+          ]
+        },
+        {
+          "id": "part_3",
+          "title": "Part 3",
+          "type": "gap_fill",
+          "instructions": "Complete the notes. Write short answers of one to three words.",
+          "questions": [
+            {
+              "number": 18,
+              "prompt": "Coastal problem",
+              "correct": [
+                "coastal erosion",
+                "erosion"
+              ]
+            },
+            {
+              "number": 19,
+              "prompt": "Historic feature",
+              "correct": [
+                "bathing suites",
+                "bathing"
+              ]
+            },
+            {
+              "number": 20,
+              "prompt": "Function",
+              "correct": [
+                "shelter"
+              ]
+            },
+            {
+              "number": 21,
+              "prompt": "Design feature",
+              "correct": [
+                "central design"
+              ]
+            },
+            {
+              "number": 22,
+              "prompt": "Interior feature",
+              "correct": [
+                "painted walls"
+              ]
+            },
+            {
+              "number": 23,
+              "prompt": "Visitors",
+              "correct": [
+                "local school groups",
+                "school groups",
+                "school visits"
+              ]
+            },
+            {
+              "number": 24,
+              "prompt": "Material",
+              "correct": [
+                "timber"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "part_4",
+          "title": "Part 4",
+          "type": "multiple_choice",
+          "instructions": "You will hear a conversation. Choose the correct answers.",
+          "questions": [
+            {
+              "number": 25,
+              "prompt": "What does Peter say about press releases issued by university press officers?",
+              "options": [
+                "a) The tone they take varies enormously from university to university.",
+                "b) It’s not in the university’s best interests for them to be too over the top.",
+                "c) Some press officers misunderstand their fundamental purpose."
+              ],
+              "correct": "b) It’s not in the university’s best interests for them to be too over the top."
+            },
+            {
+              "number": 26,
+              "prompt": "What is Peter’s concern about the first few lines of press releases?",
+              "options": [
+                "a) More effort goes into writing them than into the rest of the text.",
+                "b) The influence they have on readers isn't appreciated by press officers.",
+                "c) Inaccuracies in them seem to stick in people’s memories for a long time."
+              ],
+              "correct": "b) The influence they have on readers isn't appreciated by press officers."
+            },
+            {
+              "number": 27,
+              "prompt": "What does Marion feel is lacking from press releases about scientific findings?",
+              "options": [
+                "a) evidence to support the claims being made",
+                "b) warnings about the limitations of the study",
+                "c) information that puts the findings into context"
+              ],
+              "correct": "c) information that puts the findings into context"
+            },
+            {
+              "number": 28,
+              "prompt": "What do Peter and Marion agree about the overhyping of study results?",
+              "options": [
+                "a) Preventing it involves controlling many variables.",
+                "b) There’s no need for it to happen as often as it does.",
+                "c) Scientists need to monitor it and intervene if necessary."
+              ],
+              "correct": "a) Preventing it involves controlling many variables."
+            },
+            {
+              "number": 29,
+              "prompt": "Marion says that when dealing with science press releases, journalists",
+              "options": [
+                "a) accept them with little scrutiny.",
+                "b) are wary of challenging them.",
+                "c) treat them as low priority."
+              ],
+              "correct": "a) accept them with little scrutiny."
+            },
+            {
+              "number": 30,
+              "prompt": "What is Marion’s feeling about science media centres?",
+              "options": [
+                "a) She’s convinced they’re superior to any other solution.",
+                "b) She can’t understand why they’re not more popular.",
+                "c) She’s keen to confirm her suspicion that they are effective."
+              ],
+              "correct": "c) She’s keen to confirm her suspicion that they are effective."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading",
+      "title": "Reading",
+      "parts": [
+        {
+          "id": "part_1a",
+          "title": "Part 1a",
+          "type": "multiple_choice",
+          "instructions": "Choose the option that best replaces the word or words in bold.",
+          "questions": [
+            {
+              "number": 1,
+              "prompt": "In attempting to understand modern culture, we must begin by learning about the beliefs and habits of past civilizations.",
+              "options": [
+                "a) final",
+                "b) ended",
+                "c) gone",
+                "d) earlier"
+              ],
+              "correct": "d) earlier",
+              "highlight": "past"
+            },
+            {
+              "number": 2,
+              "prompt": "A major step forward in the science of rocket design could enable humans to go deeper into space than ever before.",
+              "options": [
+                "a) qualify",
+                "b) grant",
+                "c) allow",
+                "d) authorise"
+              ],
+              "correct": "c) allow",
+              "highlight": "enable"
+            },
+            {
+              "number": 3,
+              "prompt": "There’s a concern that if too much tree planting takes place, then the amount of land available for farming will be reduced.",
+              "options": [
+                "a) stress",
+                "b) fright",
+                "c) shock",
+                "d) fear"
+              ],
+              "correct": "d) fear",
+              "highlight": "concern"
+            },
+            {
+              "number": 4,
+              "prompt": "Despite the clumsiness of the prose, Morton’s book on the genesis of glaciers is a welcome addition to the field.",
+              "options": [
+                "a) Nevertheless",
+                "b) Notwithstanding",
+                "c) Regardless",
+                "d) Irrespective"
+              ],
+              "correct": "b) Notwithstanding",
+              "highlight": "Despite"
+            },
+            {
+              "number": 5,
+              "prompt": "History as an academic field operates in a way not dissimilar to science, in that it seeks to establish objective facts.",
+              "options": [
+                "a) attempts",
+                "b) searches",
+                "c) engages",
+                "d) assumes"
+              ],
+              "correct": "a) attempts",
+              "highlight": "seeks"
+            },
+            {
+              "number": 6,
+              "prompt": "A report has been published with the aim of allaying public concern over the safety of the proposed oil exploration project.",
+              "options": [
+                "a) deducting",
+                "b) dwindling",
+                "c) lessening",
+                "d) dropping"
+              ],
+              "correct": "c) lessening",
+              "highlight": "allaying"
+            }
+          ]
+        },
+        {
+          "id": "part_1b",
+          "title": "Part 1b",
+          "type": "multiple_choice",
+          "instructions": "Read the text and decide which option best fits each gap.",
+          "passage": "Recognition of prior learning at Harrison University College\n\nIf you have previously studied at university level, you may be able to get credit for this on your study programme at Harrison University College (HUC). The Recognition of Prior Certified Learning (RPCL) is the process by which certificated learning from another institution is credited towards an HUC award. The prior certification must be an award given by a (7) academic institution as a result of a rigorously assessed learning experience.\n\nAn example of how this would work is if you have previously passed a module that had similar (8) to one you could take at HUC. You may be awarded 20 Recognition of Prior Learning credits for your HUC module, and would be (9) from the requirement to complete this module within your HUC programme. The maximum number of credits (10) at another institution permissible for RPCL credits varies depending on the HUC award in question. Please see the information (11) to your award for further details.",
+          "questions": [
+            {
+              "number": 7,
+              "prompt": "Gap 7",
+              "options": [
+                "a) documented",
+                "b) recognised",
+                "c) celebrated"
+              ],
+              "correct": "b) recognised"
+            },
+            {
+              "number": 8,
+              "prompt": "Gap 8",
+              "options": [
+                "a) content",
+                "b) ingredient",
+                "c) matter"
+              ],
+              "correct": "a) content"
+            },
+            {
+              "number": 9,
+              "prompt": "Gap 9",
+              "options": [
+                "a) immune",
+                "b) exempt",
+                "c) aside"
+              ],
+              "correct": "b) exempt"
+            },
+            {
+              "number": 10,
+              "prompt": "Gap 10",
+              "options": [
+                "a) retrieved",
+                "b) gathered",
+                "c) acquired"
+              ],
+              "correct": "c) acquired"
+            },
+            {
+              "number": 11,
+              "prompt": "Gap 11",
+              "options": [
+                "a) peculiar",
+                "b) specific",
+                "c) distinctive"
+              ],
+              "correct": "b) specific"
+            }
+          ]
+        },
+        {
+          "id": "part_2",
+          "title": "Part 2",
+          "type": "sentence_insert",
+          "instructions": "Use sentences A-H to complete the text. There are two extra sentences.",
+          "passage": "Passion for possessions\n\nPsychologist Anna Tomkins believes that ownership of objects plays a critical role in human identity. Our predilection for object ownership seems to be a uniquely human trait. It is true that other primates have been observed in the wild fashioning basic tools out of sticks or stones. (12) Some animals collect objects, but this type of collecting seems purely instinctual. In contrast, humans produce, collect, contemplate, exchange, value and even adore objects for their own sake.\n\nEarly evidence of this is a 70,000-year-old block of ochre engraved with crosses found in South Africa, most likely a piece of art or possibly a sacred object. (13) After all, the hours devoted to creating such objects would mean less time available for survival activities.\n\nManufacturing technologies have replaced the need for us to make our own things, yet we still retain a need for ownership and forge emotional attachments with objects. (14) These precious items are considered unique and irreplaceable. Possessions can also express personality, taste or status. (15) Advertisers have exploited this for years.\n\nProfessor Russell W. Belk calls this perspective the extended self. According to this theory, possessions are an important part of identity. This explains why some of us react to loss or damage as if it were a personal tragedy. (16) However, on a psychological level, it is perfectly rational.\n\nIn my lab, we are investigating children’s attitudes toward ownership. We are trying to clarify when in childhood mature understanding of ownership develops. (17) Understanding this matters because our need to own things shapes the way we view ourselves and others.",
+          "options": [
+            "A) Many children become inseparable from objects such as stuffed toys or blankets.",
+            "B) Asking participants to do this should have proved whether valuing objects is a basic part of human cognition.",
+            "C) Getting a sense of the timing of this transition may bring us closer to the origins of our conventions about who owns what.",
+            "D) However, these artefacts are often discarded after they have served their temporary function.",
+            "E) That is, individuals choose to acquire things they believe reflect qualities they would like to be associated with.",
+            "F) What is more, simply choosing an object endows it with more worth, in our mind, than an identical object we did not select.",
+            "G) From the point of view of an outsider, this may look like a silly overreaction.",
+            "H) This tells us a great deal about how highly such items must have been valued."
+          ],
+          "questions": [
+            {
+              "number": 12,
+              "prompt": "Gap 12",
+              "correct": "D) However, these artefacts are often discarded after they have served their temporary function."
+            },
+            {
+              "number": 13,
+              "prompt": "Gap 13",
+              "correct": "H) This tells us a great deal about how highly such items must have been valued."
+            },
+            {
+              "number": 14,
+              "prompt": "Gap 14",
+              "correct": "A) Many children become inseparable from objects such as stuffed toys or blankets."
+            },
+            {
+              "number": 15,
+              "prompt": "Gap 15",
+              "correct": "E) That is, individuals choose to acquire things they believe reflect qualities they would like to be associated with."
+            },
+            {
+              "number": 16,
+              "prompt": "Gap 16",
+              "correct": "G) From the point of view of an outsider, this may look like a silly overreaction."
+            },
+            {
+              "number": 17,
+              "prompt": "Gap 17",
+              "correct": "C) Getting a sense of the timing of this transition may bring us closer to the origins of our conventions about who owns what."
+            }
+          ]
+        },
+        {
+          "id": "part_3",
+          "title": "Part 3",
+          "type": "matching",
+          "instructions": "Read the four texts about the saying “Good artists borrow, great artists steal.” Which text gives you the answer?",
+          "passage": "A\nPablo Picasso is widely quoted as having said that “good artists borrow, great artists steal.” Whether or not Picasso was truly the first person to voice this idea is in dispute, but existing ideas feed into the creation of new ones. Shakespeare routinely stole plotlines and scenes from other writers. I find the choice of words curious. Surely the idea of stealing is misplaced here, given that my use of your idea in no way denies you the use of your idea, and may even lead me to create new ideas that you will benefit from.\n\nB\nThis saying is often on the lips of artists, thinkers and filmmakers. Unfortunately, some take the second part as license to plagiarize, but that is a misinterpretation. The saying is about finding inspiration in the work of others and using it as a starting point for original output. Artists may remix or recontextualize existing work to create something new. When you have elevated someone’s idea, an informed audience could say yours explores a certain idea better.\n\nC\nYou have probably heard a version of this saying, attributed to T. S. Eliot, Pablo Picasso and Steve Jobs. The original context is often absent, and that matters because the saying is emphatically not about endorsing plagiarism. For me, the only ideas up for grabs are famous images or stories already in the public domain. Retellings can allow authors from marginalized backgrounds to redress outdated material in classic literature. What matters is that artists wear their influences openly and do not try to hide anything.\n\nD\nThis saying has been echoed throughout history, proving its wisdom. It tells us there is no such thing as an original idea, but this is a notion modern young artists resent. They often seem to aim for something that has never been done before. The practised artist does not mistake originality for success. They understand that art is made to be consumed and no one is interested in consuming something completely unrecognisable. Art requires context, experience and intention.",
+          "options": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "questions": [
+            {
+              "number": 18,
+              "prompt": "Bringing a masterpiece from the past up to date can allow unacceptable content to be removed.",
+              "correct": "C"
+            },
+            {
+              "number": 19,
+              "prompt": "Some people incorrectly believe that novelty is something to be aimed for when making art.",
+              "correct": "D"
+            },
+            {
+              "number": 20,
+              "prompt": "There are those who use the saying to defend dishonest use of another’s work.",
+              "correct": "B"
+            },
+            {
+              "number": 21,
+              "prompt": "The origin of the quote is uncertain.",
+              "correct": "A"
+            },
+            {
+              "number": 22,
+              "prompt": "Taking an idea can be legitimate if it is transformed.",
+              "correct": "B"
+            },
+            {
+              "number": 23,
+              "prompt": "It is puzzling that use of another’s ideas should be called theft.",
+              "correct": "A"
+            },
+            {
+              "number": 24,
+              "prompt": "Reworking existing ideas is justifiable if the sources are familiar to the audience.",
+              "correct": "C"
+            }
+          ]
+        },
+        {
+          "id": "part_4",
+          "title": "Part 4",
+          "type": "multiple_choice",
+          "instructions": "Read the article about language preservation and answer the questions.",
+          "passage": "When does intelligence peak?\n\nAs people get older, they may feel their intelligence is rapidly declining. Research suggests a more varied picture. In studies by Joshua Hartshorne and Laura Germine, processing speed and short-term memory peak around high school graduation, some visual-spatial and abstract reasoning abilities plateau in early adulthood, and other cognitive functions such as vocabulary and general information peak in the 40s or later.\n\nThe picture gets more complicated when we consider the dark matter of intelligence: domain-specific knowledge. Most IQ tests were designed for schoolchildren and do not include the depth of knowledge acquired after immersion in a field. Middle-aged adults may not be as intelligent by youth standards, but once domain knowledge is considered they may be up to par.\n\nPhillip Ackerman tested adults aged 21 to 62 in domains including art, music, literature, biology, physics, law and electronics. He found that middle-aged adults are more knowledgeable in many domains than younger adults. He argues that knowledge does not compensate for declining adult intelligence; it is intelligence.\n\nThere was an exception: science-related tests were negatively associated with age and correlated with fluid intelligence. Nevertheless, older adults can continue to learn in many domains. Ackerman also found that personality measures such as intellectual curiosity were related to domain-specific knowledge.\n\nRecent research suggests that having a greater purpose in life can protect against cognitive decline. Purpose in life has also been linked to increased longevity, reduced risk of stroke and cardiovascular problems, and fewer sleep disturbances.",
+          "questions": [
+            {
+              "number": 25,
+              "prompt": "What can be concluded from Hartshorne and Germine’s research?",
+              "options": [
+                "a) that a true picture of intelligence would require more participants",
+                "b) that certain types of intelligence seem to pass from one generation to another",
+                "c) that humans cannot perform at their highest on all cognitive tasks simultaneously",
+                "d) that intelligence breaks down into more distinct areas than was previously thought"
+              ],
+              "correct": "c) that humans cannot perform at their highest on all cognitive tasks simultaneously"
+            },
+            {
+              "number": 26,
+              "prompt": "The phrase “up to par” is used in the second paragraph to argue that",
+              "options": [
+                "a) conventional knowledge tests are not as effective as problem-solving tests.",
+                "b) measuring knowledge presents specific challenges as knowledge is not finite.",
+                "c) a standardised measure of intelligence across age groups should be introduced.",
+                "d) older and younger adults could be viewed as equally intelligent if expertise were included."
+              ],
+              "correct": "a) conventional knowledge tests are not as effective as problem-solving tests."
+            },
+            {
+              "number": 27,
+              "prompt": "What do we learn about Professor Ackerman’s research study in the third paragraph?",
+              "options": [
+                "a) The participants all had to meet certain criteria.",
+                "b) It was on a scale that had not been attempted before.",
+                "c) It was largely concerned with cognitive development over time.",
+                "d) The participants were able to select which knowledge tests they did."
+              ],
+              "correct": "d) The participants were able to select which knowledge tests they did."
+            },
+            {
+              "number": 28,
+              "prompt": "During his research, Ackerman found evidence confirming the belief that",
+              "options": [
+                "a) certain types of intelligence are not compatible.",
+                "b) scientific genius is more often encountered in the young.",
+                "c) there is a point in life when it becomes harder to absorb new information.",
+                "d) educating the young brings more benefits to society than educating older adults."
+              ],
+              "correct": "b) scientific genius is more often encountered in the young."
+            },
+            {
+              "number": 29,
+              "prompt": "Professor Kim’s investigation of cognitive decline in older adults",
+              "options": [
+                "a) has been successful in verifying that it has multiple causes.",
+                "b) has forced doctors to reassess how they question those suffering from it.",
+                "c) has led to the suggestion that it might be slowed by using certain interventions.",
+                "d) has raised the question of whether it is treated differently in different cultural contexts."
+              ],
+              "correct": "a) has been successful in verifying that it has multiple causes."
+            },
+            {
+              "number": 30,
+              "prompt": "In the final paragraph, the writer emphasises that",
+              "options": [
+                "a) everyone has a part to play in maintaining their own health.",
+                "b) patience is required when hoping to see the benefits of anti-ageing therapies.",
+                "c) a good mental outlook while ageing can counter many of its negative physical aspects.",
+                "d) further studies into the link between good health and a sense of purpose are needed."
+              ],
+              "correct": "c) a good mental outlook while ageing can counter many of its negative physical aspects."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "writing",
+      "title": "Writing",
+      "parts": [
+        {
+          "id": "part_1",
+          "title": "Part 1",
+          "type": "long_text",
+          "min_words": 150,
+          "max_words": 200,
+          "prompt": "Your university has recently carried out a survey into the attitudes of students and teachers towards various digital tools that are used for either teaching or studying. Write a report on the findings. Summarise the main findings and comment on what you think might be the underlying reasons for the findings."
+        },
+        {
+          "id": "part_2",
+          "title": "Part 2",
+          "type": "long_text",
+          "min_words": 220,
+          "max_words": 280,
+          "prompt": "Read the following statement and write about the topic. “Many people believe that a genius is born, not made. Scientific research, on the other hand, reveals that becoming a true expert is mainly the result of years of serious study and practice.” Discuss both views and give your own opinion. Write about 250 words."
+        }
+      ]
+    }
+  ]
+}

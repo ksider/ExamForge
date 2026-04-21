@@ -83,6 +83,9 @@ tests/
   test_1.json              Test variant 1
   test_2.json              Test variant 2
   test_3.json              Test variant 3
+  test_4.json              Test variant 4
+  test_5.json              Test variant 5
+  test_6.json              Test variant 6
 docs/
   ai-json-prompt.md        Prompt and schema for converting PDFs to JSON
 PDF TEMP/                  Source PDF/audio materials, kept untouched
@@ -168,6 +171,9 @@ Writing tasks use `long_text` and are not automatically checked.
 - `test_1.json`: LanguageCert General Practice Paper 1
 - `test_2.json`: LanguageCert General Practice Paper 1 - Variant 2
 - `test_3.json`: LanguageCert General Test 3
+- `test_4.json`: LanguageCert Academic Practice Paper 1
+- `test_5.json`: LanguageCert Academic Practice Paper 1 - Variant 2
+- `test_6.json`: LanguageCert Academic Test 3
 
 Each current test contains:
 
