@@ -272,9 +272,16 @@ legend {
   gap: 8px;
 }
 
+.result-history h4 {
+  margin: 8px 0 2px;
+  color: var(--muted);
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
 .history-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
+  grid-template-columns: minmax(0, 1fr) auto auto auto;
   gap: 12px;
   align-items: center;
   padding: 10px 12px;
@@ -290,6 +297,10 @@ legend {
 
 .history-row small {
   color: var(--muted);
+}
+
+.history-row .secondary-button {
+  padding: 7px 10px;
 }
 
 .secondary-button,

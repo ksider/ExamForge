@@ -108,7 +108,11 @@ function saveProgress() {
       checked: appState.checked,
       sectionScores: appState.sectionScores,
       activeSectionId: appState.activeSectionId,
-      timer: getTimerSnapshot()
+      timer: getTimerSnapshot(),
+      testId: appState.test.id,
+      testTitle: appState.test.title,
+      file: appState.selectedFile,
+      updatedAt: new Date().toISOString()
     })
   );
 }
@@ -909,13 +913,32 @@ function loadResultRecords() {
 
 function renderResultHistory() {
   if (!dom.resultHistory) return;
-  const records = loadResultRecords().slice(0, 5);
-  if (!records.length) {
-    dom.resultHistory.innerHTML = "<p class='muted'>No completed attempts yet.</p>";
+  const progressRecords = loadProgressRecords().slice(0, 5);
+  const resultRecords = loadResultRecords().slice(0, 5);
+
+  if (!progressRecords.length && !resultRecords.length) {
+    dom.resultHistory.innerHTML = "<p class='muted'>No local attempts yet.</p>";
     return;
   }
 
-  dom.resultHistory.innerHTML = records
+  const progressHtml = progressRecords.length
+    ? `
+      <h4>Saved tests</h4>
+      ${progressRecords.map((record) => `
+        <div class="history-row">
+          <strong>${escapeHtml(record.testTitle)}</strong>
+          <span>${escapeHtml(record.activeSectionId || "Not started")}</span>
+          <small>${new Date(record.updatedAt).toLocaleString()}</small>
+          <button class="secondary-button" type="button" data-continue-file="${escapeHtml(record.file)}" data-continue-section="${escapeHtml(record.activeSectionId || "")}">Continue</button>
+        </div>
+      `).join("")}
+    `
+    : "";
+
+  const resultsHtml = resultRecords.length
+    ? `
+      <h4>Completed results</h4>
+      ${resultRecords
     .map((record) => `
       <div class="history-row">
         <strong>${escapeHtml(record.testTitle)}</strong>
@@ -923,7 +946,38 @@ function renderResultHistory() {
         <small>${new Date(record.completedAt).toLocaleString()}</small>
       </div>
     `)
-    .join("");
+    .join("")}
+    `
+    : "";
+
+  dom.resultHistory.innerHTML = `${progressHtml}${resultsHtml}`;
+  dom.resultHistory.querySelectorAll("[data-continue-file]").forEach((button) => {
+    button.addEventListener("click", () => {
+      enterExam(button.dataset.continueFile, button.dataset.continueSection || null, true);
+    });
+  });
+}
+
+function loadProgressRecords() {
+  const records = [];
+  for (let index = 0; index < localStorage.length; index += 1) {
+    const key = localStorage.key(index);
+    if (!key?.startsWith("examforge:progress:")) continue;
+    try {
+      const progress = JSON.parse(localStorage.getItem(key));
+      records.push({
+        ...progress,
+        key,
+        updatedAt: progress.updatedAt || new Date(0).toISOString()
+      });
+    } catch {
+      // Ignore malformed local progress.
+    }
+  }
+
+  return records
+    .filter((record) => record.file && record.testTitle)
+    .sort((left, right) => new Date(right.updatedAt) - new Date(left.updatedAt));
 }
 
 function startTimer() {
