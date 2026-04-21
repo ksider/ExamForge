@@ -281,7 +281,7 @@ legend {
 
 .history-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto auto;
+  grid-template-columns: minmax(0, 1fr) auto auto auto auto;
   gap: 12px;
   align-items: center;
   padding: 10px 12px;
@@ -301,6 +301,15 @@ legend {
 
 .history-row .secondary-button {
   padding: 7px 10px;
+}
+
+.danger-button {
+  padding: 7px 10px;
+  border: 1px solid #fda29b;
+  border-radius: 7px;
+  background: var(--danger-bg);
+  color: var(--danger);
+  font-weight: 800;
 }
 
 .secondary-button,

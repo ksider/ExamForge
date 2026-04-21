@@ -935,6 +935,7 @@ function renderResultHistory() {
           <span>${escapeHtml(record.activeSectionId || "Not started")}</span>
           <small>${new Date(record.updatedAt).toLocaleString()}</small>
           <button class="secondary-button" type="button" data-continue-file="${escapeHtml(record.file)}" data-continue-section="${escapeHtml(record.activeSectionId || "")}">Continue</button>
+          <button class="danger-button" type="button" data-delete-progress="${escapeHtml(record.key)}">Delete</button>
         </div>
       `).join("")}
     `
@@ -959,6 +960,13 @@ function renderResultHistory() {
   dom.resultHistory.querySelectorAll("[data-continue-file]").forEach((button) => {
     button.addEventListener("click", () => {
       enterExam(button.dataset.continueFile, button.dataset.continueSection || null, true);
+    });
+  });
+
+  dom.resultHistory.querySelectorAll("[data-delete-progress]").forEach((button) => {
+    button.addEventListener("click", () => {
+      localStorage.removeItem(button.dataset.deleteProgress);
+      renderResultHistory();
     });
   });
 }
