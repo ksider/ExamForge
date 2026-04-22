@@ -875,6 +875,7 @@ function renderSectionActions(section, locked) {
   return `
     <div class="block-actions">
       <button class="primary-button" type="button" data-action="check-section" ${locked ? "disabled" : ""}>Check section</button>
+      ${appState.checked[section.id] ? `<button class="secondary-button" type="button" data-action="undo-check-section">Undo check</button>` : ""}
       ${appState.checked[section.id] ? `<span class="score-pill">${scoreLabel(section.id)}</span>` : ""}
     </div>
   `;
@@ -908,6 +909,11 @@ function bindSectionEvents(section) {
   const checkButton = dom.examContent.querySelector("[data-action='check-section']");
   if (checkButton) {
     checkButton.addEventListener("click", () => checkSection(section));
+  }
+
+  const undoCheckButton = dom.examContent.querySelector("[data-action='undo-check-section']");
+  if (undoCheckButton) {
+    undoCheckButton.addEventListener("click", () => undoCheckSection(section));
   }
 
   const saveWritingButton = dom.examContent.querySelector("[data-action='save-writing']");
@@ -1034,6 +1040,14 @@ function checkSection(section) {
 
   appState.checked[section.id] = true;
   appState.sectionScores[section.id] = { correct, total };
+  saveProgress();
+  renderExam();
+}
+
+function undoCheckSection(section) {
+  delete appState.checked[section.id];
+  delete appState.sectionScores[section.id];
+  appState.timer.locked = false;
   saveProgress();
   renderExam();
 }
