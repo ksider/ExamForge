@@ -59,7 +59,7 @@ code {
 .topbar {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 20;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -68,6 +68,14 @@ code {
   background: rgba(255, 255, 255, 0.92);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(14px);
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .eyebrow {
@@ -391,6 +399,32 @@ legend {
   background: #f8fafc;
 }
 
+#examScreen.is-listening .audio-box {
+  position: fixed;
+  top: 8px;
+  left: 50%;
+  width: min(100% - 40px, 760px);
+  transform: translateX(-50%);
+  z-index: 30;
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+#examScreen.is-listening .audio-box strong,
+#examScreen.is-listening .audio-box .muted {
+  display: none;
+}
+
+#examScreen.is-listening .audio-box audio {
+  margin-top: 0;
+}
+
+#examScreen.is-listening .section-card {
+  padding-top: 72px;
+}
+
 .audio-box audio {
   width: 100%;
   margin-top: 10px;
@@ -587,6 +621,10 @@ legend {
 }
 
 .drag-chip {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
   width: 100%;
   padding: 9px 10px;
   border: 1px solid var(--line);
@@ -608,8 +646,50 @@ legend {
   background: #eef8f5;
 }
 
+.drag-chip.is-used {
+  border-color: #1570ef;
+  background: #eff8ff;
+  box-shadow: inset 3px 0 0 #1570ef;
+}
+
+.drag-chip.is-used .option-marker {
+  background: #1570ef;
+}
+
 .drag-chip.is-dragging {
   opacity: 0.45;
+}
+
+.option-used-label {
+  flex: 0 0 auto;
+  margin-left: auto;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: #d1e9ff;
+  color: #175cd3;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.option-marker {
+  flex: 0 0 auto;
+  min-width: 24px;
+  min-height: 24px;
+  padding: 3px 6px;
+  border-radius: 999px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 18px;
+  text-align: center;
+}
+
+.option-text {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .passage-drop {
@@ -634,6 +714,20 @@ legend {
   vertical-align: middle;
 }
 
+.drop-zone > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.drop-zone .option-marker {
+  min-width: 22px;
+  min-height: 22px;
+  padding: 2px 6px;
+  line-height: 18px;
+}
+
 .drop-zone.is-inline {
   min-width: 74px;
   min-height: 28px;
@@ -646,10 +740,6 @@ legend {
 
 .drop-zone.is-inline.is-filled {
   min-width: 88px;
-}
-
-.drop-zone.is-inline small {
-  display: none;
 }
 
 .drop-zone.is-filled {
@@ -679,6 +769,25 @@ legend {
   color: var(--muted);
   font-size: 11px;
   font-weight: 700;
+}
+
+.drop-clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: rgba(18, 103, 85, 0.12);
+  color: var(--brand);
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.drop-clear:hover {
+  background: rgba(18, 103, 85, 0.22);
 }
 
 .matching-board,
@@ -889,6 +998,16 @@ legend {
   color: #175cd3;
 }
 
+.word-pill.ok {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.word-pill.bad {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
 .status-pill.ok {
   background: var(--success-bg);
   color: var(--success);
@@ -928,6 +1047,22 @@ legend {
 
   .timer-panel {
     text-align: left;
+  }
+
+  .topbar-actions {
+    justify-content: stretch;
+  }
+
+  .topbar-actions > * {
+    flex: 1 1 auto;
+  }
+
+  #examScreen.is-listening .audio-box {
+    width: min(100% - 20px, 1180px);
+  }
+
+  #examScreen.is-listening .section-card {
+    padding-top: 84px;
   }
 
   .history-row {

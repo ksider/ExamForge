@@ -2,6 +2,7 @@ const appState = {
   tests: [],
   selectedFile: null,
   loadedFile: null,
+  progressKey: null,
   test: null,
   activeSectionId: null,
   answers: {},
@@ -18,6 +19,7 @@ const appState = {
     isPaused: false,
     restoreOnStart: false,
     savedState: null,
+    sectionStates: {},
     locked: false
   }
 };
@@ -35,6 +37,7 @@ const dom = {
   resultsContent: document.querySelector("#resultsContent"),
   resultSubtitle: document.querySelector("#resultSubtitle"),
   resultHistory: document.querySelector("#resultHistory"),
+  topbarExitBtn: document.querySelector("#topbarExitBtn"),
   restartBtn: document.querySelector("#restartBtn")
 };
 
@@ -47,7 +50,29 @@ function getTimerScope() {
 }
 
 function storageKey() {
-  return appState.test ? `examforge:progress:${appState.test.id}` : null;
+  return appState.progressKey || defaultProgressKey();
+}
+
+function defaultProgressKey(testId = appState.test?.id) {
+  return testId ? `examforge:progress:${testId}` : null;
+}
+
+function newProgressKey(testId = appState.test?.id) {
+  return testId ? `examforge:progress:${testId}:${Date.now()}` : null;
+}
+
+function activeProgressStorageKey(testId = appState.test?.id) {
+  return testId ? `examforge:active-progress:${testId}` : null;
+}
+
+function saveActiveProgressKey() {
+  const key = activeProgressStorageKey();
+  if (key && appState.progressKey) sessionStorage.setItem(key, appState.progressKey);
+}
+
+function loadActiveProgressKey(testId = appState.test?.id) {
+  const key = activeProgressStorageKey(testId);
+  return key ? sessionStorage.getItem(key) : null;
 }
 
 function resultsStorageKey() {
@@ -99,9 +124,15 @@ function getTotalLimitSeconds() {
   return appState.test.sections.reduce((sum, section) => sum + getSectionLimitMinutes(section) * 60, 0);
 }
 
+function isCurrentTestCompleted() {
+  if (!appState.test?.sections?.length) return false;
+  return appState.test.sections.every((section) => Boolean(appState.checked[section.id]));
+}
+
 function saveProgress() {
   const key = storageKey();
   if (!key) return;
+  saveActiveProgressKey();
   localStorage.setItem(
     key,
     JSON.stringify({
@@ -120,40 +151,78 @@ function saveProgress() {
 
 function getTimerSnapshot() {
   if (!appState.test || dom.timerPanel.classList.contains("is-hidden")) return null;
+  const elapsedSeconds = appState.timer.isPaused
+    ? appState.timer.elapsedSeconds
+    : appState.timer.accumulatedSeconds + Math.floor((Date.now() - appState.timer.startedAt) / 1000);
+  const remainingSeconds = getTimerMode() === "exam"
+    ? Math.max(0, appState.timer.limitSeconds - elapsedSeconds)
+    : appState.timer.remainingSeconds;
+  const sectionState = {
+    elapsedSeconds,
+    remainingSeconds
+  };
+  appState.timer.sectionStates = {
+    ...appState.timer.sectionStates,
+    [appState.activeSectionId]: sectionState
+  };
+
   return {
     mode: getTimerMode(),
     scope: getTimerScope(),
     sectionId: appState.activeSectionId,
-    elapsedSeconds: appState.timer.elapsedSeconds,
-    remainingSeconds: appState.timer.remainingSeconds
+    elapsedSeconds,
+    remainingSeconds,
+    sections: appState.timer.sectionStates
   };
 }
 
-function loadProgress() {
-  const key = storageKey();
+function loadProgress(progressKey = storageKey()) {
+  const key = progressKey;
   if (!key) return;
   const raw = localStorage.getItem(key);
   if (!raw) return;
 
   try {
     const saved = JSON.parse(raw);
+    appState.progressKey = key;
     appState.answers = saved.answers || {};
     appState.checked = saved.checked || {};
     appState.sectionScores = saved.sectionScores || {};
     appState.activeSectionId = saved.activeSectionId || appState.activeSectionId;
     appState.timer.savedState = saved.timer || null;
+    appState.timer.sectionStates = saved.timer?.sections || {};
     appState.timer.restoreOnStart = Boolean(saved.timer);
   } catch {
     localStorage.removeItem(key);
   }
 }
 
+function appBasePath() {
+  const pathname = window.location.pathname;
+  const routeIndex = pathname.indexOf("/test/");
+  if (routeIndex >= 0) return pathname.slice(0, routeIndex);
+
+  const cleanPath = pathname.replace(/\/+$/, "");
+  if (!cleanPath || cleanPath === "/") return "";
+  if (/\.[^/]+$/.test(cleanPath)) {
+    const lastSlash = cleanPath.lastIndexOf("/");
+    return lastSlash > 0 ? cleanPath.slice(0, lastSlash) : "";
+  }
+  return cleanPath;
+}
+
+function routePath(path) {
+  const base = appBasePath();
+  const cleanPath = `/${String(path || "").replace(/^\/+/, "")}`;
+  return `${base}${cleanPath}` || "/";
+}
+
 function buildExamPath(file, sectionId = appState.activeSectionId) {
-  return `/test/${encodeURIComponent(file)}/section/${encodeURIComponent(sectionId || "")}`;
+  return routePath(`/test/${encodeURIComponent(file)}/section/${encodeURIComponent(sectionId || "")}`);
 }
 
 function buildResultsPath(file) {
-  return `/test/${encodeURIComponent(file)}/results`;
+  return routePath(`/test/${encodeURIComponent(file)}/results`);
 }
 
 function updateRoute(path) {
@@ -164,7 +233,8 @@ function updateRoute(path) {
 }
 
 function staticAssetPath(path) {
-  return path.replace(/^\/+/, "");
+  if (window.location.protocol === "file:") return path.replace(/^\/+/, "");
+  return routePath(path);
 }
 
 function resolveMediaPath(path) {
@@ -175,21 +245,27 @@ function resolveMediaPath(path) {
 function showStartScreen(push = true) {
   window.clearInterval(appState.timer.intervalId);
   dom.timerPanel.classList.add("is-hidden");
+  dom.topbarExitBtn.classList.add("is-hidden");
   dom.examScreen.classList.add("is-hidden");
   dom.resultsScreen.classList.add("is-hidden");
   dom.startScreen.classList.remove("is-hidden");
   document.querySelector("main").classList.remove("is-wide");
-  if (push) updateRoute("/");
+  if (push) updateRoute(routePath("/"));
 }
 
 function showExamScreen() {
   dom.startScreen.classList.add("is-hidden");
   dom.resultsScreen.classList.add("is-hidden");
   dom.examScreen.classList.remove("is-hidden");
+  dom.topbarExitBtn.classList.remove("is-hidden");
 }
 
 function parseRoute() {
-  const parts = window.location.pathname.split("/").filter(Boolean);
+  const base = appBasePath();
+  const routePathname = base && window.location.pathname.startsWith(base)
+    ? window.location.pathname.slice(base.length)
+    : window.location.pathname;
+  const parts = routePathname.split("/").filter(Boolean);
   if (parts[0] !== "test" || !parts[1]) return { name: "home" };
 
   const file = decodeURIComponent(parts[1]);
@@ -296,31 +372,41 @@ function renderTestsList() {
 
 async function startExam() {
   if (!appState.selectedFile) return;
-  await enterExam(appState.selectedFile, null, true, true);
+  await enterExam(appState.selectedFile, null, true, { reset: true, newAttempt: true });
 }
 
-async function enterExam(file, sectionId = null, push = true, reset = false) {
+async function enterExam(file, sectionId = null, push = true, options = {}) {
+  const enterOptions = typeof options === "boolean" ? { reset: options } : options;
   const needsLoad = !appState.test || appState.loadedFile !== file;
 
   if (needsLoad) {
     appState.test = await fetchTestFile(file);
     appState.selectedFile = file;
     appState.loadedFile = file;
+    appState.progressKey = null;
     appState.answers = {};
     appState.checked = {};
     appState.sectionScores = {};
     appState.activeSectionId = null;
     appState.timer.savedState = null;
+    appState.timer.sectionStates = {};
     appState.timer.restoreOnStart = false;
-    loadProgress();
+    if (!enterOptions.reset && !enterOptions.newAttempt) {
+      loadProgress(enterOptions.progressKey || loadActiveProgressKey(appState.test.id) || defaultProgressKey(appState.test.id));
+    }
   }
 
-  if (reset) {
+  if (enterOptions.reset) {
+    appState.progressKey = enterOptions.newAttempt ? newProgressKey(appState.test.id) : defaultProgressKey(appState.test.id);
     appState.answers = {};
     appState.checked = {};
     appState.sectionScores = {};
+    appState.activeSectionId = null;
     appState.timer.savedState = null;
+    appState.timer.sectionStates = {};
     appState.timer.restoreOnStart = false;
+  } else if (enterOptions.progressKey && enterOptions.progressKey !== appState.progressKey) {
+    loadProgress(enterOptions.progressKey);
   }
 
   const firstSectionId = appState.test.sections[0]?.id || null;
@@ -330,14 +416,20 @@ async function enterExam(file, sectionId = null, push = true, reset = false) {
 
   showExamScreen();
   renderExam();
-  startTimer();
+  if (isCurrentTestCompleted()) {
+    window.clearInterval(appState.timer.intervalId);
+    dom.timerPanel.classList.add("is-hidden");
+    appState.timer.locked = true;
+  } else {
+    startTimer();
+    saveProgress();
+  }
   if (push) updateRoute(buildExamPath(file, appState.activeSectionId));
 }
 
 function renderExam() {
   renderTabs();
   renderActiveSection();
-  saveProgress();
 }
 
 function renderTabs() {
@@ -350,11 +442,15 @@ function renderTabs() {
 
   dom.sectionTabs.querySelectorAll(".tab-button").forEach((button) => {
     button.addEventListener("click", () => {
+      if (!isCurrentTestCompleted()) saveProgress();
       appState.activeSectionId = button.dataset.section;
       appState.timer.locked = false;
       renderExam();
       updateRoute(buildExamPath(appState.selectedFile, appState.activeSectionId));
-      if (getTimerScope() === "section") startTimer();
+      if (!isCurrentTestCompleted() && getTimerScope() === "section") {
+        startTimer();
+        saveProgress();
+      }
     });
   });
 }
@@ -365,6 +461,7 @@ function renderActiveSection() {
 
   const locked = Boolean(appState.checked[section.id] || appState.timer.locked);
   dom.examScreen.classList.toggle("is-wide", section.id === "reading");
+  dom.examScreen.classList.toggle("is-listening", section.id === "listening");
   document.querySelector("main").classList.toggle("is-wide", section.id === "reading");
   const audio = section.audio
     ? `<div class="audio-box"><strong>Section audio</strong><audio controls src="${escapeHtml(resolveMediaPath(section.audio))}"></audio><p class="muted">${escapeHtml(section.audio)}</p></div>`
@@ -379,7 +476,6 @@ function renderActiveSection() {
         </div>
         <div class="section-head-actions">
           ${appState.checked[section.id] ? `<span class="score-pill">${scoreLabel(section.id)}</span>` : ""}
-          <button class="secondary-button" type="button" data-action="exit-test">Exit test</button>
         </div>
       </div>
       ${audio}
@@ -536,10 +632,37 @@ function collectDragOptions(part, questions) {
 }
 
 function renderDragChip(option, locked, label = option) {
+  const usedClass = isDragValueUsed(option) ? "is-used" : "";
+
   return `
-    <button class="drag-chip" type="button" draggable="${locked ? "false" : "true"}" data-drag-value="${escapeAttr(option)}" ${locked ? "disabled" : ""}>
-      ${escapeHtml(label)}
+    <button class="drag-chip ${usedClass}" type="button" draggable="${locked ? "false" : "true"}" data-drag-value="${escapeAttr(option)}" ${locked ? "disabled" : ""}>
+      ${renderOptionLabel(label)}
+      ${usedClass ? `<span class="option-used-label">Used</span>` : ""}
     </button>
+  `;
+}
+
+function isDragValueUsed(option) {
+  const sectionPrefix = `${appState.activeSectionId}:`;
+  return Object.entries(appState.answers).some(([key, value]) => (
+    key.startsWith(sectionPrefix) && String(value) === String(option)
+  ));
+}
+
+function optionLabelParts(value) {
+  const text = String(value ?? "").trim();
+  const match = text.match(/^([A-Z])\)\s+(.+)$/);
+  if (!match) return null;
+  return { marker: match[1], text: match[2] };
+}
+
+function renderOptionLabel(value) {
+  const parts = optionLabelParts(value);
+  if (!parts) return escapeHtml(value);
+
+  return `
+    <span class="option-marker" aria-hidden="true">${escapeHtml(parts.marker)}</span>
+    <span class="option-text">${escapeHtml(parts.text)}</span>
   `;
 }
 
@@ -656,8 +779,8 @@ function renderInlineDropzone(section, question, locked, placeholder = "Drop ans
 
   return `
     <button class="drop-zone ${escapeHtml(className)} ${filledClass} ${resultClassFor(section, question)}" type="button" data-drop-key="${escapeHtml(key)}" ${locked ? "disabled" : ""}>
-      <span>${value ? escapeHtml(value) : escapeHtml(placeholder)}</span>
-      ${value && !locked ? `<small data-clear-drop="${escapeHtml(key)}">Clear</small>` : ""}
+      <span>${value ? renderOptionLabel(value) : escapeHtml(placeholder)}</span>
+      ${value && !locked ? `<small class="drop-clear" data-clear-drop="${escapeHtml(key)}" aria-label="Remove answer" title="Remove answer">&times;</small>` : ""}
     </button>
   `;
 }
@@ -731,7 +854,7 @@ function renderWritingPart(section, part, locked) {
         <div class="writing-prompt">${escapeHtml(part.prompt).replaceAll("\n", "<br />")}</div>
         <textarea class="writing-box" data-writing="${escapeHtml(key)}" data-min="${escapeHtml(part.min_words)}" data-max="${escapeHtml(part.max_words)}" ${locked ? "disabled" : ""}>${escapeHtml(text)}</textarea>
         <div class="block-actions">
-          <span class="word-pill" data-word-count="${escapeHtml(key)}">Words: ${count}</span>
+          <span class="word-pill ${status.kind}" data-word-count="${escapeHtml(key)}">Words: ${count}</span>
           <span class="status-pill ${status.kind}" data-word-status="${escapeHtml(key)}">${escapeHtml(status.label)}</span>
         </div>
       </div>
@@ -785,11 +908,6 @@ function bindSectionEvents(section) {
   const checkButton = dom.examContent.querySelector("[data-action='check-section']");
   if (checkButton) {
     checkButton.addEventListener("click", () => checkSection(section));
-  }
-
-  const exitButton = dom.examContent.querySelector("[data-action='exit-test']");
-  if (exitButton) {
-    exitButton.addEventListener("click", exitTest);
   }
 
   const saveWritingButton = dom.examContent.querySelector("[data-action='save-writing']");
@@ -850,10 +968,10 @@ function bindDragDropEvents() {
     });
 
     zone.addEventListener("click", (event) => {
-      const clearKey = event.target.dataset.clearDrop;
-      if (clearKey) {
+      const clearButton = event.target.closest("[data-clear-drop]");
+      if (clearButton) {
         event.stopPropagation();
-        setDroppedAnswer(clearKey, "");
+        setDroppedAnswer(clearButton.dataset.clearDrop, "");
         return;
       }
 
@@ -876,7 +994,10 @@ function updateWritingStatus(textarea) {
   const status = wordStatus(count, Number(textarea.dataset.min), Number(textarea.dataset.max));
   const countNode = dom.examContent.querySelector(`[data-word-count="${CSS.escape(key)}"]`);
   const statusNode = dom.examContent.querySelector(`[data-word-status="${CSS.escape(key)}"]`);
-  if (countNode) countNode.textContent = `Words: ${count}`;
+  if (countNode) {
+    countNode.textContent = `Words: ${count}`;
+    countNode.className = `word-pill ${status.kind}`;
+  }
   if (statusNode) {
     statusNode.textContent = status.label;
     statusNode.className = `status-pill ${status.kind}`;
@@ -884,7 +1005,7 @@ function updateWritingStatus(textarea) {
 }
 
 function wordStatus(count, min, max) {
-  if (min && count < min) return { kind: "warn", label: `Below limit: ${min}-${max} words` };
+  if (min && count < min) return { kind: "bad", label: `Below limit: ${min}-${max} words` };
   if (max && count > max) return { kind: "bad", label: `Above limit: ${min}-${max} words` };
   return { kind: "ok", label: `Within limit: ${min}-${max} words` };
 }
@@ -981,7 +1102,7 @@ function renderResultHistory() {
           <strong>${escapeHtml(record.testTitle)}</strong>
           <span>${escapeHtml(record.activeSectionId || "Not started")}</span>
           <small>${new Date(record.updatedAt).toLocaleString()}</small>
-          <button class="secondary-button" type="button" data-continue-file="${escapeHtml(record.file)}" data-continue-section="${escapeHtml(record.activeSectionId || "")}">Continue</button>
+          <button class="secondary-button" type="button" data-continue-file="${escapeHtml(record.file)}" data-continue-section="${escapeHtml(record.activeSectionId || "")}" data-progress-key="${escapeHtml(record.key)}">Continue</button>
           <button class="danger-button" type="button" data-delete-progress="${escapeHtml(record.key)}">Delete</button>
         </div>
       `).join("")}
@@ -1006,7 +1127,9 @@ function renderResultHistory() {
   dom.resultHistory.innerHTML = `${progressHtml}${resultsHtml}`;
   dom.resultHistory.querySelectorAll("[data-continue-file]").forEach((button) => {
     button.addEventListener("click", () => {
-      enterExam(button.dataset.continueFile, button.dataset.continueSection || null, true);
+      enterExam(button.dataset.continueFile, button.dataset.continueSection || null, true, {
+        progressKey: button.dataset.progressKey
+      });
     });
   });
 
@@ -1051,20 +1174,53 @@ function startTimer() {
   const activeSection = appState.test.sections.find((section) => section.id === appState.activeSectionId);
   appState.timer.limitSeconds = getTimerScope() === "test" ? getTotalLimitSeconds() : getSectionLimitMinutes(activeSection) * 60;
   appState.timer.remainingSeconds = appState.timer.limitSeconds;
-  restorePracticeTimerIfAvailable(activeSection);
+  restoreTimerIfAvailable(activeSection);
   dom.timerPanel.classList.remove("is-hidden");
   renderTimer();
   scheduleTimerInterval();
 }
 
-function restorePracticeTimerIfAvailable(activeSection) {
-  const saved = appState.timer.savedState;
-  if (!appState.timer.restoreOnStart || !saved || saved.mode !== "practice") return;
-  if (saved.mode !== getTimerMode() || saved.scope !== getTimerScope() || saved.sectionId !== activeSection?.id) return;
+function timerSnapshotMatchesCurrentMode(saved, activeSection) {
+  if (!saved || saved.mode !== getTimerMode() || saved.scope !== getTimerScope()) return false;
+  if (saved.scope === "section" && saved.sectionId !== activeSection?.id) return false;
+  return true;
+}
 
-  appState.timer.accumulatedSeconds = Number(saved.elapsedSeconds) || 0;
+function savedTimerForActiveSection(activeSection) {
+  const saved = appState.timer.savedState;
+  if (!saved || saved.mode !== getTimerMode() || saved.scope !== getTimerScope()) return null;
+  if (saved.scope !== "section") return saved;
+
+  const sectionState = appState.timer.sectionStates?.[activeSection?.id];
+  if (sectionState) return sectionState;
+  return timerSnapshotMatchesCurrentMode(saved, activeSection) ? saved : null;
+}
+
+function restoreTimerIfAvailable(activeSection) {
+  const rootSaved = appState.timer.savedState;
+  const saved = savedTimerForActiveSection(activeSection);
+  if (!saved) return;
+
+  if (rootSaved.mode === "practice") {
+    appState.timer.accumulatedSeconds = Math.max(0, Number(saved.elapsedSeconds) || 0);
+    appState.timer.elapsedSeconds = appState.timer.accumulatedSeconds;
+    appState.timer.remainingSeconds = Math.max(0, Number(saved.remainingSeconds) || appState.timer.remainingSeconds);
+    appState.timer.restoreOnStart = false;
+    return;
+  }
+
+  if (rootSaved.mode !== "exam") return;
+
+  const savedRemaining = Number(saved.remainingSeconds);
+  const savedElapsed = Number(saved.elapsedSeconds);
+  const remaining = Number.isFinite(savedRemaining)
+    ? Math.min(appState.timer.limitSeconds, Math.max(0, savedRemaining))
+    : Math.max(0, appState.timer.limitSeconds - (Number.isFinite(savedElapsed) ? savedElapsed : 0));
+
+  appState.timer.remainingSeconds = remaining;
+  appState.timer.accumulatedSeconds = appState.timer.limitSeconds - remaining;
   appState.timer.elapsedSeconds = appState.timer.accumulatedSeconds;
-  appState.timer.remainingSeconds = Number(saved.remainingSeconds) || appState.timer.remainingSeconds;
+  appState.timer.startedAt = Date.now();
   appState.timer.restoreOnStart = false;
 }
 
@@ -1089,6 +1245,7 @@ function tickTimer() {
   }
 
   renderTimer();
+  saveProgress();
 }
 
 function pausePracticeTimer() {
@@ -1133,6 +1290,7 @@ function handleTimeExpired() {
 function showResults(push = true, persist = true) {
   window.clearInterval(appState.timer.intervalId);
   dom.timerPanel.classList.add("is-hidden");
+  dom.topbarExitBtn.classList.add("is-hidden");
   dom.examScreen.classList.add("is-hidden");
   dom.resultsScreen.classList.remove("is-hidden");
   dom.startScreen.classList.add("is-hidden");
@@ -1164,9 +1322,123 @@ function showResults(push = true, persist = true) {
       <p class="muted">Writing is saved without automatic scoring.</p>
     </div>
     ${appState.test.sections.map(renderResultCard).join("")}
+    <div class="result-card result-actions-card">
+      <strong>Teacher export</strong>
+      <p class="muted">Download an HTML report with tasks, answers and writing texts.</p>
+      <button class="secondary-button" type="button" data-action="export-teacher-report">Download HTML</button>
+    </div>
   `;
 
+  const exportButton = dom.resultsContent.querySelector("[data-action='export-teacher-report']");
+  if (exportButton) exportButton.addEventListener("click", downloadTeacherReport);
+
   if (push) updateRoute(buildResultsPath(appState.selectedFile));
+}
+
+function reportAnswerClass(userAnswer, question) {
+  if (!userAnswer) return "missing";
+  return isAnswerCorrect(userAnswer, question) ? "correct" : "wrong";
+}
+
+function renderReportQuestion(section, question) {
+  const userAnswer = appState.answers[answerKey(section.id, question.number)] || "";
+  const answerClass = reportAnswerClass(userAnswer, question);
+  const correct = correctValues(question).filter(Boolean).join(" / ");
+  const needsCorrectAnswer = answerClass !== "correct" && correct;
+
+  return `
+    <div class="report-question">
+      <div class="report-prompt"><strong>${escapeHtml(question.number)}.</strong> ${escapeHtml(question.prompt || "Question")}</div>
+      <div class="report-answer ${answerClass}">My answer: ${userAnswer ? escapeHtml(userAnswer) : "No answer"}</div>
+      ${needsCorrectAnswer ? `<div class="report-correct">Correct answer: ${escapeHtml(correct)}</div>` : ""}
+    </div>
+  `;
+}
+
+function renderReportWritingPart(section, part) {
+  const text = appState.answers[answerKey(section.id, part.id)] || "";
+  const count = wordCount(text);
+
+  return `
+    <article class="report-part">
+      <h3>${escapeHtml(part.title || part.id)}</h3>
+      <div class="report-task">${escapeHtml(part.prompt || "").replaceAll("\n", "<br />")}</div>
+      <p class="report-meta">Words: ${count}</p>
+      <div class="report-writing">${escapeHtml(text || "No text submitted")}</div>
+    </article>
+  `;
+}
+
+function renderReportPart(section, part) {
+  if (part.type === "long_text") return renderReportWritingPart(section, part);
+  const questions = Array.isArray(part.questions) ? part.questions : [];
+
+  return `
+    <article class="report-part">
+      <h3>${escapeHtml(part.title || part.id)}</h3>
+      ${part.instructions ? `<p class="report-meta">${escapeHtml(part.instructions)}</p>` : ""}
+      ${part.passage ? `<div class="report-task">${escapeHtml(part.passage).replaceAll("\n", "<br />")}</div>` : ""}
+      ${questions.map((question) => renderReportQuestion(section, question)).join("")}
+    </article>
+  `;
+}
+
+function buildTeacherReportHtml() {
+  const generatedAt = new Date().toLocaleString();
+  const title = `${appState.test.title} - Teacher report`;
+  const body = appState.test.sections.map((section) => `
+    <section class="report-section">
+      <h2>${escapeHtml(section.title || section.id)}</h2>
+      ${(section.parts || []).map((part) => renderReportPart(section, part)).join("")}
+    </section>
+  `).join("");
+
+  return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>${escapeHtml(title)}</title>
+  <style>
+    body { margin: 0; padding: 32px; font-family: Arial, sans-serif; color: #1d2430; line-height: 1.5; }
+    h1, h2, h3 { margin: 0 0 12px; }
+    h1 { font-size: 28px; }
+    h2 { margin-top: 28px; padding-bottom: 8px; border-bottom: 2px solid #d0d5dd; }
+    h3 { margin-top: 18px; font-size: 18px; }
+    .report-meta { color: #667085; font-size: 14px; }
+    .report-part { margin: 18px 0; padding: 16px; border: 1px solid #d0d5dd; border-radius: 8px; }
+    .report-task { margin: 12px 0; padding: 12px; background: #f8fafc; border: 1px solid #eaecf0; border-radius: 6px; }
+    .report-question { margin: 12px 0; padding-top: 12px; border-top: 1px solid #eaecf0; }
+    .report-answer { margin-top: 6px; font-weight: 700; }
+    .report-answer.correct { color: #027a48; }
+    .report-answer.wrong, .report-answer.missing { color: #b42318; }
+    .report-correct { margin-top: 4px; color: #175cd3; font-weight: 700; }
+    .report-writing { white-space: pre-wrap; padding: 14px; border: 1px solid #d0d5dd; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>${escapeHtml(title)}</h1>
+  <p class="report-meta">Generated: ${escapeHtml(generatedAt)}</p>
+  ${body}
+</body>
+</html>`;
+}
+
+function reportFileName() {
+  const base = `${appState.test.id || "test"}-teacher-report`;
+  return `${base.replace(/[^a-z0-9_-]+/gi, "-").toLowerCase()}.html`;
+}
+
+function downloadTeacherReport() {
+  const blob = new Blob([buildTeacherReportHtml()], { type: "text/html;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = reportFileName();
+  document.body.append(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
 }
 
 function writingWordCounts() {
@@ -1196,6 +1468,7 @@ function renderResultCard(section) {
 
 dom.refreshTests.addEventListener("click", loadTests);
 dom.startBtn.addEventListener("click", startExam);
+dom.topbarExitBtn.addEventListener("click", exitTest);
 dom.restartBtn.addEventListener("click", () => {
   showStartScreen(true);
   loadTests();
