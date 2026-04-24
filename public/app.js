@@ -19,7 +19,7 @@ const appState = {
     isPaused: false,
     restoreOnStart: false,
     savedState: null,
-    sectionStates: {},
+    audioStates: {},
     locked: false
   }
 };
@@ -53,25 +53,36 @@ function storageKey() {
   return appState.progressKey || defaultProgressKey();
 }
 
-function defaultProgressKey(testId = appState.test?.id) {
-  return testId ? `examforge:progress:${testId}` : null;
+function progressModeKey(mode = getTimerMode()) {
+  return mode || "exam";
 }
 
-function newProgressKey(testId = appState.test?.id) {
-  return testId ? `examforge:progress:${testId}:${Date.now()}` : null;
+function defaultProgressKey(testId = appState.test?.id, mode = getTimerMode()) {
+  return testId ? `examforge:progress:${testId}:${progressModeKey(mode)}` : null;
 }
 
-function activeProgressStorageKey(testId = appState.test?.id) {
-  return testId ? `examforge:active-progress:${testId}` : null;
+function newProgressKey(testId = appState.test?.id, mode = getTimerMode()) {
+  return testId ? `examforge:progress:${testId}:${progressModeKey(mode)}:${Date.now()}` : null;
+}
+
+function activeProgressStorageKey(testId = appState.test?.id, mode = getTimerMode()) {
+  return testId ? `examforge:active-progress:${testId}:${progressModeKey(mode)}` : null;
+}
+
+function timerStorageKey(testId = appState.test?.id, mode = getTimerMode(), sectionId = appState.activeSectionId) {
+  if (!testId) return null;
+  const scope = getTimerScope();
+  const sectionPart = scope === "section" ? `:${sectionId || "section"}` : "";
+  return `examforge:timer:${testId}:${progressModeKey(mode)}:${scope}${sectionPart}`;
 }
 
 function saveActiveProgressKey() {
-  const key = activeProgressStorageKey();
+  const key = activeProgressStorageKey(appState.test?.id, getTimerMode());
   if (key && appState.progressKey) sessionStorage.setItem(key, appState.progressKey);
 }
 
-function loadActiveProgressKey(testId = appState.test?.id) {
-  const key = activeProgressStorageKey(testId);
+function loadActiveProgressKey(testId = appState.test?.id, mode = getTimerMode()) {
+  const key = activeProgressStorageKey(testId, mode);
   return key ? sessionStorage.getItem(key) : null;
 }
 
@@ -133,6 +144,9 @@ function saveProgress() {
   const key = storageKey();
   if (!key) return;
   saveActiveProgressKey();
+  const timerSnapshot = getTimerSnapshot();
+  appState.timer.savedState = timerSnapshot;
+  saveTimerSnapshot(timerSnapshot);
   localStorage.setItem(
     key,
     JSON.stringify({
@@ -140,7 +154,8 @@ function saveProgress() {
       checked: appState.checked,
       sectionScores: appState.sectionScores,
       activeSectionId: appState.activeSectionId,
-      timer: getTimerSnapshot(),
+      timer: timerSnapshot,
+      audioStates: appState.timer.audioStates,
       testId: appState.test.id,
       testTitle: appState.test.title,
       file: appState.selectedFile,
@@ -149,30 +164,66 @@ function saveProgress() {
   );
 }
 
+function saveTimerSnapshot(snapshot = getTimerSnapshot()) {
+  if (!snapshot || !appState.test) return;
+  const testId = appState.test.id;
+  const mode = snapshot.mode || getTimerMode();
+  const scope = snapshot.scope || getTimerScope();
+
+  if (scope === "section") {
+    const sectionId = snapshot.sectionId || appState.activeSectionId;
+    const key = timerStorageKey(testId, mode, sectionId);
+    if (key) {
+      localStorage.setItem(key, JSON.stringify({ ...snapshot, sectionId }));
+    }
+    return;
+  }
+
+  const key = timerStorageKey(testId, mode);
+  if (key) localStorage.setItem(key, JSON.stringify(snapshot));
+}
+
+function loadTimerSnapshot(sectionId = appState.activeSectionId) {
+  if (!appState.test) return null;
+  const mode = getTimerMode();
+  const scope = getTimerScope();
+  const key = timerStorageKey(appState.test.id, mode, sectionId);
+  if (!key) return null;
+
+  const raw = localStorage.getItem(key);
+  if (raw) {
+    try {
+      const parsed = JSON.parse(raw);
+      if (parsed && parsed.mode === mode && parsed.scope === scope) return parsed;
+    } catch {
+      localStorage.removeItem(key);
+    }
+  }
+
+  if (scope === "section") return null;
+
+  const rootKey = timerStorageKey(appState.test.id, mode);
+  const rootRaw = rootKey ? localStorage.getItem(rootKey) : null;
+  if (!rootRaw) return null;
+  try {
+    const parsed = JSON.parse(rootRaw);
+    if (parsed && parsed.mode === mode && parsed.scope === scope) return parsed;
+  } catch {
+    localStorage.removeItem(rootKey);
+  }
+  return null;
+}
+
 function getTimerSnapshot() {
-  if (!appState.test || dom.timerPanel.classList.contains("is-hidden")) return null;
-  const elapsedSeconds = appState.timer.isPaused
-    ? appState.timer.elapsedSeconds
-    : appState.timer.accumulatedSeconds + Math.floor((Date.now() - appState.timer.startedAt) / 1000);
-  const remainingSeconds = getTimerMode() === "exam"
-    ? Math.max(0, appState.timer.limitSeconds - elapsedSeconds)
-    : appState.timer.remainingSeconds;
-  const sectionState = {
-    elapsedSeconds,
-    remainingSeconds
-  };
-  appState.timer.sectionStates = {
-    ...appState.timer.sectionStates,
-    [appState.activeSectionId]: sectionState
-  };
+  if (!appState.test) return null;
+  if (appState.timer.remainingSeconds === 0 && appState.timer.elapsedSeconds === 0 && appState.timer.limitSeconds === 0) return null;
 
   return {
     mode: getTimerMode(),
     scope: getTimerScope(),
     sectionId: appState.activeSectionId,
-    elapsedSeconds,
-    remainingSeconds,
-    sections: appState.timer.sectionStates
+    elapsedSeconds: appState.timer.elapsedSeconds,
+    remainingSeconds: appState.timer.remainingSeconds,
   };
 }
 
@@ -190,11 +241,28 @@ function loadProgress(progressKey = storageKey()) {
     appState.sectionScores = saved.sectionScores || {};
     appState.activeSectionId = saved.activeSectionId || appState.activeSectionId;
     appState.timer.savedState = saved.timer || null;
-    appState.timer.sectionStates = saved.timer?.sections || {};
+    appState.timer.audioStates = saved.audioStates || {};
     appState.timer.restoreOnStart = Boolean(saved.timer);
   } catch {
     localStorage.removeItem(key);
   }
+}
+
+function resetRuntimeState() {
+  appState.answers = {};
+  appState.checked = {};
+  appState.sectionScores = {};
+  appState.activeSectionId = null;
+  appState.progressKey = null;
+  appState.timer.startedAt = null;
+  appState.timer.remainingSeconds = 0;
+  appState.timer.elapsedSeconds = 0;
+  appState.timer.limitSeconds = 0;
+  appState.timer.isPaused = false;
+  appState.timer.restoreOnStart = false;
+  appState.timer.savedState = null;
+  appState.timer.audioStates = {};
+  appState.timer.locked = false;
 }
 
 function appBasePath() {
@@ -225,8 +293,10 @@ function buildResultsPath(file) {
   return routePath(`/test/${encodeURIComponent(file)}/results`);
 }
 
-function updateRoute(path) {
+function updateRoute(path, options = {}) {
+  const shouldSave = options.save !== false;
   if (window.location.protocol === "file:") return;
+  if (shouldSave) saveProgress();
   if (window.location.pathname !== path) {
     history.pushState({}, "", path);
   }
@@ -372,47 +442,49 @@ function renderTestsList() {
 
 async function startExam() {
   if (!appState.selectedFile) return;
-  await enterExam(appState.selectedFile, null, true, { reset: true, newAttempt: true });
+  const mode = getTimerMode();
+  const existingProgress = loadActiveProgressKey(appState.selectedFile, mode) || defaultProgressKey(appState.selectedFile, mode);
+  await enterExam(appState.selectedFile, null, true, {
+    progressKey: existingProgress || undefined,
+    reset: false,
+    newAttempt: false
+  });
 }
 
 async function enterExam(file, sectionId = null, push = true, options = {}) {
   const enterOptions = typeof options === "boolean" ? { reset: options } : options;
+  const mode = getTimerMode();
   const needsLoad = !appState.test || appState.loadedFile !== file;
+  const progressKey = enterOptions.progressKey || loadActiveProgressKey(file, mode) || defaultProgressKey(file, mode);
 
   if (needsLoad) {
     appState.test = await fetchTestFile(file);
     appState.selectedFile = file;
     appState.loadedFile = file;
-    appState.progressKey = null;
-    appState.answers = {};
-    appState.checked = {};
-    appState.sectionScores = {};
-    appState.activeSectionId = null;
-    appState.timer.savedState = null;
-    appState.timer.sectionStates = {};
-    appState.timer.restoreOnStart = false;
-    if (!enterOptions.reset && !enterOptions.newAttempt) {
-      loadProgress(enterOptions.progressKey || loadActiveProgressKey(appState.test.id) || defaultProgressKey(appState.test.id));
-    }
+    resetRuntimeState();
   }
 
   if (enterOptions.reset) {
-    appState.progressKey = enterOptions.newAttempt ? newProgressKey(appState.test.id) : defaultProgressKey(appState.test.id);
-    appState.answers = {};
-    appState.checked = {};
-    appState.sectionScores = {};
-    appState.activeSectionId = null;
-    appState.timer.savedState = null;
-    appState.timer.sectionStates = {};
-    appState.timer.restoreOnStart = false;
-  } else if (enterOptions.progressKey && enterOptions.progressKey !== appState.progressKey) {
-    loadProgress(enterOptions.progressKey);
+    appState.progressKey = enterOptions.newAttempt ? newProgressKey(appState.test.id, mode) : defaultProgressKey(appState.test.id, mode);
+    resetRuntimeState();
+    appState.progressKey = enterOptions.newAttempt ? newProgressKey(appState.test.id, mode) : defaultProgressKey(appState.test.id, mode);
+  } else {
+    resetRuntimeState();
+    const beforeLoadKey = progressKey;
+    loadProgress(beforeLoadKey);
+    if (!appState.progressKey) {
+      appState.progressKey = beforeLoadKey;
+    }
   }
 
   const firstSectionId = appState.test.sections[0]?.id || null;
   const validSection = appState.test.sections.find((section) => section.id === sectionId);
   appState.activeSectionId = validSection?.id || appState.activeSectionId || firstSectionId;
   appState.timer.locked = false;
+  const timerSnapshot = loadTimerSnapshot(appState.activeSectionId);
+  if (timerSnapshot) {
+    appState.timer.savedState = timerSnapshot;
+  }
 
   showExamScreen();
   renderExam();
@@ -421,7 +493,7 @@ async function enterExam(file, sectionId = null, push = true, options = {}) {
     dom.timerPanel.classList.add("is-hidden");
     appState.timer.locked = true;
   } else {
-    startTimer();
+    syncTimerForActiveSection();
     saveProgress();
   }
   if (push) updateRoute(buildExamPath(file, appState.activeSectionId));
@@ -446,11 +518,11 @@ function renderTabs() {
       appState.activeSectionId = button.dataset.section;
       appState.timer.locked = false;
       renderExam();
-      updateRoute(buildExamPath(appState.selectedFile, appState.activeSectionId));
-      if (!isCurrentTestCompleted() && getTimerScope() === "section") {
-        startTimer();
+      if (!isCurrentTestCompleted()) {
+        syncTimerForActiveSection();
         saveProgress();
       }
+      updateRoute(buildExamPath(appState.selectedFile, appState.activeSectionId), { save: false });
     });
   });
 }
@@ -897,6 +969,9 @@ function bindSectionEvents(section) {
   });
 
   dom.examContent.querySelectorAll("[data-writing]").forEach((textarea) => {
+    textarea.setAttribute("spellcheck", "false");
+    textarea.setAttribute("autocapitalize", "off");
+    textarea.setAttribute("autocomplete", "off");
     textarea.addEventListener("input", () => {
       appState.answers[textarea.dataset.writing] = textarea.value;
       updateWritingStatus(textarea);
@@ -927,6 +1002,8 @@ function bindSectionEvents(section) {
 
   const finishButton = dom.examContent.querySelector("[data-action='finish-test']");
   if (finishButton) finishButton.addEventListener("click", showResults);
+
+  bindAudioEvents(section);
 }
 
 function exitTest() {
@@ -992,6 +1069,45 @@ function setDroppedAnswer(key, value) {
   appState.answers[key] = value;
   saveProgress();
   renderActiveSection();
+}
+
+function audioStateKey(sectionId) {
+  const file = appState.selectedFile || appState.test?.id || "test";
+  return `${file}:${sectionId}`;
+}
+
+function bindAudioEvents(section) {
+  const audio = dom.examContent.querySelector("audio");
+  if (!audio) return;
+
+  const key = audioStateKey(section.id);
+  const saved = appState.timer.audioStates?.[key];
+  const restoreTime = Number(saved?.currentTime);
+
+  if (Number.isFinite(restoreTime) && restoreTime > 0) {
+    audio.addEventListener("loadedmetadata", () => {
+      try {
+        audio.currentTime = Math.min(restoreTime, Math.max(0, audio.duration || restoreTime));
+      } catch {
+        // Ignore seek failures on browsers that restrict early seeking.
+      }
+    }, { once: true });
+  }
+
+  const persist = () => {
+    appState.timer.audioStates[key] = {
+      currentTime: Math.max(0, audio.currentTime || 0)
+    };
+    saveProgress();
+  };
+
+  audio.addEventListener("timeupdate", persist);
+  audio.addEventListener("seeked", persist);
+  audio.addEventListener("pause", persist);
+  audio.addEventListener("ended", () => {
+    appState.timer.audioStates[key] = { currentTime: 0 };
+    saveProgress();
+  });
 }
 
 function updateWritingStatus(textarea) {
@@ -1132,6 +1248,8 @@ function renderResultHistory() {
         <strong>${escapeHtml(record.testTitle)}</strong>
         <span>${record.totalCorrect} of ${record.totalQuestions}</span>
         <small>${new Date(record.completedAt).toLocaleString()}</small>
+        <button class="secondary-button" type="button" data-open-result="${escapeHtml(record.id)}">View</button>
+        <button class="danger-button" type="button" data-delete-result="${escapeHtml(record.id)}">Delete</button>
       </div>
     `)
     .join("")}
@@ -1150,6 +1268,17 @@ function renderResultHistory() {
   dom.resultHistory.querySelectorAll("[data-delete-progress]").forEach((button) => {
     button.addEventListener("click", () => {
       localStorage.removeItem(button.dataset.deleteProgress);
+      renderResultHistory();
+    });
+  });
+
+  dom.resultHistory.querySelectorAll("[data-open-result]").forEach((button) => {
+    button.addEventListener("click", () => openResultRecord(button.dataset.openResult));
+  });
+
+  dom.resultHistory.querySelectorAll("[data-delete-result]").forEach((button) => {
+    button.addEventListener("click", () => {
+      deleteResultRecord(button.dataset.deleteResult);
       renderResultHistory();
     });
   });
@@ -1177,65 +1306,132 @@ function loadProgressRecords() {
     .sort((left, right) => new Date(right.updatedAt) - new Date(left.updatedAt));
 }
 
-function startTimer() {
+function deleteResultRecord(recordId) {
+  const raw = localStorage.getItem(resultsStorageKey());
+  if (!raw) return;
+
+  let records = [];
+  try {
+    records = JSON.parse(raw);
+  } catch {
+    records = [];
+  }
+
+  localStorage.setItem(resultsStorageKey(), JSON.stringify(records.filter((record) => record.id !== recordId)));
+}
+
+async function openResultRecord(recordId) {
+  const record = loadResultRecords().find((item) => item.id === recordId);
+  if (!record) return;
+
+  const hasFullAttempt = Boolean(record.file && record.answers && record.checked);
+  if (!hasFullAttempt) {
+    openTeacherReportRecord(record);
+    return;
+  }
+
+  await enterExam(record.file, record.activeSectionId || null, true, {
+    progressKey: record.progressKey || defaultProgressKey(record.testId || record.file),
+    reset: false
+  });
+
+  appState.answers = record.answers || {};
+  appState.checked = record.checked || {};
+  appState.sectionScores = record.sectionScores || {};
+  appState.activeSectionId = record.activeSectionId || appState.activeSectionId;
+  appState.timer.savedState = record.timer || null;
+  appState.timer.audioStates = record.audioStates || {};
+  appState.timer.locked = true;
+
+  renderExam();
+  showResults(false, false);
+}
+
+function buildTeacherReportFromRecord(record) {
+  const generatedAt = new Date().toLocaleString();
+  const title = `${record.testTitle || record.testId || "Test"} - Teacher report`;
+  const sections = record.sectionScores || {};
+  const sectionRows = Object.entries(sections).map(([sectionId, score]) => {
+    const label = `${sectionId.charAt(0).toUpperCase()}${sectionId.slice(1)}`;
+    return `
+      <section class="report-part">
+        <h3>${escapeHtml(label)}</h3>
+        <p class="report-meta">Score: ${escapeHtml(score.correct)} / ${escapeHtml(score.total)}</p>
+      </section>
+    `;
+  }).join("");
+  const writing = record.writingWordCounts || {};
+  const writingRows = Object.keys(writing).length
+    ? `
+      <section class="report-part">
+        <h3>Writing</h3>
+        ${Object.entries(writing).map(([partId, count]) => `<p class="report-meta">${escapeHtml(partId)}: ${escapeHtml(count)} words</p>`).join("")}
+      </section>
+    `
+    : "";
+
+  return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>${escapeHtml(title)}</title>
+  <style>
+    body { margin: 0; padding: 32px; font-family: Arial, sans-serif; color: #1d2430; line-height: 1.5; }
+    h1, h2, h3 { margin: 0 0 12px; }
+    h1 { font-size: 28px; }
+    .report-meta { color: #667085; font-size: 14px; }
+    .report-part { margin: 18px 0; padding: 16px; border: 1px solid #d0d5dd; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <h1>${escapeHtml(title)}</h1>
+  <p class="report-meta">Generated: ${escapeHtml(generatedAt)}</p>
+  <section class="report-part">
+    <h3>Summary</h3>
+    <p class="report-meta">Total score: ${escapeHtml(record.totalCorrect ?? 0)} / ${escapeHtml(record.totalQuestions ?? 0)}</p>
+    <p class="report-meta">Completed: ${escapeHtml(record.completedAt || "")}</p>
+  </section>
+  ${sectionRows}
+  ${writingRows}
+</body>
+</html>`;
+}
+
+function openTeacherReportRecord(record) {
+  const html = buildTeacherReportFromRecord(record);
+  const blob = new Blob([html], { type: "text/html;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const win = window.open(url, "_blank", "noopener,noreferrer");
+  if (!win) {
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `${String(record.testId || "test")}-teacher-report.html`;
+    document.body.append(link);
+    link.click();
+    link.remove();
+  }
+  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function syncTimerForActiveSection() {
   window.clearInterval(appState.timer.intervalId);
-  appState.timer.startedAt = Date.now();
-  appState.timer.accumulatedSeconds = 0;
-  appState.timer.elapsedSeconds = 0;
   appState.timer.locked = false;
   appState.timer.isPaused = false;
 
   const activeSection = appState.test.sections.find((section) => section.id === appState.activeSectionId);
   appState.timer.limitSeconds = getTimerScope() === "test" ? getTotalLimitSeconds() : getSectionLimitMinutes(activeSection) * 60;
-  appState.timer.remainingSeconds = appState.timer.limitSeconds;
-  restoreTimerIfAvailable(activeSection);
+  const saved = loadTimerSnapshot(activeSection?.id);
+  const remainingSeconds = saved?.remainingSeconds;
+  appState.timer.remainingSeconds = Number.isFinite(Number(remainingSeconds))
+    ? Math.max(0, Number(remainingSeconds))
+    : appState.timer.limitSeconds;
+  appState.timer.elapsedSeconds = Number.isFinite(Number(saved?.elapsedSeconds))
+    ? Math.max(0, Number(saved.elapsedSeconds))
+    : Math.max(0, appState.timer.limitSeconds - appState.timer.remainingSeconds);
   dom.timerPanel.classList.remove("is-hidden");
   renderTimer();
   scheduleTimerInterval();
-}
-
-function timerSnapshotMatchesCurrentMode(saved, activeSection) {
-  if (!saved || saved.mode !== getTimerMode() || saved.scope !== getTimerScope()) return false;
-  if (saved.scope === "section" && saved.sectionId !== activeSection?.id) return false;
-  return true;
-}
-
-function savedTimerForActiveSection(activeSection) {
-  const saved = appState.timer.savedState;
-  if (!saved || saved.mode !== getTimerMode() || saved.scope !== getTimerScope()) return null;
-  if (saved.scope !== "section") return saved;
-
-  const sectionState = appState.timer.sectionStates?.[activeSection?.id];
-  if (sectionState) return sectionState;
-  return timerSnapshotMatchesCurrentMode(saved, activeSection) ? saved : null;
-}
-
-function restoreTimerIfAvailable(activeSection) {
-  const rootSaved = appState.timer.savedState;
-  const saved = savedTimerForActiveSection(activeSection);
-  if (!saved) return;
-
-  if (rootSaved.mode === "practice") {
-    appState.timer.accumulatedSeconds = Math.max(0, Number(saved.elapsedSeconds) || 0);
-    appState.timer.elapsedSeconds = appState.timer.accumulatedSeconds;
-    appState.timer.remainingSeconds = Math.max(0, Number(saved.remainingSeconds) || appState.timer.remainingSeconds);
-    appState.timer.restoreOnStart = false;
-    return;
-  }
-
-  if (rootSaved.mode !== "exam") return;
-
-  const savedRemaining = Number(saved.remainingSeconds);
-  const savedElapsed = Number(saved.elapsedSeconds);
-  const remaining = Number.isFinite(savedRemaining)
-    ? Math.min(appState.timer.limitSeconds, Math.max(0, savedRemaining))
-    : Math.max(0, appState.timer.limitSeconds - (Number.isFinite(savedElapsed) ? savedElapsed : 0));
-
-  appState.timer.remainingSeconds = remaining;
-  appState.timer.accumulatedSeconds = appState.timer.limitSeconds - remaining;
-  appState.timer.elapsedSeconds = appState.timer.accumulatedSeconds;
-  appState.timer.startedAt = Date.now();
-  appState.timer.restoreOnStart = false;
 }
 
 function scheduleTimerInterval() {
@@ -1248,14 +1444,18 @@ function scheduleTimerInterval() {
 function tickTimer() {
   if (appState.timer.isPaused) return;
   const mode = getTimerMode();
-  appState.timer.elapsedSeconds = appState.timer.accumulatedSeconds + Math.floor((Date.now() - appState.timer.startedAt) / 1000);
-
   if (mode === "exam") {
-    appState.timer.remainingSeconds = Math.max(0, appState.timer.limitSeconds - appState.timer.elapsedSeconds);
+    appState.timer.remainingSeconds = Math.max(0, appState.timer.remainingSeconds - 1);
+    appState.timer.elapsedSeconds = Math.min(appState.timer.limitSeconds, appState.timer.elapsedSeconds + 1);
     if (appState.timer.remainingSeconds <= 0) {
+      saveProgress();
       window.clearInterval(appState.timer.intervalId);
       handleTimeExpired();
+      return;
     }
+  } else {
+    appState.timer.elapsedSeconds = appState.timer.elapsedSeconds + 1;
+    appState.timer.remainingSeconds = appState.timer.remainingSeconds;
   }
 
   renderTimer();
@@ -1264,16 +1464,14 @@ function tickTimer() {
 
 function pausePracticeTimer() {
   if (getTimerMode() !== "practice" || appState.timer.isPaused || dom.timerPanel.classList.contains("is-hidden")) return;
-  tickTimer();
-  appState.timer.accumulatedSeconds = appState.timer.elapsedSeconds;
   appState.timer.isPaused = true;
   window.clearInterval(appState.timer.intervalId);
+  saveProgress();
   renderTimer();
 }
 
 function resumePracticeTimer() {
   if (getTimerMode() !== "practice" || !appState.timer.isPaused || dom.timerPanel.classList.contains("is-hidden")) return;
-  appState.timer.startedAt = Date.now();
   appState.timer.isPaused = false;
   scheduleTimerInterval();
   renderTimer();
@@ -1321,10 +1519,17 @@ function showResults(push = true, persist = true) {
       id: `${appState.test.id}:${completedAt}`,
       testId: appState.test.id,
       testTitle: appState.test.title,
+      file: appState.selectedFile,
+      progressKey: storageKey(),
       completedAt,
       totalCorrect,
       totalQuestions,
+      answers: appState.answers,
+      checked: appState.checked,
       sectionScores: appState.sectionScores,
+      audioStates: appState.timer.audioStates,
+      activeSectionId: appState.activeSectionId,
+      timer: getTimerSnapshot(),
       writingWordCounts: writingWordCounts()
     });
   }
