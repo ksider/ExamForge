@@ -1,0 +1,27 @@
+body { margin: 0; font-family: Arial, sans-serif; color: #1f2937; background: #f4f7fb; }
+.topbar { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid #d7dee8; background: #fff; }
+.topbar p { margin: 4px 0 0; color: #6b7280; }
+.topbar-actions button, .tabs button, .mini-tabs button, .section-head button { margin-left: 8px; }
+.layout { display: grid; grid-template-columns: 280px 1fr; min-height: calc(100vh - 68px); }
+.sidebar { border-right: 1px solid #d7dee8; background: #fff; padding: 16px; }
+.workspace { padding: 16px; }
+.tabs, .mini-tabs { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.tabs button.is-active, .screen.is-active { display: block; }
+.tabs button { padding: 10px 14px; }
+.screen { display: none; background: #fff; border: 1px solid #d7dee8; border-radius: 8px; padding: 16px; }
+.grid { display: grid; gap: 12px; }
+.grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+label { display: grid; gap: 6px; font-size: 14px; }
+input, select, textarea, button, pre { font: inherit; }
+input, select, textarea { border: 1px solid #cfd7e3; border-radius: 6px; padding: 10px; background: #fff; }
+textarea { min-height: 100px; resize: vertical; }
+button { border: 1px solid #cfd7e3; border-radius: 6px; padding: 10px 12px; background: #fff; cursor: pointer; }
+.tests-list { display: grid; gap: 8px; }
+.test-item { padding: 12px; border: 1px solid #d7dee8; border-radius: 8px; background: #fff; text-align: left; }
+.test-item strong { display: block; }
+.test-item small { color: #6b7280; }
+.section-head { display: flex; justify-content: space-between; align-items: center; margin: 18px 0 10px; }
+.section-parts, .part-item, .question-item { margin-top: 12px; }
+.part-item, .question-item { border: 1px solid #d7dee8; border-radius: 8px; padding: 12px; background: #fdfefe; }
+.question-item { display: grid; gap: 10px; }
+#previewBox, #validationBox { white-space: pre-wrap; background: #0b1020; color: #e6edf7; padding: 14px; border-radius: 8px; overflow: auto; }

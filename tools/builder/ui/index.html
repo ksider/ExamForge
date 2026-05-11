@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ExamForge Builder</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <strong>ExamForge Builder</strong>
+      <p>Local-only test editor and importer</p>
+    </div>
+    <div class="topbar-actions">
+      <button data-action="new">New test</button>
+      <button data-action="duplicate">Duplicate</button>
+      <button data-action="validate">Validate</button>
+      <button data-action="save">Save draft</button>
+      <button data-action="import">Import</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <section>
+        <h2>Dashboard</h2>
+        <div id="testsList" class="tests-list"></div>
+      </section>
+    </aside>
+
+    <section class="workspace">
+      <nav class="tabs">
+        <button class="is-active" data-screen="meta">Test meta</button>
+        <button data-screen="section">Section editor</button>
+        <button data-screen="part">Part editor</button>
+        <button data-screen="preview">Preview</button>
+      </nav>
+
+      <section class="screen is-active" data-panel="meta">
+        <h2>Test meta</h2>
+        <div class="grid two">
+          <label>Id<input data-field="id" /></label>
+          <label>Title<input data-field="title" /></label>
+          <label>Exam type<select data-field="examType"><option value="general">General</option><option value="academic">Academic</option></select></label>
+          <label>Listening minutes<input type="number" data-field="listening_minutes" /></label>
+          <label>Reading minutes<input type="number" data-field="reading_minutes" /></label>
+          <label>Writing minutes<input type="number" data-field="writing_minutes" /></label>
+        </div>
+      </section>
+
+      <section class="screen" data-panel="section">
+        <h2>Section editor</h2>
+        <div id="sectionTabs" class="mini-tabs"></div>
+        <div class="grid two">
+          <label>Section title<input data-section-field="title" /></label>
+          <label>Audio path<input data-section-field="audio" /></label>
+        </div>
+        <div class="section-parts">
+          <div class="section-head">
+            <strong>Parts</strong>
+            <button data-action="add-part">Add part</button>
+          </div>
+          <div id="partsList"></div>
+        </div>
+      </section>
+
+      <section class="screen" data-panel="part">
+        <h2>Part editor</h2>
+        <div class="grid two">
+          <label>Part id<input data-part-field="id" /></label>
+          <label>Part title<input data-part-field="title" /></label>
+          <label>Type<select data-part-field="type">
+            <option value="multiple_choice">multiple_choice</option>
+            <option value="gap_fill">gap_fill</option>
+            <option value="matching">matching</option>
+            <option value="sentence_insert">sentence_insert</option>
+            <option value="long_text">long_text</option>
+          </select></label>
+          <label>Instructions<input data-part-field="instructions" /></label>
+          <label>Passage<textarea data-part-field="passage"></textarea></label>
+          <label>Options<textarea data-part-field="options"></textarea></label>
+          <label>Min words<input type="number" data-part-field="min_words" /></label>
+          <label>Max words<input type="number" data-part-field="max_words" /></label>
+        </div>
+        <div class="section-head">
+          <strong>Questions</strong>
+          <button data-action="add-question">Add question</button>
+        </div>
+        <div id="questionsList"></div>
+      </section>
+
+      <section class="screen" data-panel="preview">
+        <h2>Preview / Validation</h2>
+        <pre id="previewBox"></pre>
+        <pre id="validationBox"></pre>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

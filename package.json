@@ -6,6 +6,12 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
+    "builder": "node tools/builder/cli.js",
+    "builder:list": "node tools/builder/cli.js list",
+    "builder:new": "node tools/builder/cli.js new",
+    "builder:duplicate": "node tools/builder/cli.js duplicate",
+    "builder:import": "node tools/builder/cli.js import",
+    "builder:validate": "node tools/builder/cli.js validate",
     "build:static": "node scripts/build-static.js",
     "export:static": "node scripts/build-static.js"
   },
