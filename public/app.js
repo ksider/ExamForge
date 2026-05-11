@@ -38,8 +38,33 @@ const dom = {
   resultSubtitle: document.querySelector("#resultSubtitle"),
   resultHistory: document.querySelector("#resultHistory"),
   topbarExitBtn: document.querySelector("#topbarExitBtn"),
-  restartBtn: document.querySelector("#restartBtn")
+  restartBtn: document.querySelector("#restartBtn"),
+  promptModal: document.querySelector("#promptModal"),
+  promptModalText: document.querySelector("#promptModalText"),
+  promptModalCancel: document.querySelector("#promptModalCancel"),
+  promptModalSave: document.querySelector("#promptModalSave")
 };
+
+// Bind modal events
+if (dom.promptModalCancel) {
+  dom.promptModalCancel.addEventListener("click", () => dom.promptModal.close());
+}
+if (dom.promptModalSave) {
+  dom.promptModalSave.addEventListener("click", () => {
+    const newPrompt = dom.promptModalText.value.trim();
+    const partId = dom.promptModalText.dataset.editingPart;
+    if (newPrompt && appState.test?.id === "custom_writing" && partId) {
+      const part = appState.test.sections[0].parts.find(p => p.id === partId);
+      if (part) {
+        part.prompt = newPrompt;
+        const storageKey = partId === "custom_task_1" ? "examforge:custom_prompt_1" : "examforge:custom_prompt_2";
+        localStorage.setItem(storageKey, newPrompt);
+        renderActiveSection();
+      }
+    }
+    dom.promptModal.close();
+  });
+}
 
 function getTimerMode() {
   return document.querySelector("input[name='timerMode']:checked").value;
@@ -369,6 +394,13 @@ async function loadTests() {
   try {
     const data = await fetchTestsIndex();
     appState.tests = data.tests || [];
+    
+    appState.tests.push({
+      file: "custom_writing",
+      title: "Custom Writing Practice",
+      sections: [{ id: "writing", title: "Writing" }]
+    });
+
     dom.startBtn.disabled = !appState.selectedFile;
     renderTestsList();
     renderResultHistory();
@@ -398,6 +430,38 @@ async function fetchTestsIndex() {
 }
 
 async function fetchTestFile(file) {
+  if (file === "custom_writing") {
+    const savedPrompt1 = localStorage.getItem("examforge:custom_prompt_1") || "Click here to edit the first writing task prompt. Replace this text with your own task.";
+    const savedPrompt2 = localStorage.getItem("examforge:custom_prompt_2") || "Click here to edit the second writing task prompt. Replace this text with your own task.";
+    return {
+      id: "custom_writing",
+      title: "Custom Writing Practice",
+      sections: [{
+        id: "writing",
+        title: "Writing",
+        time_minutes: 60,
+        parts: [
+          {
+            id: "custom_task_1",
+            title: "Task 1",
+            type: "long_text",
+            prompt: savedPrompt1,
+            min_words: 100,
+            max_words: 150
+          },
+          {
+            id: "custom_task_2",
+            title: "Task 2",
+            type: "long_text",
+            prompt: savedPrompt2,
+            min_words: 150,
+            max_words: 250
+          }
+        ]
+      }]
+    };
+  }
+
   const embeddedTest = window.EXAMFORGE_STATIC_DATA?.tests?.[file];
   if (embeddedTest) {
     appState.staticMode = true;
@@ -914,6 +978,7 @@ function renderWritingPart(section, part, locked) {
   const text = appState.answers[key] || "";
   const count = wordCount(text);
   const status = wordStatus(count, part.min_words, part.max_words);
+  const isCustom = appState.test.id === "custom_writing";
 
   return `
     <section class="part writing-part">
@@ -923,7 +988,7 @@ function renderWritingPart(section, part, locked) {
           <span class="question-number">${escapeHtml(part.id)}</span>
           <strong>${escapeHtml(part.title || part.id)}</strong>
         </div>
-        <div class="writing-prompt">${escapeHtml(part.prompt).replaceAll("\n", "<br />")}</div>
+        <div class="writing-prompt ${isCustom && !locked ? "is-editable" : ""}" ${isCustom && !locked ? `data-edit-prompt="${escapeHtml(part.id)}"` : ''} title="${isCustom && !locked ? "Click to edit prompt" : ""}">${escapeHtml(part.prompt).replaceAll("\n", "<br />")}</div>
         <textarea class="writing-box" data-writing="${escapeHtml(key)}" data-min="${escapeHtml(part.min_words)}" data-max="${escapeHtml(part.max_words)}" ${locked ? "disabled" : ""}>${escapeHtml(text)}</textarea>
         <div class="block-actions">
           <span class="word-pill ${status.kind}" data-word-count="${escapeHtml(key)}">Words: ${count}</span>
@@ -989,6 +1054,19 @@ function bindSectionEvents(section) {
   const undoCheckButton = dom.examContent.querySelector("[data-action='undo-check-section']");
   if (undoCheckButton) {
     undoCheckButton.addEventListener("click", () => undoCheckSection(section));
+  }
+
+  const promptBox = dom.examContent.querySelectorAll("[data-edit-prompt]");
+  if (promptBox.length) {
+    promptBox.forEach((box) => {
+      box.addEventListener("click", () => {
+        const partId = box.dataset.editPrompt;
+        const part = appState.test.sections[0].parts.find(p => p.id === partId);
+        dom.promptModalText.value = part.prompt;
+        dom.promptModalText.dataset.editingPart = partId;
+        dom.promptModal.showModal();
+      });
+    });
   }
 
   const saveWritingButton = dom.examContent.querySelector("[data-action='save-writing']");
@@ -1534,6 +1612,13 @@ function showResults(push = true, persist = true) {
     });
   }
 
+  const detailedReportHtml = appState.test.sections.map((section) => `
+    <section class="report-section" style="margin-top: 32px; padding-top: 16px; border-top: 2px solid var(--line);">
+      <h2>${escapeHtml(section.title || section.id)}</h2>
+      ${(section.parts || []).map((part) => renderReportPart(section, part)).join("")}
+    </section>
+  `).join("");
+
   dom.resultsContent.innerHTML = `
     <div class="result-card">
       <strong>Overall score</strong>
@@ -1545,6 +1630,9 @@ function showResults(push = true, persist = true) {
       <strong>Teacher export</strong>
       <p class="muted">Download an HTML report with tasks, answers and writing texts.</p>
       <button class="secondary-button" type="button" data-action="export-teacher-report">Download HTML</button>
+    </div>
+    <div style="grid-column: 1 / -1;" class="on-screen-report">
+      ${detailedReportHtml}
     </div>
   `;
 
@@ -1576,14 +1664,15 @@ function renderReportQuestion(section, question) {
 
 function renderReportWritingPart(section, part) {
   const text = appState.answers[answerKey(section.id, part.id)] || "";
-  const count = wordCount(text);
+  const words = wordCount(text);
+  const chars = text.length;
 
   return `
     <article class="report-part">
       <h3>${escapeHtml(part.title || part.id)}</h3>
-      <div class="report-task">${escapeHtml(part.prompt || "").replaceAll("\n", "<br />")}</div>
-      <p class="report-meta">Words: ${count}</p>
-      <div class="report-writing">${escapeHtml(text || "No text submitted")}</div>
+      <div class="report-task" style="font-style: italic; color: #555;">${escapeHtml(part.prompt || "").replaceAll("\n", "<br />")}</div>
+      <p class="report-meta" style="margin: 12px 0;"><strong>Words:</strong> ${words} | <strong>Characters:</strong> ${chars}</p>
+      <div class="report-answer" style="white-space: pre-wrap; font-size: 15px; color: #111;">${escapeHtml(text || "No text submitted")}</div>
     </article>
   `;
 }

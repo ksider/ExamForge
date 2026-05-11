@@ -1128,3 +1128,58 @@ legend {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+.writing-prompt.is-editable {
+  cursor: pointer;
+  border: 1px dashed var(--line);
+  padding: 10px;
+  border-radius: 6px;
+  background: #fdfdfd;
+  transition: all 0.2s;
+}
+
+.writing-prompt.is-editable:hover {
+  border-color: var(--brand);
+  background: #f0fdf9;
+}
+
+.writing-prompt.is-editable::after {
+  content: ' ✎ Edit';
+  color: var(--brand);
+  font-size: 12px;
+  font-weight: bold;
+  opacity: 0.7;
+}
+
+.writing-prompt.is-editable:hover::after {
+  opacity: 1;
+}
+
+.modal {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 0;
+  width: min(90vw, 600px);
+  max-width: 100%;
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+.modal-content {
+  padding: 24px;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
