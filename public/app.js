@@ -394,10 +394,10 @@ async function loadTests() {
   try {
     const data = await fetchTestsIndex();
     appState.tests = data.tests || [];
-    
+
     appState.tests.push({
       file: "custom_writing",
-      title: "Custom Writing Practice",
+      title: "✍️ Writing Practice",
       sections: [{ id: "writing", title: "Writing" }]
     });
 
@@ -946,16 +946,16 @@ function renderQuestionInput(section, part, question, value, locked) {
     return `
       <div class="options-list">
         ${(question.options || [])
-          .map((option) => {
-            const checked = String(value) === String(option) ? "checked" : "";
-            return `
+        .map((option) => {
+          const checked = String(value) === String(option) ? "checked" : "";
+          return `
               <label class="option-row">
                 <input type="radio" name="${escapeHtml(answerKey(section.id, question.number))}" value="${escapeHtml(option)}" ${checked} ${disabled} />
                 <span>${escapeHtml(option)}</span>
               </label>
             `;
-          })
-          .join("")}
+        })
+        .join("")}
       </div>
     `;
   }
@@ -1321,7 +1321,7 @@ function renderResultHistory() {
     ? `
       <h4>Completed results</h4>
       ${resultRecords
-    .map((record) => `
+      .map((record) => `
       <div class="history-row">
         <strong>${escapeHtml(record.testTitle)}</strong>
         <span>${record.totalCorrect} of ${record.totalQuestions}</span>
@@ -1330,7 +1330,7 @@ function renderResultHistory() {
         <button class="danger-button" type="button" data-delete-result="${escapeHtml(record.id)}">Delete</button>
       </div>
     `)
-    .join("")}
+      .join("")}
     `
     : "";
 
