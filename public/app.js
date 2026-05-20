@@ -393,7 +393,7 @@ async function loadTests() {
 
   try {
     const data = await fetchTestsIndex();
-    appState.tests = data.tests || [];
+    appState.tests = [...(data.tests || [])];
 
     appState.tests.push({
       file: "custom_writing",
