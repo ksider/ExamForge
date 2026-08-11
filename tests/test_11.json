@@ -1,0 +1,233 @@
+{
+  "id": "test_synonyms_hard_1",
+  "title": "Synonym Practice B2-C1",
+  "timer": {
+    "reading_minutes": 20
+  },
+  "sections": [
+    {
+      "id": "reading",
+      "title": "Reading",
+      "parts": [
+        {
+          "id": "part_1a",
+          "title": "Part 1a",
+          "type": "multiple_choice",
+          "instructions": "Read the sentences below and decide which option can best replace the word or words in bold so that the meaning remains the same.",
+          "questions": [
+            {
+              "number": 1,
+              "prompt": "The report highlights several issues that require immediate attention.",
+              "highlight": "highlights",
+              "options": ["a) conceals", "b) emphasises", "c) predicts", "d) records"],
+              "correct": "b) emphasises"
+            },
+            {
+              "number": 2,
+              "prompt": "The company has sufficient resources to complete the project.",
+              "highlight": "sufficient",
+              "options": ["a) additional", "b) available", "c) adequate", "d) separate"],
+              "correct": "c) adequate"
+            },
+            {
+              "number": 3,
+              "prompt": "Residents expressed concerns about the proposed motorway expansion.",
+              "highlight": "concerns",
+              "options": ["a) worries", "b) statements", "c) expectations", "d) demands"],
+              "correct": "a) worries"
+            },
+            {
+              "number": 4,
+              "prompt": "The museum houses an extensive collection of regional artwork.",
+              "highlight": "extensive",
+              "options": ["a) valuable", "b) diverse", "c) large", "d) historic"],
+              "correct": "c) large"
+            },
+            {
+              "number": 5,
+              "prompt": "The organisation aims to enhance access to education.",
+              "highlight": "enhance",
+              "options": ["a) improve", "b) monitor", "c) restrict", "d) measure"],
+              "correct": "a) improve"
+            },
+            {
+              "number": 6,
+              "prompt": "The findings suggest that further research is necessary.",
+              "highlight": "necessary",
+              "options": ["a) practical", "b) essential", "c) beneficial", "d) likely"],
+              "correct": "b) essential"
+            },
+            {
+              "number": 7,
+              "prompt": "The athlete demonstrated remarkable determination throughout the competition.",
+              "highlight": "remarkable",
+              "options": ["a) impressive", "b) expected", "c) unusual", "d) fortunate"],
+              "correct": "a) impressive"
+            },
+            {
+              "number": 8,
+              "prompt": "The council intends to allocate additional funding to the scheme.",
+              "highlight": "allocate",
+              "options": ["a) collect", "b) distribute", "c) request", "d) recover"],
+              "correct": "b) distribute"
+            },
+            {
+              "number": 9,
+              "prompt": "The new regulations will affect all businesses operating in the area.",
+              "highlight": "affect",
+              "options": ["a) influence", "b) inspect", "c) replace", "d) identify"],
+              "correct": "a) influence"
+            },
+            {
+              "number": 10,
+              "prompt": "The village has preserved many traditional customs.",
+              "highlight": "preserved",
+              "options": ["a) protected", "b) documented", "c) restored", "d) displayed"],
+              "correct": "a) protected"
+            },
+            {
+              "number": 11,
+              "prompt": "Customers are advised to retain their receipts.",
+              "highlight": "retain",
+              "options": ["a) exchange", "b) examine", "c) keep", "d) locate"],
+              "correct": "c) keep"
+            },
+            {
+              "number": 12,
+              "prompt": "The research team encountered several unexpected difficulties.",
+              "highlight": "encountered",
+              "options": ["a) solved", "b) experienced", "c) reported", "d) avoided"],
+              "correct": "b) experienced"
+            },
+            {
+              "number": 13,
+              "prompt": "The figures indicate a steady increase in demand.",
+              "highlight": "indicate",
+              "options": ["a) reveal", "b) estimate", "c) prove", "d) justify"],
+              "correct": "a) reveal"
+            },
+            {
+              "number": 14,
+              "prompt": "The architect proposed several modifications to the design.",
+              "highlight": "modifications",
+              "options": ["a) limitations", "b) alternatives", "c) changes", "d) features"],
+              "correct": "c) changes"
+            },
+            {
+              "number": 15,
+              "prompt": "The town benefits from an efficient transport network.",
+              "highlight": "efficient",
+              "options": ["a) modern", "b) effective", "c) extensive", "d) affordable"],
+              "correct": "b) effective"
+            },
+            {
+              "number": 16,
+              "prompt": "The manager rejected the proposal after reviewing the costs.",
+              "highlight": "rejected",
+              "options": ["a) dismissed", "b) delayed", "c) questioned", "d) amended"],
+              "correct": "a) dismissed"
+            },
+            {
+              "number": 17,
+              "prompt": "The charity relies heavily on public donations.",
+              "highlight": "relies on",
+              "options": ["a) depends on", "b) searches for", "c) competes for", "d) contributes to"],
+              "correct": "a) depends on"
+            },
+            {
+              "number": 18,
+              "prompt": "The company seeks to expand its presence overseas.",
+              "highlight": "presence",
+              "options": ["a) reputation", "b) operation", "c) influence", "d) location"],
+              "correct": "c) influence"
+            },
+            {
+              "number": 19,
+              "prompt": "Visitors are prohibited from entering the construction site.",
+              "highlight": "prohibited",
+              "options": ["a) prevented", "b) discouraged", "c) delayed", "d) monitored"],
+              "correct": "a) prevented"
+            },
+            {
+              "number": 20,
+              "prompt": "The conference attracted delegates from more than fifty countries.",
+              "highlight": "attracted",
+              "options": ["a) invited", "b) drew", "c) convinced", "d) informed"],
+              "correct": "b) drew"
+            },
+            {
+              "number": 21,
+              "prompt": "Researchers attempted to identify the source of the contamination.",
+              "highlight": "identify",
+              "options": ["a) determine", "b) monitor", "c) explain", "d) report"],
+              "correct": "a) determine"
+            },
+            {
+              "number": 22,
+              "prompt": "The initiative received widespread support from local residents.",
+              "highlight": "widespread",
+              "options": ["a) public", "b) considerable", "c) extensive", "d) immediate"],
+              "correct": "c) extensive"
+            },
+            {
+              "number": 23,
+              "prompt": "The station underwent substantial renovation last year.",
+              "highlight": "substantial",
+              "options": ["a) expensive", "b) major", "c) recent", "d) necessary"],
+              "correct": "b) major"
+            },
+            {
+              "number": 24,
+              "prompt": "The policy generated considerable debate among experts.",
+              "highlight": "generated",
+              "options": ["a) produced", "b) reduced", "c) justified", "d) encouraged"],
+              "correct": "a) produced"
+            },
+            {
+              "number": 25,
+              "prompt": "The region is renowned for its vineyards.",
+              "highlight": "renowned",
+              "options": ["a) respected", "b) celebrated", "c) famous", "d) recognised"],
+              "correct": "c) famous"
+            },
+            {
+              "number": 26,
+              "prompt": "The equipment must be inspected regularly.",
+              "highlight": "inspected",
+              "options": ["a) repaired", "b) checked", "c) replaced", "d) installed"],
+              "correct": "b) checked"
+            },
+            {
+              "number": 27,
+              "prompt": "Employees are expected to comply with safety procedures.",
+              "highlight": "comply with",
+              "options": ["a) understand", "b) follow", "c) review", "d) enforce"],
+              "correct": "b) follow"
+            },
+            {
+              "number": 28,
+              "prompt": "Scientists continue to examine data collected during the experiment.",
+              "highlight": "examine",
+              "options": ["a) analyse", "b) discover", "c) estimate", "d) compare"],
+              "correct": "a) analyse"
+            },
+            {
+              "number": 29,
+              "prompt": "The company experienced a sharp decline in profits.",
+              "highlight": "decline",
+              "options": ["a) fall", "b) interruption", "c) reduction", "d) weakness"],
+              "correct": "a) fall"
+            },
+            {
+              "number": 30,
+              "prompt": "The recommendations were based on reliable evidence.",
+              "highlight": "reliable",
+              "options": ["a) consistent", "b) trustworthy", "c) detailed", "d) recent"],
+              "correct": "b) trustworthy"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

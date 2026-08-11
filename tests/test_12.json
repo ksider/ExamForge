@@ -1,0 +1,198 @@
+{
+  "id": "cloude_vocab_1",
+  "title": "Cloude vocab 1",
+  "timer": {
+    "reading_minutes": 20
+  },
+  "sections": [
+    {
+      "id": "reading",
+      "title": "Reading",
+      "parts": [
+        {
+          "id": "part_1a",
+          "title": "Part 1",
+          "type": "multiple_choice",
+          "instructions": "Read the sentences below and decide which option can best replace the word or words in bold so that the meaning remains the same.",
+          "questions": [
+            {
+              "number": 1,
+              "prompt": "The results of the study were largely inconclusive, prompting researchers to call for further investigation.",
+              "highlight": "inconclusive",
+              "options": ["a) unreliable", "b) uncertain", "c) invalid", "d) irrelevant"],
+              "correct": "b) uncertain"
+            },
+            {
+              "number": 2,
+              "prompt": "Her argument, though persuasive, was ultimately based on a somewhat tenuous connection between the two events.",
+              "highlight": "tenuous",
+              "options": ["a) weak", "b) irrelevant", "c) obvious", "d) controversial"],
+              "correct": "a) weak"
+            },
+            {
+              "number": 3,
+              "prompt": "Given that key data had not yet been collected, the committee's decision to proceed was widely regarded as premature.",
+              "highlight": "premature",
+              "options": ["a) sudden", "b) hasty", "c) uninformed", "d) unpopular"],
+              "correct": "b) hasty"
+            },
+            {
+              "number": 4,
+              "prompt": "Many of the claims made in the report have yet to be corroborated by independent sources.",
+              "highlight": "corroborated",
+              "options": ["a) confirmed", "b) published", "c) translated", "d) challenged"],
+              "correct": "a) confirmed"
+            },
+            {
+              "number": 5,
+              "prompt": "The novel's plot is somewhat implausible, relying on a series of unlikely coincidences.",
+              "highlight": "implausible",
+              "options": ["a) unoriginal", "b) unconvincing", "c) unclear", "d) uninteresting"],
+              "correct": "b) unconvincing"
+            },
+            {
+              "number": 6,
+              "prompt": "The government's new policy has been criticised for being overly stringent.",
+              "highlight": "stringent",
+              "options": ["a) strict", "b) sudden", "c) vague", "d) expensive"],
+              "correct": "a) strict"
+            },
+            {
+              "number": 7,
+              "prompt": "Despite years of research, the exact cause of the phenomenon remains elusive.",
+              "highlight": "elusive",
+              "options": ["a) dangerous", "b) difficult to identify", "c) widely debated", "d) poorly documented"],
+              "correct": "b) difficult to identify"
+            },
+            {
+              "number": 8,
+              "prompt": "The two companies eventually reached an amicable settlement, avoiding a lengthy court battle.",
+              "highlight": "amicable",
+              "options": ["a) friendly", "b) profitable", "c) formal", "d) unexpected"],
+              "correct": "a) friendly"
+            },
+            {
+              "number": 9,
+              "prompt": "Critics argue that the new regulations will exacerbate existing inequalities rather than reduce them.",
+              "highlight": "exacerbate",
+              "options": ["a) reveal", "b) worsen", "c) ignore", "d) create"],
+              "correct": "b) worsen"
+            },
+            {
+              "number": 10,
+              "prompt": "The report's conclusions were later vindicated by further independent studies.",
+              "highlight": "vindicated",
+              "options": ["a) proved correct", "b) questioned", "c) reconsidered", "d) publicised"],
+              "correct": "a) proved correct"
+            },
+            {
+              "number": 11,
+              "prompt": "The negotiations were suspended after both sides reached an impasse.",
+              "highlight": "impasse",
+              "options": ["a) deadlock", "b) agreement", "c) compromise", "d) deadline"],
+              "correct": "a) deadlock"
+            },
+            {
+              "number": 12,
+              "prompt": "The professor's explanation, while detailed, did little to dispel students' confusion.",
+              "highlight": "dispel",
+              "options": ["a) increase", "b) eliminate", "c) explain", "d) predict"],
+              "correct": "b) eliminate"
+            },
+            {
+              "number": 13,
+              "prompt": "The charity's efforts to raise awareness have been largely futile, given the public's continued indifference.",
+              "highlight": "futile",
+              "options": ["a) unnoticed", "b) unsuccessful", "c) unpopular", "d) unwelcome"],
+              "correct": "b) unsuccessful"
+            },
+            {
+              "number": 14,
+              "prompt": "The new evidence casts doubt on the credibility of the witness's testimony.",
+              "highlight": "credibility",
+              "options": ["a) trustworthiness", "b) accuracy", "c) relevance", "d) consistency"],
+              "correct": "a) trustworthiness"
+            },
+            {
+              "number": 15,
+              "prompt": "The manufacturer was forced to recall thousands of vehicles due to a defect in the braking system.",
+              "highlight": "defect",
+              "options": ["a) fault", "b) delay", "c) shortage", "d) design"],
+              "correct": "a) fault"
+            },
+            {
+              "number": 16,
+              "prompt": "The negotiations dragged on for months, testing the patience of everyone involved.",
+              "highlight": "dragged on",
+              "options": ["a) continued for longer than expected", "b) became more difficult", "c) were postponed repeatedly", "d) ended abruptly"],
+              "correct": "a) continued for longer than expected"
+            },
+            {
+              "number": 17,
+              "prompt": "Her account of the accident was consistent with what other witnesses reported.",
+              "highlight": "consistent with",
+              "options": ["a) similar to", "b) different from", "c) unrelated to", "d) independent of"],
+              "correct": "a) similar to"
+            },
+            {
+              "number": 18,
+              "prompt": "The committee was reluctant to endorse a proposal it considered financially unviable.",
+              "highlight": "unviable",
+              "options": ["a) unfair", "b) unworkable", "c) unpopular", "d) unclear"],
+              "correct": "b) unworkable"
+            },
+            {
+              "number": 19,
+              "prompt": "The findings, though preliminary, are nonetheless significant enough to warrant further study.",
+              "highlight": "warrant",
+              "options": ["a) justify", "b) delay", "c) prevent", "d) fund"],
+              "correct": "a) justify"
+            },
+            {
+              "number": 20,
+              "prompt": "The industry has faced mounting pressure to adopt more sustainable practices.",
+              "highlight": "mounting",
+              "options": ["a) increasing", "b) unexpected", "c) international", "d) financial"],
+              "correct": "a) increasing"
+            },
+            {
+              "number": 21,
+              "prompt": "The spokesperson's vague response only fuelled further speculation about the company's future.",
+              "highlight": "fuelled",
+              "options": ["a) encouraged", "b) ended", "c) explained", "d) delayed"],
+              "correct": "a) encouraged"
+            },
+            {
+              "number": 22,
+              "prompt": "Local residents have voiced concerns that the new development could jeopardise the area's natural habitat.",
+              "highlight": "jeopardise",
+              "options": ["a) endanger", "b) transform", "c) restrict", "d) monitor"],
+              "correct": "a) endanger"
+            },
+            {
+              "number": 23,
+              "prompt": "The article provides a comprehensive overview of the debate, covering all major perspectives.",
+              "highlight": "comprehensive",
+              "options": ["a) thorough", "b) balanced", "c) recent", "d) technical"],
+              "correct": "a) thorough"
+            },
+            {
+              "number": 24,
+              "prompt": "Despite initial scepticism, the proposal gradually gained traction among policymakers.",
+              "highlight": "gained traction",
+              "options": ["a) became more accepted", "b) became more controversial", "c) lost support", "d) faced legal challenges"],
+              "correct": "a) became more accepted"
+            },
+            {
+              "number": 25,
+              "prompt": "The company's profits have remained relatively stagnant over the past three years.",
+              "highlight": "stagnant",
+              "options": ["a) unchanged", "b) declining", "c) unpredictable", "d) modest"],
+              "correct": "a) unchanged"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

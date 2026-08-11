@@ -1,0 +1,323 @@
+{
+  "id": "test_7",
+  "title": "Gen R",
+  "timer": {
+    "listening_minutes": 40,
+    "reading_minutes": 50,
+    "writing_minutes": 50
+  },
+  "sections": [
+    {
+  "id": "reading",
+  "title": "Reading",
+  "parts": [
+    {
+      "id": "part_1a",
+      "title": "Part 1a",
+      "type": "multiple_choice",
+      "instructions": "Read the sentences below and decide which option can best replace the word or words in bold so that the meaning remains the same.",
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Passengers are advised to arrive at the airport at least two hours before departure.",
+          "highlight": "advised",
+          "options": [
+            "a) allowed",
+            "b) encouraged",
+            "c) instructed",
+            "d) informed"
+          ],
+          "correct": "b) encouraged"
+        },
+        {
+          "number": 2,
+          "prompt": "The company experienced a significant increase in sales during the summer.",
+          "highlight": "significant",
+          "options": [
+            "a) gradual",
+            "b) unexpected",
+            "c) important",
+            "d) usual"
+          ],
+          "correct": "c) important"
+        },
+        {
+          "number": 3,
+          "prompt": "Visitors should keep their belongings secure at all times.",
+          "highlight": "secure",
+          "options": [
+            "a) visible",
+            "b) safe",
+            "c) nearby",
+            "d) organised"
+          ],
+          "correct": "b) safe"
+        },
+        {
+          "number": 4,
+          "prompt": "The museum contains an extensive collection of ancient coins.",
+          "highlight": "extensive",
+          "options": [
+            "a) valuable",
+            "b) unusual",
+            "c) large",
+            "d) famous"
+          ],
+          "correct": "c) large"
+        },
+        {
+          "number": 5,
+          "prompt": "Employees are expected to attend the training session.",
+          "highlight": "attend",
+          "options": [
+            "a) organise",
+            "b) join",
+            "c) observe",
+            "d) support"
+          ],
+          "correct": "b) join"
+        },
+        {
+          "number": 6,
+          "prompt": "The city council plans to improve public transport over the next five years.",
+          "highlight": "improve",
+          "options": [
+            "a) develop",
+            "b) replace",
+            "c) inspect",
+            "d) simplify"
+          ],
+          "correct": "a) develop"
+        }
+      ]
+    },
+    {
+      "id": "part_1b",
+      "title": "Part 1b",
+      "type": "multiple_choice",
+      "instructions": "Read the text and decide which option best fits each gap.",
+      "passage": "Working from home\n\nMany employees enjoy working from home because it gives them greater flexibility. However, it also requires a high level of self-discipline. People who work remotely need to (7) their time carefully and avoid distractions. It can also be difficult to (8) in touch with colleagues, particularly if the team is spread across different locations. Experts recommend creating a dedicated workspace and taking regular breaks. This helps workers stay focused (9) their tasks and maintain a healthy work-life balance. Businesses have also discovered that remote working can (10) costs by reducing the amount of office space required. As a result, many organisations now see flexible working as a long-term (11).",
+      "questions": [
+        {
+          "number": 7,
+          "prompt": "Gap 7",
+          "options": [
+            "a) manage",
+            "b) control",
+            "c) operate"
+          ],
+          "correct": "a) manage"
+        },
+        {
+          "number": 8,
+          "prompt": "Gap 8",
+          "options": [
+            "a) remain",
+            "b) keep",
+            "c) stay"
+          ],
+          "correct": "b) keep"
+        },
+        {
+          "number": 9,
+          "prompt": "Gap 9",
+          "options": [
+            "a) to",
+            "b) with",
+            "c) on"
+          ],
+          "correct": "c) on"
+        },
+        {
+          "number": 10,
+          "prompt": "Gap 10",
+          "options": [
+            "a) reduce",
+            "b) lower",
+            "c) remove"
+          ],
+          "correct": "a) reduce"
+        },
+        {
+          "number": 11,
+          "prompt": "Gap 11",
+          "options": [
+            "a) fashion",
+            "b) trend",
+            "c) habit"
+          ],
+          "correct": "b) trend"
+        }
+      ]
+    },
+    {
+      "id": "part_2",
+      "title": "Part 2",
+      "type": "sentence_insert",
+      "instructions": "Read the text and use sentences A-G to complete the gaps. There is one extra sentence.",
+      "passage": "Walking Across the Coast\n\nLast spring I decided to complete a five-day walk along a famous coastal route. Although I had done short hikes before, I had never attempted anything of this length. (12) I spent several weeks reading guidebooks and planning where I would stay each night.\n\nThe first day was more challenging than I expected. Strong winds slowed my progress and heavy clouds blocked the sea views. (13) By the afternoon, however, the weather improved and I began to enjoy the experience.\n\nOn the second day I met several walkers travelling in the opposite direction. They were happy to share advice about the route ahead. (14) Their recommendations helped me avoid a difficult section that had become muddy after recent rain.\n\nThe third day included a visit to a small fishing village. I stopped for lunch and spent some time talking to local residents. (15) Listening to them made the area feel much more interesting and alive.\n\nBy the final day my legs were tired, but I felt proud of what I had achieved. (16) Reaching the finish point was satisfying, but the journey itself had been the real reward.\n\nLooking back, I realise that the challenge taught me patience and confidence. (17) I am already considering which long-distance route to tackle next.",
+      "options": [
+        "A) They told me stories about the village's history.",
+        "B) Nevertheless, I was determined to continue.",
+        "C) The experience proved far more enjoyable than I had imagined.",
+        "D) It seemed sensible to prepare as thoroughly as possible.",
+        "E) In fact, I covered more distance than planned that day.",
+        "F) Their enthusiasm was infectious.",
+        "G) I had learned a great deal during the walk."
+      ],
+      "questions": [
+        {
+          "number": 12,
+          "prompt": "Gap 12",
+          "correct": "D) It seemed sensible to prepare as thoroughly as possible."
+        },
+        {
+          "number": 13,
+          "prompt": "Gap 13",
+          "correct": "B) Nevertheless, I was determined to continue."
+        },
+        {
+          "number": 14,
+          "prompt": "Gap 14",
+          "correct": "F) Their enthusiasm was infectious."
+        },
+        {
+          "number": 15,
+          "prompt": "Gap 15",
+          "correct": "A) They told me stories about the village's history."
+        },
+        {
+          "number": 16,
+          "prompt": "Gap 16",
+          "correct": "G) I had learned a great deal during the walk."
+        },
+        {
+          "number": 17,
+          "prompt": "Gap 17",
+          "correct": "C) The experience proved far more enjoyable than I had imagined."
+        }
+      ]
+    },
+    {
+      "id": "part_3",
+      "title": "Part 3",
+      "type": "matching",
+      "instructions": "Read the four texts about community activities. Which text gives you the answer to each question?",
+      "passage": "A\nThe Green Team organises monthly events to improve local parks and gardens. Volunteers take part in activities including planting trees, removing litter and maintaining footpaths. No experience is required, and all equipment is provided.\n\nB\nThe Riverside Book Club meets every Thursday evening. Members read a different novel each month and enjoy discussing it in a relaxed and friendly atmosphere. New members are welcome at any time.\n\nC\nOur photography workshops are designed for beginners. Participants learn how to use their cameras effectively and how to edit images. Classes take place indoors and outdoors, depending on weather conditions.\n\nD\nThe Community Sports Centre offers a range of fitness activities for adults and children. Recent improvements include a new gym area and longer opening hours at weekends.",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "questions": [
+        {
+          "number": 18,
+          "prompt": "Which text is aimed at people who enjoy reading?",
+          "correct": "B"
+        },
+        {
+          "number": 19,
+          "prompt": "Which text mentions recently upgraded facilities?",
+          "correct": "D"
+        },
+        {
+          "number": 20,
+          "prompt": "Which text involves environmental projects?",
+          "correct": "A"
+        },
+        {
+          "number": 21,
+          "prompt": "Which text would suit someone learning a new skill?",
+          "correct": "C"
+        },
+        {
+          "number": 22,
+          "prompt": "Which text specifically says no previous experience is necessary?",
+          "correct": "A"
+        },
+        {
+          "number": 23,
+          "prompt": "Which text offers activities for different age groups?",
+          "correct": "D"
+        },
+        {
+          "number": 24,
+          "prompt": "Which text refers to both indoor and outdoor activities?",
+          "correct": "C"
+        }
+      ]
+    },
+    {
+      "id": "part_4",
+      "title": "Part 4",
+      "type": "multiple_choice",
+      "instructions": "Read the article and answer the questions.",
+      "passage": "The Rise of Repair Cafés\n\nFor many years, people have become accustomed to replacing broken household items rather than repairing them. Whether it is a toaster that no longer works or a chair with a damaged leg, buying a replacement often seems quicker and easier. However, a growing movement known as the repair café is encouraging people to think differently.\n\nRepair cafés are community events where volunteers help visitors fix everyday items free of charge. The idea started in Europe and has spread to many countries around the world. Visitors bring items such as lamps, bicycles, clothing and small electrical devices. Experienced volunteers then work alongside owners to identify problems and attempt repairs.\n\nOne reason for the popularity of repair cafés is financial. Replacing products can be expensive, especially during periods of economic uncertainty. By repairing an item instead, people can save money while extending the life of their possessions. Many visitors are surprised to discover that a problem they assumed was serious can often be solved quickly.\n\nEnvironmental concerns also play an important role. Modern society produces vast quantities of waste every year, and electronic waste is one of the fastest-growing categories. Repair cafés encourage reuse rather than disposal, helping reduce the number of items that end up in landfill sites.\n\nSupporters argue that repair cafés offer benefits beyond saving money and reducing waste. They provide opportunities for people to learn practical skills and meet others in their community. Younger visitors can gain confidence by working alongside experienced volunteers, while older participants enjoy sharing knowledge acquired over many years.\n\nOf course, not everything can be repaired. Some products are designed in ways that make repairs extremely difficult. Manufacturers sometimes use specialised components that are unavailable to the public. Despite these challenges, repair café organisers remain optimistic about the future and believe the movement will continue to grow.",
+      "questions": [
+        {
+          "number": 25,
+          "prompt": "According to the first paragraph, many people traditionally",
+          "options": [
+            "a) prefer repairing damaged items",
+            "b) replace things rather than fix them",
+            "c) avoid buying household products"
+          ],
+          "correct": "b) replace things rather than fix them"
+        },
+        {
+          "number": 26,
+          "prompt": "What happens at a repair café?",
+          "options": [
+            "a) Professionals sell second-hand goods",
+            "b) Visitors learn how products are manufactured",
+            "c) Volunteers help repair household items"
+          ],
+          "correct": "c) Volunteers help repair household items"
+        },
+        {
+          "number": 27,
+          "prompt": "What financial benefit is mentioned?",
+          "options": [
+            "a) Repairs are often cheaper than replacements",
+            "b) Visitors are paid for attending",
+            "c) Volunteers receive free equipment"
+          ],
+          "correct": "a) Repairs are often cheaper than replacements"
+        },
+        {
+          "number": 28,
+          "prompt": "Why are repair cafés considered environmentally friendly?",
+          "options": [
+            "a) They manufacture fewer products",
+            "b) They reduce waste by encouraging reuse",
+            "c) They only accept electronic devices"
+          ],
+          "correct": "b) They reduce waste by encouraging reuse"
+        },
+        {
+          "number": 29,
+          "prompt": "Supporters believe repair cafés also",
+          "options": [
+            "a) strengthen communities",
+            "b) increase product prices",
+            "c) replace schools and colleges"
+          ],
+          "correct": "a) strengthen communities"
+        },
+        {
+          "number": 30,
+          "prompt": "What is the writer's overall attitude towards repair cafés?",
+          "options": [
+            "a) Generally positive",
+            "b) Strongly critical",
+            "c) Completely neutral"
+          ],
+          "correct": "a) Generally positive"
+        }
+      ]
+    }
+  ]
+}
+  ]
+}

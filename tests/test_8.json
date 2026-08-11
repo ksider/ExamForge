@@ -1,0 +1,316 @@
+{
+  "id": "test_8",
+  "title": "Gen R 2",
+  "timer": {
+    "reading_minutes": 50
+  },
+  "sections": [
+{
+  "id": "reading",
+  "title": "Reading",
+  "parts": [
+    {
+      "id": "part_1a",
+      "title": "Part 1a",
+      "type": "multiple_choice",
+      "instructions": "Read the sentences below and decide which option can best replace the word or words in bold so that the meaning remains the same.",
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "The council intends to construct a new pedestrian bridge across the river.",
+          "highlight": "construct",
+          "options": [
+            "a) design",
+            "b) build",
+            "c) improve",
+            "d) expand"
+          ],
+          "correct": "b) build"
+        },
+        {
+          "number": 2,
+          "prompt": "The museum attracts thousands of visitors every year.",
+          "highlight": "attracts",
+          "options": [
+            "a) welcomes",
+            "b) directs",
+            "c) draws",
+            "d) entertains"
+          ],
+          "correct": "c) draws"
+        },
+        {
+          "number": 3,
+          "prompt": "Employees are required to follow the company's safety procedures.",
+          "highlight": "required",
+          "options": [
+            "a) expected",
+            "b) invited",
+            "c) advised",
+            "d) persuaded"
+          ],
+          "correct": "a) expected"
+        },
+        {
+          "number": 4,
+          "prompt": "The town experienced a dramatic increase in tourism last year.",
+          "highlight": "dramatic",
+          "options": [
+            "a) sudden",
+            "b) regular",
+            "c) unusual",
+            "d) impressive"
+          ],
+          "correct": "d) impressive"
+        },
+        {
+          "number": 5,
+          "prompt": "Residents expressed concerns about the proposed development.",
+          "highlight": "concerns",
+          "options": [
+            "a) opinions",
+            "b) worries",
+            "c) requests",
+            "d) discussions"
+          ],
+          "correct": "b) worries"
+        },
+        {
+          "number": 6,
+          "prompt": "Researchers discovered evidence supporting the theory.",
+          "highlight": "evidence",
+          "options": [
+            "a) proof",
+            "b) result",
+            "c) explanation",
+            "d) observation"
+          ],
+          "correct": "a) proof"
+        }
+      ]
+    },
+    {
+      "id": "part_1b",
+      "title": "Part 1b",
+      "type": "multiple_choice",
+      "instructions": "Read the text and decide which option best fits each gap.",
+      "passage": "Community Projects\n\nMany towns rely on volunteers to support local projects. While some people believe they do not have enough free time, even a small contribution can make a difference. Volunteers often help to (7) events, raise money and provide practical support. One advantage of taking part is that people can get to know others who share similar interests. This helps to build stronger relationships and creates a sense (8) belonging. Successful projects usually depend (9) good communication and careful planning. Organisers also encourage participants to suggest new ideas rather than simply (10) instructions. In many cases, volunteers discover skills they did not realise they possessed, which can (11) useful in other areas of life.",
+      "questions": [
+        {
+          "number": 7,
+          "prompt": "Gap 7",
+          "options": [
+            "a) arrange",
+            "b) prepare",
+            "c) construct"
+          ],
+          "correct": "a) arrange"
+        },
+        {
+          "number": 8,
+          "prompt": "Gap 8",
+          "options": [
+            "a) for",
+            "b) of",
+            "c) with"
+          ],
+          "correct": "b) of"
+        },
+        {
+          "number": 9,
+          "prompt": "Gap 9",
+          "options": [
+            "a) in",
+            "b) on",
+            "c) at"
+          ],
+          "correct": "b) on"
+        },
+        {
+          "number": 10,
+          "prompt": "Gap 10",
+          "options": [
+            "a) following",
+            "b) watching",
+            "c) receiving"
+          ],
+          "correct": "a) following"
+        },
+        {
+          "number": 11,
+          "prompt": "Gap 11",
+          "options": [
+            "a) appear",
+            "b) prove",
+            "c) remain"
+          ],
+          "correct": "b) prove"
+        }
+      ]
+    },
+    {
+      "id": "part_2",
+      "title": "Part 2",
+      "type": "sentence_insert",
+      "instructions": "Read the text and use sentences A-G to complete the text. There is one extra sentence.",
+      "passage": "My First Year as a Volunteer Guide\n\nLast year I decided to become a volunteer guide at a historic house near where I live. I had visited the building several times as a tourist, but I knew very little about its history. (12) Before long, I found myself attending evening training sessions twice a week.\n\nThe training covered everything from local history to customer service. At first, I worried about remembering so many facts and dates. (13) The instructors encouraged us to focus on telling interesting stories rather than memorising every detail.\n\nA few months later, I was asked to lead my first tour. I felt nervous when I saw a group of twenty visitors waiting for me. (14) To my surprise, the tour went smoothly and several people stayed behind to ask additional questions.\n\nThe most rewarding aspect of the role has been meeting people from different backgrounds. Visitors often share experiences or information that I have never encountered before. (15) Some of these conversations have even encouraged me to research topics in my free time.\n\nNot every day is perfect, however. Unexpected problems occasionally occur. For example, poor weather sometimes prevents access to parts of the grounds. (16) Learning to adapt has become an important part of the role.\n\nLooking back, volunteering has given me confidence and a much deeper appreciation of local history. (17) I would recommend a similar experience to anyone looking for a meaningful way to spend their spare time.",
+      "options": [
+        "A) As a result, every tour is slightly different.",
+        "B) Fortunately, I soon realised that this was unnecessary.",
+        "C) Since then, I have developed a number of useful skills.",
+        "D) Nevertheless, visitors still expect an enjoyable experience.",
+        "E) The decision required a greater commitment than I expected.",
+        "F) Several experienced guides offered practical advice beforehand.",
+        "G) Many of the buildings have been carefully restored."
+      ],
+      "questions": [
+        {
+          "number": 12,
+          "prompt": "Gap 12",
+          "correct": "E) The decision required a greater commitment than I expected."
+        },
+        {
+          "number": 13,
+          "prompt": "Gap 13",
+          "correct": "B) Fortunately, I soon realised that this was unnecessary."
+        },
+        {
+          "number": 14,
+          "prompt": "Gap 14",
+          "correct": "F) Several experienced guides offered practical advice beforehand."
+        },
+        {
+          "number": 15,
+          "prompt": "Gap 15",
+          "correct": "A) As a result, every tour is slightly different."
+        },
+        {
+          "number": 16,
+          "prompt": "Gap 16",
+          "correct": "D) Nevertheless, visitors still expect an enjoyable experience."
+        },
+        {
+          "number": 17,
+          "prompt": "Gap 17",
+          "correct": "C) Since then, I have developed a number of useful skills."
+        }
+      ]
+    },
+    {
+      "id": "part_3",
+      "title": "Part 3",
+      "type": "matching",
+      "instructions": "Read the four texts. Which text gives you the answer to each question?",
+      "passage": "A\nWhen the centre opened ten years ago, many doubted whether enough residents would use it. Those concerns have disappeared. Demand now exceeds available space, and managers are considering extending the building. While users speak positively about the facilities, they frequently mention the difficulty of visiting at peak times because the car park fills up quickly.\n\nB\nThe organisers believe that variety is essential to the event's success. To achieve this, they limit the number of businesses offering similar products. The rule was unpopular when first introduced, but most participants now accept that it prevents a small number of traders from dominating the market.\n\nC\nAlthough the permanent exhibits remain popular, temporary displays have become the institution's main attraction. These short-term exhibitions introduce visitors to unfamiliar subjects and encourage schools to arrange regular educational visits. Attendance figures have increased steadily over recent years.\n\nD\nAt first glance, the facility appears rather old-fashioned. However, visitors consistently praise the staff, particularly those working with people who are using the service for the first time. Local authorities are currently discussing ways to modernise the building without affecting day-to-day operations.",
+      "options": ["A", "B", "C", "D"],
+      "questions": [
+        {
+          "number": 18,
+          "prompt": "Which text describes a project that performed better than many people predicted?",
+          "correct": "A"
+        },
+        {
+          "number": 19,
+          "prompt": "Which text refers to a measure designed to create a more balanced environment for participants?",
+          "correct": "B"
+        },
+        {
+          "number": 20,
+          "prompt": "Which text suggests that visitors are encouraged to explore subjects beyond their usual interests?",
+          "correct": "C"
+        },
+        {
+          "number": 21,
+          "prompt": "Which text mentions plans that could improve an ageing facility?",
+          "correct": "D"
+        },
+        {
+          "number": 22,
+          "prompt": "Which text indicates that popularity can sometimes create inconvenience?",
+          "correct": "A"
+        },
+        {
+          "number": 23,
+          "prompt": "Which text mentions a policy that was initially unpopular?",
+          "correct": "B"
+        },
+        {
+          "number": 24,
+          "prompt": "Which text implies that personal assistance contributes to positive feedback?",
+          "correct": "D"
+        }
+      ]
+    },
+    {
+      "id": "part_4",
+      "title": "Part 4",
+      "type": "multiple_choice",
+      "instructions": "Read the article and answer the questions.",
+      "passage": "The Reinvention of Public Libraries\n\nFor generations, public libraries were associated with shelves of books and silent reading rooms. Although these features remain important, libraries in many countries have undergone significant changes over the last two decades. Faced with the growth of digital technology and changing public expectations, many libraries have expanded their role within the community.\n\nOne of the most noticeable developments has been the introduction of digital services. Modern libraries frequently provide access to e-books, audiobooks and online learning platforms. Members can often borrow digital materials without visiting the building at all. As a result, libraries are now able to reach people who may have difficulty travelling or who live in remote areas.\n\nHowever, librarians argue that technology is only part of the story. Many libraries have deliberately increased the amount of space dedicated to social and educational activities. It is now common to find workshops, language classes and children's events taking place alongside traditional library services. In some areas, libraries even provide meeting rooms for local organisations and community groups.\n\nThese changes have not been welcomed by everyone. Some critics argue that libraries risk losing their original purpose if they focus too heavily on activities unrelated to reading. They believe that limited budgets should be spent primarily on books and specialist staff. Supporters of the modern approach respond that libraries must evolve if they wish to remain relevant.\n\nResearch suggests that libraries continue to play an important role in reducing inequality. People who cannot afford expensive technology at home often rely on library computers and internet access. Others benefit from free training opportunities that improve employment prospects or develop practical skills.\n\nDespite financial pressures in many regions, library managers remain optimistic. They argue that libraries have survived previous technological changes and are capable of adapting again. Rather than replacing traditional services, current developments may simply represent the next stage in the institution's long history.",
+      "questions": [
+        {
+          "number": 25,
+          "prompt": "What point does the writer make in the first paragraph?",
+          "options": [
+            "a) Libraries have resisted change.",
+            "b) Expectations of libraries have changed over time.",
+            "c) Libraries are less popular than in the past."
+          ],
+          "correct": "b) Expectations of libraries have changed over time."
+        },
+        {
+          "number": 26,
+          "prompt": "Why does the writer mention people living in remote areas?",
+          "options": [
+            "a) To show one benefit of digital services.",
+            "b) To criticise library funding policies.",
+            "c) To explain why libraries are being closed."
+          ],
+          "correct": "a) To show one benefit of digital services."
+        },
+        {
+          "number": 27,
+          "prompt": "What do librarians suggest about modern libraries?",
+          "options": [
+            "a) Their educational role is becoming less important.",
+            "b) Technology should replace existing services.",
+            "c) They can serve several community functions."
+          ],
+          "correct": "c) They can serve several community functions."
+        },
+        {
+          "number": 28,
+          "prompt": "What concern is expressed by some critics?",
+          "options": [
+            "a) Libraries may move too far from their traditional purpose.",
+            "b) Digital technology is too expensive to maintain.",
+            "c) Community events attract too many visitors."
+          ],
+          "correct": "a) Libraries may move too far from their traditional purpose."
+        },
+        {
+          "number": 29,
+          "prompt": "What does the writer imply about libraries and inequality?",
+          "options": [
+            "a) Libraries mainly benefit students.",
+            "b) Libraries can improve access to opportunities.",
+            "c) Libraries are responsible for solving social problems."
+          ],
+          "correct": "b) Libraries can improve access to opportunities."
+        },
+        {
+          "number": 30,
+          "prompt": "Which statement best reflects the writer's overall view?",
+          "options": [
+            "a) Libraries should focus exclusively on books.",
+            "b) Libraries are unlikely to survive future changes.",
+            "c) Adaptation is a natural part of a library's development."
+          ],
+          "correct": "c) Adaptation is a natural part of a library's development."
+        }
+      ]
+    }
+  ]
+}
+  ]
+}

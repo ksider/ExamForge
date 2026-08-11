@@ -1,0 +1,321 @@
+{
+  "id": "cloude_reading_1",
+  "title": "Cloude reading 1",
+  "timer": {
+    "reading_minutes": 50
+  },
+  "sections": [
+    {
+      "id": "reading",
+      "title": "Reading",
+      "parts": [
+        {
+          "id": "part_1a",
+          "title": "Part 1a",
+          "type": "multiple_choice",
+          "instructions": "Read the sentences below and decide which option can best replace the word or words in bold so that the meaning remains the same.",
+          "questions": [
+            {
+              "number": 1,
+              "prompt": "The committee acknowledged the difficulties faced by small businesses.",
+              "highlight": "acknowledged",
+              "options": [
+                "a) ignored",
+                "b) recognised",
+                "c) predicted",
+                "d) questioned"
+              ],
+              "correct": "b) recognised"
+            },
+            {
+              "number": 2,
+              "prompt": "It is essential to check the equipment before each use.",
+              "highlight": "essential",
+              "options": [
+                "a) helpful",
+                "b) necessary",
+                "c) advisable",
+                "d) preferable"
+              ],
+              "correct": "b) necessary"
+            },
+            {
+              "number": 3,
+              "prompt": "Many small firms encountered unexpected problems during the expansion.",
+              "highlight": "encountered",
+              "options": [
+                "a) avoided",
+                "b) predicted",
+                "c) faced",
+                "d) solved"
+              ],
+              "correct": "c) faced"
+            },
+            {
+              "number": 4,
+              "prompt": "Traffic in the city centre has gradually increased over the past decade.",
+              "highlight": "gradually",
+              "options": [
+                "a) suddenly",
+                "b) slowly",
+                "c) rarely",
+                "d) significantly"
+              ],
+              "correct": "b) slowly"
+            },
+            {
+              "number": 5,
+              "prompt": "The new policy will have a considerable impact on local businesses.",
+              "highlight": "considerable",
+              "options": [
+                "a) negative",
+                "b) immediate",
+                "c) significant",
+                "d) temporary"
+              ],
+              "correct": "c) significant"
+            },
+            {
+              "number": 6,
+              "prompt": "Residents were reluctant to accept the proposed changes to the park.",
+              "highlight": "reluctant",
+              "options": [
+                "a) unwilling",
+                "b) unable",
+                "c) eager",
+                "d) entitled"
+              ],
+              "correct": "a) unwilling"
+            }
+          ]
+        },
+        {
+          "id": "part_1b",
+          "title": "Part 1b",
+          "type": "multiple_choice",
+          "instructions": "Read the text and decide which option best fits each gap.",
+          "passage": "Cycling in the City\n\nOver the past few years, an increasing number of people have chosen to travel (7) bicycle rather than by car, especially in large cities. Local authorities have responded (8) building new cycle lanes and offering financial support for anyone wishing to buy a bike. Cyclists often point (9) the health benefits of regular exercise as one of the main reasons for their choice. In addition, many riders say that cycling allows them to arrive (10) work feeling more energetic than after sitting in traffic. Nevertheless, some cyclists still worry (11) safety, particularly on busy roads without proper cycle paths.",
+          "questions": [
+            {
+              "number": 7,
+              "prompt": "Gap 7",
+              "options": [
+                "a) on",
+                "b) by",
+                "c) with"
+              ],
+              "correct": "b) by"
+            },
+            {
+              "number": 8,
+              "prompt": "Gap 8",
+              "options": [
+                "a) to",
+                "b) with",
+                "c) by"
+              ],
+              "correct": "c) by"
+            },
+            {
+              "number": 9,
+              "prompt": "Gap 9",
+              "options": [
+                "a) at",
+                "b) to",
+                "c) out"
+              ],
+              "correct": "b) to"
+            },
+            {
+              "number": 10,
+              "prompt": "Gap 10",
+              "options": [
+                "a) to",
+                "b) in",
+                "c) at"
+              ],
+              "correct": "c) at"
+            },
+            {
+              "number": 11,
+              "prompt": "Gap 11",
+              "options": [
+                "a) for",
+                "b) about",
+                "c) over"
+              ],
+              "correct": "b) about"
+            }
+          ]
+        },
+        {
+          "id": "part_2",
+          "title": "Part 2",
+          "type": "sentence_insert",
+          "instructions": "Read the text and use sentences A-G to complete the text. There is one extra sentence.",
+          "passage": "Learning to Swim as an Adult\n\nLast summer, I finally decided to learn how to swim properly. I had avoided lessons for years, mainly because I felt embarrassed about starting so late. (12) Still, I told myself that it was better to try than to keep avoiding the water forever.\n\nThe first lesson was more difficult than I expected. My instructor asked me to float on my back, something I had never managed before. (13) Every time I tried, I tensed up and sank almost immediately.\n\nBy the third week, however, something began to change. I could float for a few seconds without panicking, and my confidence slowly grew. (14) My instructor said this was completely normal and encouraged me to keep practising.\n\nAs the weeks went by, I started swimming short distances across the pool. (15) Friends who already knew how to swim seemed surprised at how quickly I was improving.\n\nEventually, I signed up for a longer course that included open water sessions at a nearby lake. (16) The water felt colder and less predictable than the swimming pool, and at first this made me nervous.\n\nLooking back now, I am glad that I did not give up after that first lesson. (17) I now swim regularly, and I even encourage other adults who are hesitant to give it a try.",
+          "options": [
+            "A) It seemed like a strange skill to be missing at my age.",
+            "B) Progress, however, was not always steady.",
+            "C) I also began to enjoy the exercise more than I had anticipated.",
+            "D) It was a completely different experience from swimming indoors.",
+            "E) At times, I wondered whether I would ever manage it at all.",
+            "F) Learning as an adult has taught me patience as much as swimming itself.",
+            "G) Most beginners give up within the first few sessions."
+          ],
+          "questions": [
+            {
+              "number": 12,
+              "prompt": "Gap 12",
+              "correct": "A) It seemed like a strange skill to be missing at my age."
+            },
+            {
+              "number": 13,
+              "prompt": "Gap 13",
+              "correct": "E) At times, I wondered whether I would ever manage it at all."
+            },
+            {
+              "number": 14,
+              "prompt": "Gap 14",
+              "correct": "B) Progress, however, was not always steady."
+            },
+            {
+              "number": 15,
+              "prompt": "Gap 15",
+              "correct": "C) I also began to enjoy the exercise more than I had anticipated."
+            },
+            {
+              "number": 16,
+              "prompt": "Gap 16",
+              "correct": "D) It was a completely different experience from swimming indoors."
+            },
+            {
+              "number": 17,
+              "prompt": "Gap 17",
+              "correct": "F) Learning as an adult has taught me patience as much as swimming itself."
+            }
+          ]
+        },
+        {
+          "id": "part_3",
+          "title": "Part 3",
+          "type": "matching",
+          "instructions": "Read the four texts. Which text gives you the answer to each question?",
+          "passage": "A\nWhen the community garden opened, few people expected it to attract much interest. Today, more than eighty households are on the waiting list, and additional plots are being cleared to meet demand. While members are pleased with its popularity, several have complained that securing a plot now takes over a year.\n\nB\nThe choir welcomes new singers by pairing them with more experienced members during their first few rehearsals. Organisers say this approach helps newcomers feel comfortable more quickly and makes them more likely to stay involved long-term. A number of former newcomers now act as mentors themselves.\n\nC\nFor many years, the family who run the restaurant refused to offer a delivery service, worried that it might affect the quality of the food or the atmosphere of the dining room. They eventually changed their minds during a quiet period, and the decision is now seen as one that saved the business.\n\nD\nThe pop-up cinema is known for showing a different, often unusual selection of films every month, with the exact programme kept secret until the night itself. Regular visitors say that not knowing what they will see is part of the enjoyment, and attendance is highest when the theme is most unpredictable.",
+          "options": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "questions": [
+            {
+              "number": 18,
+              "prompt": "Which text refers to a scheme that helps new members feel part of a group more quickly?",
+              "correct": "B"
+            },
+            {
+              "number": 19,
+              "prompt": "Which text describes something that has become more popular than originally anticipated?",
+              "correct": "A"
+            },
+            {
+              "number": 20,
+              "prompt": "Which text suggests that not knowing what to expect increases people's enjoyment?",
+              "correct": "D"
+            },
+            {
+              "number": 21,
+              "prompt": "Which text describes a decision that went against a long-standing habit or belief?",
+              "correct": "C"
+            },
+            {
+              "number": 22,
+              "prompt": "Which text mentions a wait that has become longer as demand has grown?",
+              "correct": "A"
+            },
+            {
+              "number": 23,
+              "prompt": "Which text describes a system in which former beginners now support new arrivals?",
+              "correct": "B"
+            },
+            {
+              "number": 24,
+              "prompt": "Which text mentions initial resistance to change that was later reconsidered?",
+              "correct": "C"
+            }
+          ]
+        },
+        {
+          "id": "part_4",
+          "title": "Part 4",
+          "type": "multiple_choice",
+          "instructions": "Read the article and answer the questions.",
+          "passage": "The Shift Towards Shorter Working Weeks\n\nFor most of the last century, a five-day working week was considered standard practice across much of the developed world. Employees were expected to work broadly similar hours from Monday to Friday, with the idea of a shorter working week largely confined to occasional debate rather than serious policy. However, this arrangement is increasingly being questioned by employers, employees and researchers alike.\n\nIn recent years, a growing number of companies have experimented with a four-day working week, usually maintaining full pay while reducing total hours. Advocates argue that a shorter week can lead to a more focused and motivated workforce, particularly in roles that involve a high degree of concentration or creativity. Rather than measuring value purely by hours spent at a desk, supporters suggest that output and results should matter more.\n\nOne frequently cited advantage is the potential improvement in employee wellbeing. Trials in several countries have reported that staff experience lower levels of stress and improved work-life balance when given an additional day off each week. Some employees have used the extra time to spend with family, pursue hobbies or simply rest, which in turn appears to reduce burnout and staff turnover.\n\nProductivity is another area of interest. Contrary to what many assumed, several organisations that adopted a four-day week did not see an overall drop in output. Instead, some reported that employees became more efficient during the days they did work, cutting down on unnecessary meetings and minimising distractions in order to complete tasks within a shorter timeframe.\n\nNonetheless, the model is not without its critics. Certain industries, particularly those involving shift work, healthcare or customer-facing roles, argue that reducing working days is far more difficult to implement without increasing costs or affecting service levels. Smaller businesses in particular may struggle to maintain the same level of output without hiring additional staff, which is not always financially realistic.\n\nThere are also concerns about how a shorter week might affect long-term career expectations. Some critics worry that employees working fewer days could be seen as less committed, potentially affecting promotion opportunities, regardless of their actual performance during working hours.\n\nDespite these challenges, interest in alternative working patterns continues to grow. Many analysts believe that as technology continues to automate routine tasks, the traditional link between hours worked and value produced will become increasingly outdated. While a universal shift to a four-day week remains unlikely in the near future, flexible approaches to working time are expected to become more common across a wider range of industries.",
+          "questions": [
+            {
+              "number": 25,
+              "prompt": "Why does the writer mention the traditional five-day week in the first paragraph?",
+              "options": [
+                "a) To explain why the four-day week is now common",
+                "b) To provide context for a changing practice",
+                "c) To criticise companies that still use it"
+              ],
+              "correct": "b) To provide context for a changing practice"
+            },
+            {
+              "number": 26,
+              "prompt": "What assumption does the writer suggest supporters of the four-day week are challenging?",
+              "options": [
+                "a) That hours worked should not be linked to a fixed salary",
+                "b) That value is best measured by time spent working",
+                "c) That employees prefer working from home"
+              ],
+              "correct": "b) That value is best measured by time spent working"
+            },
+            {
+              "number": 27,
+              "prompt": "What benefit of a shorter working week is emphasised in the article?",
+              "options": [
+                "a) It guarantees higher salaries for employees",
+                "b) It can improve employees' overall wellbeing",
+                "c) It removes the need for management structures"
+              ],
+              "correct": "b) It can improve employees' overall wellbeing"
+            },
+            {
+              "number": 28,
+              "prompt": "What point does the writer make about smaller businesses?",
+              "options": [
+                "a) They are always better suited to reduced hours",
+                "b) They may find it harder to maintain output without extra staff",
+                "c) They have already abandoned traditional schedules"
+              ],
+              "correct": "b) They may find it harder to maintain output without extra staff"
+            },
+            {
+              "number": 29,
+              "prompt": "The reference to career expectations suggests that",
+              "options": [
+                "a) some employees worry a shorter week could affect how they are perceived",
+                "b) most companies now judge staff only by results",
+                "c) promotions will become automatic with a shorter week"
+              ],
+              "correct": "a) some employees worry a shorter week could affect how they are perceived"
+            },
+            {
+              "number": 30,
+              "prompt": "Which statement best summarises the writer's view?",
+              "options": [
+                "a) The four-day week will soon completely replace the traditional model",
+                "b) Flexible working patterns are likely to spread despite remaining challenges",
+                "c) Reduced working hours have proven unsuccessful in most trials"
+              ],
+              "correct": "b) Flexible working patterns are likely to spread despite remaining challenges"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,321 @@
+{
+  "id": "test_9",
+  "title": "Gen R 3",
+  "timer": {
+    "reading_minutes": 50
+  },
+  "sections": [
+    {
+      "id": "reading",
+      "title": "Reading",
+      "parts": [
+        {
+          "id": "part_1a",
+          "title": "Part 1a",
+          "type": "multiple_choice",
+          "instructions": "Read the sentences below and decide which option can best replace the word or words in bold so that the meaning remains the same.",
+          "questions": [
+            {
+              "number": 1,
+              "prompt": "The organisers were delighted by the response to the event.",
+              "highlight": "delighted",
+              "options": [
+                "a) surprised",
+                "b) satisfied",
+                "c) pleased",
+                "d) amused"
+              ],
+              "correct": "c) pleased"
+            },
+            {
+              "number": 2,
+              "prompt": "The company decided to postpone the launch of its new product.",
+              "highlight": "postpone",
+              "options": [
+                "a) delay",
+                "b) organise",
+                "c) replace",
+                "d) cancel"
+              ],
+              "correct": "a) delay"
+            },
+            {
+              "number": 3,
+              "prompt": "All passengers must retain their tickets until the end of the journey.",
+              "highlight": "retain",
+              "options": [
+                "a) present",
+                "b) keep",
+                "c) inspect",
+                "d) obtain"
+              ],
+              "correct": "b) keep"
+            },
+            {
+              "number": 4,
+              "prompt": "The village has preserved much of its historic character.",
+              "highlight": "preserved",
+              "options": [
+                "a) protected",
+                "b) improved",
+                "c) displayed",
+                "d) restored"
+              ],
+              "correct": "a) protected"
+            },
+            {
+              "number": 5,
+              "prompt": "Scientists are attempting to identify the cause of the problem.",
+              "highlight": "identify",
+              "options": [
+                "a) remove",
+                "b) explain",
+                "c) determine",
+                "d) investigate"
+              ],
+              "correct": "c) determine"
+            },
+            {
+              "number": 6,
+              "prompt": "The manager stressed the importance of clear communication.",
+              "highlight": "stressed",
+              "options": [
+                "a) questioned",
+                "b) emphasised",
+                "c) described",
+                "d) repeated"
+              ],
+              "correct": "b) emphasised"
+            }
+          ]
+        },
+        {
+          "id": "part_1b",
+          "title": "Part 1b",
+          "type": "multiple_choice",
+          "instructions": "Read the text and decide which option best fits each gap.",
+          "passage": "Learning New Skills\n\nMany adults decide to learn a new skill later in life. Some do so because they want to improve their career prospects, while others simply enjoy the challenge. Whatever the reason, success often depends (7) maintaining motivation over a long period. Experts suggest setting realistic goals and breaking large tasks into smaller steps. It is also important not to give (8) if progress seems slow at first. People who learn with others frequently benefit (9) encouragement and shared experience. In addition, regular practice can result (10) noticeable improvements over time. For this reason, learners are usually advised to set (11) a specific amount of time each week for study.",
+          "questions": [
+            {
+              "number": 7,
+              "prompt": "Gap 7",
+              "options": [
+                "a) at",
+                "b) on",
+                "c) with"
+              ],
+              "correct": "b) on"
+            },
+            {
+              "number": 8,
+              "prompt": "Gap 8",
+              "options": [
+                "a) off",
+                "b) away",
+                "c) up"
+              ],
+              "correct": "c) up"
+            },
+            {
+              "number": 9,
+              "prompt": "Gap 9",
+              "options": [
+                "a) from",
+                "b) by",
+                "c) with"
+              ],
+              "correct": "a) from"
+            },
+            {
+              "number": 10,
+              "prompt": "Gap 10",
+              "options": [
+                "a) with",
+                "b) in",
+                "c) for"
+              ],
+              "correct": "b) in"
+            },
+            {
+              "number": 11,
+              "prompt": "Gap 11",
+              "options": [
+                "a) aside",
+                "b) back",
+                "c) out"
+              ],
+              "correct": "a) aside"
+            }
+          ]
+        },
+        {
+          "id": "part_2",
+          "title": "Part 2",
+          "type": "sentence_insert",
+          "instructions": "Read the text and use sentences A-G to complete the text. There is one extra sentence.",
+          "passage": "A Weekend Without Technology\n\nEarlier this year, I agreed to take part in an experiment organised by a local newspaper. Participants were asked to spend an entire weekend without using digital devices. That meant no smartphone, no computer and no television. (12) I soon discovered that the challenge would be harder than I had expected.\n\nThe first difficulty appeared on Saturday morning. Normally, I use my phone alarm to wake up. Without it, I had to rely on an old clock that I found in a cupboard. (13) Several times I reached for my phone before remembering that I was not allowed to use it.\n\nLater that day, I went into town to meet a friend. Usually, I would send a message if I was running late. (14) Fortunately, we had arranged an exact meeting place in advance.\n\nAs the weekend continued, however, I noticed some unexpected benefits. I spent more time reading and finished a book I had started months earlier. (15) The conversations seemed more relaxed because nobody was checking notifications.\n\nBy Sunday evening, I felt less dependent on technology than before. (16) Nevertheless, I could not deny that the experience had changed my habits.\n\nWhen the experiment ended, I turned my phone back on and immediately received dozens of messages. (17) Since then, I have tried to spend at least a few hours each week without digital distractions.",
+          "options": [
+            "A) Instead, I had to trust that my friend would arrive.",
+            "B) In fact, I was secretly looking forward to it.",
+            "C) I also spent longer talking with family members.",
+            "D) Some of them turned out to be far less important than I had imagined.",
+            "E) Even ordinary routines suddenly felt unfamiliar.",
+            "F) I knew I would eventually return to my usual devices.",
+            "G) Most participants gave up before the end of the experiment."
+          ],
+          "questions": [
+            {
+              "number": 12,
+              "prompt": "Gap 12",
+              "correct": "B) In fact, I was secretly looking forward to it."
+            },
+            {
+              "number": 13,
+              "prompt": "Gap 13",
+              "correct": "E) Even ordinary routines suddenly felt unfamiliar."
+            },
+            {
+              "number": 14,
+              "prompt": "Gap 14",
+              "correct": "A) Instead, I had to trust that my friend would arrive."
+            },
+            {
+              "number": 15,
+              "prompt": "Gap 15",
+              "correct": "C) I also spent longer talking with family members."
+            },
+            {
+              "number": 16,
+              "prompt": "Gap 16",
+              "correct": "F) I knew I would eventually return to my usual devices."
+            },
+            {
+              "number": 17,
+              "prompt": "Gap 17",
+              "correct": "D) Some of them turned out to be far less important than I had imagined."
+            }
+          ]
+        },
+        {
+          "id": "part_3",
+          "title": "Part 3",
+          "type": "matching",
+          "instructions": "Read the four texts. Which text gives you the answer to each question?",
+          "passage": "A\nWhen the project first began, even its organisers admitted that success was far from guaranteed. Today, the waiting list contains hundreds of names, and additional sessions are being planned. Although visitors are enthusiastic, many have complained that obtaining a place has become increasingly difficult.\n\nB\nThe programme aims to support newcomers by pairing them with experienced participants. According to organisers, this arrangement helps people settle in more quickly and increases the likelihood that they will remain involved. Several former participants now volunteer as mentors themselves.\n\nC\nManagers resisted making changes for many years because they feared upsetting regular customers. Eventually, however, they accepted that the existing approach was limiting future growth. The decision proved controversial at the time but is now widely regarded as successful.\n\nD\nThe attraction is best known for a feature that changes every few months. Visitors rarely know exactly what to expect before arriving, and this uncertainty is considered part of its appeal. Attendance figures are strongest whenever a particularly unusual theme is selected.",
+          "options": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "questions": [
+            {
+              "number": 18,
+              "prompt": "Which text refers to an initiative that encourages participants to help the next generation of members?",
+              "correct": "B"
+            },
+            {
+              "number": 19,
+              "prompt": "Which text describes something whose popularity has created access difficulties?",
+              "correct": "A"
+            },
+            {
+              "number": 20,
+              "prompt": "Which text suggests that uncertainty contributes to people's enjoyment?",
+              "correct": "D"
+            },
+            {
+              "number": 21,
+              "prompt": "Which text describes a decision that challenged established practice?",
+              "correct": "C"
+            },
+            {
+              "number": 22,
+              "prompt": "Which text mentions expectations that were initially modest?",
+              "correct": "A"
+            },
+            {
+              "number": 23,
+              "prompt": "Which text refers to a system designed to ease the transition into a new environment?",
+              "correct": "B"
+            },
+            {
+              "number": 24,
+              "prompt": "Which text mentions opposition that later gave way to approval?",
+              "correct": "C"
+            }
+          ]
+        },
+        {
+          "id": "part_4",
+          "title": "Part 4",
+          "type": "multiple_choice",
+          "instructions": "Read the article and answer the questions.",
+          "passage": "The Return of Night Trains\n\nFor much of the twentieth century, overnight rail travel was viewed as a practical and sometimes glamorous way to move between major cities. Travellers could board a train in the evening, sleep during the journey and arrive at their destination the following morning. However, the rise of low-cost air travel led to a steady decline in many night train services.\n\nIn recent years, that trend has begun to reverse. Several European railway operators have invested in new overnight routes, modern carriages and improved passenger facilities. Supporters argue that night trains offer an attractive alternative to short-haul flights, particularly for travellers who value convenience and environmental sustainability.\n\nOne advantage frequently mentioned is the efficient use of time. Instead of spending the night in a hotel, passengers can travel while sleeping. This can reduce accommodation costs and make better use of daylight hours at the destination. Business travellers, tourists and students have all contributed to growing demand.\n\nEnvironmental concerns have also played a significant role. Rail travel generally produces fewer emissions per passenger than air travel on equivalent routes. As public awareness of climate issues has increased, some travellers have become more willing to choose slower forms of transport if they are perceived as more sustainable.\n\nNevertheless, night trains face challenges. Operating overnight services can be expensive, and railway companies must compete with airlines that often advertise very low fares. In addition, some routes require cooperation between multiple countries, making planning and regulation more complicated.\n\nDespite these difficulties, industry experts remain optimistic. They argue that improvements in comfort, combined with growing interest in sustainable travel, will continue to attract passengers. While night trains are unlikely to replace air travel entirely, they may become an increasingly important part of the transport network.",
+          "questions": [
+            {
+              "number": 25,
+              "prompt": "Why does the writer mention low-cost airlines in the first paragraph?",
+              "options": [
+                "a) To explain a decline in a form of transport",
+                "b) To compare ticket prices today",
+                "c) To recommend a travel option"
+              ],
+              "correct": "a) To explain a decline in a form of transport"
+            },
+            {
+              "number": 26,
+              "prompt": "What assumption appears to be made by supporters of night trains?",
+              "options": [
+                "a) Travellers never compare prices",
+                "b) Environmental considerations influence travel decisions",
+                "c) Hotels are becoming less popular"
+              ],
+              "correct": "b) Environmental considerations influence travel decisions"
+            },
+            {
+              "number": 27,
+              "prompt": "What benefit of overnight rail travel is emphasised in the article?",
+              "options": [
+                "a) It allows travellers to make productive use of travel time",
+                "b) It guarantees lower ticket prices",
+                "c) It eliminates the need for reservations"
+              ],
+              "correct": "a) It allows travellers to make productive use of travel time"
+            },
+            {
+              "number": 28,
+              "prompt": "What point does the writer make about operating night train services?",
+              "options": [
+                "a) They depend entirely on tourism",
+                "b) They involve certain financial and organisational difficulties",
+                "c) They receive unlimited government support"
+              ],
+              "correct": "b) They involve certain financial and organisational difficulties"
+            },
+            {
+              "number": 29,
+              "prompt": "The reference to climate issues suggests that",
+              "options": [
+                "a) public attitudes towards transport are changing",
+                "b) rail companies created environmental campaigns",
+                "c) flying will soon disappear"
+              ],
+              "correct": "a) public attitudes towards transport are changing"
+            },
+            {
+              "number": 30,
+              "prompt": "Which statement best summarises the writer's view?",
+              "options": [
+                "a) Night trains have little future in modern transport",
+                "b) Night trains will soon replace airlines",
+                "c) Night trains are likely to become more relevant, although limitations remain"
+              ],
+              "correct": "c) Night trains are likely to become more relevant, although limitations remain"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

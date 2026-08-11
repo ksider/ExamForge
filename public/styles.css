@@ -63,11 +63,55 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding: 18px clamp(18px, 4vw, 48px);
+  gap: 16px;
+  padding: 16px clamp(16px, 3.5vw, 44px);
   background: rgba(255, 255, 255, 0.92);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(14px);
+}
+
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.header-settings {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.compact-settings-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #f8fafc;
+}
+
+.compact-settings-group legend {
+  display: none;
+}
+
+.compact-setting-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--muted);
+}
+
+.compact-setting-pill input {
+  margin: 0;
+  accent-color: var(--brand);
 }
 
 .topbar-actions {
@@ -114,11 +158,14 @@ h3 {
 main {
   width: min(1180px, calc(100% - 32px));
   margin: 28px auto 64px;
+  /* margin-left: clamp(16px, 3vw, 24px); */
 }
 
 main.is-wide,
 main:has(#examScreen.is-wide) {
   width: min(1600px, calc(100% - 24px));
+  margin: 28px auto 64px;
+ /* margin-left: clamp(12px, 2vw, 16px);  */
 }
 
 .screen {
@@ -139,7 +186,79 @@ main:has(#examScreen.is-wide) {
 }
 
 .start-screen {
-  padding: clamp(18px, 4vw, 34px);
+  position: relative;
+  padding: clamp(16px, 3vw, 28px);
+  margin-left: 0;
+}
+
+.start-screen-shell {
+  display: block;
+  min-width: 0;
+  padding-right: clamp(120px, 18vw, 420px);
+}
+
+.start-screen-main {
+  min-width: 0;
+  max-width: 720px;
+}
+
+.tests-sidebar {
+  position: fixed;
+  top: 92px;
+  right: 0;
+  z-index: 18;
+  display: grid;
+  gap: 12px;
+  width: min(340px, 32vw);
+  max-width: calc(100vw - 24px);
+  height: calc(100vh - 112px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  transform: translateX(0);
+}
+
+.tests-sidebar-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.tests-sidebar-head h3 {
+  margin-bottom: 0;
+  font-size: 18px;
+}
+
+.tests-sidebar .tests-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 0;
+}
+
+.tests-sidebar .test-card {
+  padding: 12px 14px;
+}
+
+.tests-sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 16;
+  display: none;
+  background: rgba(15, 23, 42, 0.28);
+}
+
+.tests-sidebar-backdrop.is-visible {
+  display: block;
+}
+
+.mobile-tests-toggle {
+  display: none;
 }
 
 .section-head {
@@ -167,12 +286,12 @@ main:has(#examScreen.is-wide) {
 .settings-grid,
 .results-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
 }
 
 .tests-grid {
-  margin-bottom: 24px;
+  margin-bottom: 0;
 }
 
 .test-card,
@@ -1045,6 +1164,23 @@ legend {
     flex-direction: column;
   }
 
+  main {
+    margin-left: 10px;
+  }
+
+  .topbar-brand {
+    align-items: flex-start;
+  }
+
+  .header-settings {
+    margin-top: 4px;
+  }
+
+  .compact-settings-group {
+    border-radius: 10px;
+    padding: 6px;
+  }
+
   .timer-panel {
     text-align: left;
   }
@@ -1055,6 +1191,52 @@ legend {
 
   .topbar-actions > * {
     flex: 1 1 auto;
+  }
+
+  .mobile-tests-toggle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 12px;
+  }
+
+  .start-screen-shell {
+    padding-right: 0;
+  }
+
+  .tests-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 40;
+    width: min(86vw, 360px);
+    height: 100vh;
+    max-height: none;
+    border-radius: 0 12px 12px 0;
+    transform: translateX(-105%);
+    transition: transform 0.2s ease;
+  }
+
+  .tests-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .tests-sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 35;
+    display: none;
+    background: rgba(16, 24, 40, 0.45);
+  }
+
+  .tests-sidebar-backdrop.is-visible {
+    display: block;
+  }
+
+  .tests-sidebar-head .icon-button {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
   }
 
   #examScreen.is-listening .audio-box {

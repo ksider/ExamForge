@@ -31,6 +31,11 @@ const dom = {
   testsList: document.querySelector("#testsList"),
   refreshTests: document.querySelector("#refreshTests"),
   startBtn: document.querySelector("#startBtn"),
+  headerSettings: document.querySelector("#headerSettings"),
+  mobileTestsToggle: document.querySelector("#mobileTestsToggle"),
+  testsSidebar: document.querySelector("#testsSidebar"),
+  testsSidebarBackdrop: document.querySelector("#testsSidebarBackdrop"),
+  testsSidebarClose: document.querySelector("#testsSidebarClose"),
   timerPanel: document.querySelector("#timerPanel"),
   sectionTabs: document.querySelector("#sectionTabs"),
   examContent: document.querySelector("#examContent"),
@@ -44,6 +49,16 @@ const dom = {
   promptModalCancel: document.querySelector("#promptModalCancel"),
   promptModalSave: document.querySelector("#promptModalSave")
 };
+
+function openTestsSidebar() {
+  dom.testsSidebar?.classList.add("is-open");
+  dom.testsSidebarBackdrop?.classList.add("is-visible");
+}
+
+function closeTestsSidebar() {
+  dom.testsSidebar?.classList.remove("is-open");
+  dom.testsSidebarBackdrop?.classList.remove("is-visible");
+}
 
 // Bind modal events
 if (dom.promptModalCancel) {
@@ -65,6 +80,19 @@ if (dom.promptModalSave) {
     dom.promptModal.close();
   });
 }
+
+if (dom.mobileTestsToggle) {
+  dom.mobileTestsToggle.addEventListener("click", openTestsSidebar);
+}
+if (dom.testsSidebarBackdrop) {
+  dom.testsSidebarBackdrop.addEventListener("click", closeTestsSidebar);
+}
+if (dom.testsSidebarClose) {
+  dom.testsSidebarClose.addEventListener("click", closeTestsSidebar);
+}
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 720) closeTestsSidebar();
+});
 
 function getTimerMode() {
   return document.querySelector("input[name='timerMode']:checked").value;
@@ -115,8 +143,11 @@ function resultsStorageKey() {
   return "examforge:results";
 }
 
-function answerKey(sectionId, questionNumber) {
-  return `${sectionId}:${questionNumber}`;
+function answerKey(sectionId, questionNumber, partId = null) {
+  const sectionToken = String(sectionId ?? "");
+  const questionToken = String(questionNumber ?? "");
+  const partToken = partId == null || partId === "" ? "" : String(partId);
+  return partToken ? `${sectionToken}:${partToken}:${questionToken}` : `${sectionToken}:${questionToken}`;
 }
 
 function escapeHtml(value) {
@@ -320,11 +351,8 @@ function buildResultsPath(file) {
 
 function updateRoute(path, options = {}) {
   const shouldSave = options.save !== false;
-  if (window.location.protocol === "file:") return;
   if (shouldSave) saveProgress();
-  if (window.location.pathname !== path) {
-    history.pushState({}, "", path);
-  }
+  return;
 }
 
 function staticAssetPath(path) {
@@ -344,6 +372,9 @@ function showStartScreen(push = true) {
   dom.examScreen.classList.add("is-hidden");
   dom.resultsScreen.classList.add("is-hidden");
   dom.startScreen.classList.remove("is-hidden");
+  dom.headerSettings?.classList.remove("is-hidden");
+  dom.mobileTestsToggle?.classList.remove("is-hidden");
+  closeTestsSidebar();
   document.querySelector("main").classList.remove("is-wide");
   if (push) updateRoute(routePath("/"));
 }
@@ -353,6 +384,9 @@ function showExamScreen() {
   dom.resultsScreen.classList.add("is-hidden");
   dom.examScreen.classList.remove("is-hidden");
   dom.topbarExitBtn.classList.remove("is-hidden");
+  dom.headerSettings?.classList.add("is-hidden");
+  dom.mobileTestsToggle?.classList.add("is-hidden");
+  closeTestsSidebar();
 }
 
 function parseRoute() {
@@ -855,35 +889,35 @@ function renderPassageWithDropzones(section, part, questions, locked) {
   const html = escapeHtml(part.passage).replace(/\((\d+)\)/g, (match, number) => {
     if (!questionNumbers.has(number)) return match;
     const question = questions.find((item) => String(item.number) === number);
-    return renderInlineDropzone(section, question, locked, `(${number})`, "is-inline");
+    return renderInlineDropzone(section, { ...question, partId: part.id }, locked, `(${number})`, "is-inline");
   });
 
   return `<div class="passage passage-drop">${html.replaceAll("\n", "<br />")}</div>`;
 }
 
 function renderInlineDropQuestions(section, part, questions, locked) {
-  if (part.passage) return questions.map((question) => renderHiddenFeedbackQuestion(section, question)).join("");
+  if (part.passage) return questions.map((question) => renderHiddenFeedbackQuestion(section, part, question)).join("");
   return `
     <div class="drop-list">
       ${questions.map((question) => `
-        <div class="drop-row ${resultClassFor(section, question)}">
+        <div class="drop-row ${resultClassFor(section, question, part)}">
           <div class="question-title">
             <span class="question-number">№${escapeHtml(question.number)}</span>
             <span>${escapeHtml(question.prompt)}</span>
           </div>
-          ${renderInlineDropzone(section, question, locked)}
-          ${feedbackFor(section, question)}
+          ${renderInlineDropzone(section, { ...question, partId: part.id }, locked, "Drop answer", "", part)}
+          ${feedbackFor(section, question, part)}
         </div>
       `).join("")}
     </div>
   `;
 }
 
-function renderHiddenFeedbackQuestion(section, question) {
-  const feedback = feedbackFor(section, question);
+function renderHiddenFeedbackQuestion(section, part, question) {
+  const feedback = feedbackFor(section, question, part);
   if (!feedback) return "";
   return `
-    <div class="inline-feedback ${resultClassFor(section, question)}">
+    <div class="inline-feedback ${resultClassFor(section, question, part)}">
       <strong>№${escapeHtml(question.number)}</strong>
       ${feedback}
     </div>
@@ -895,26 +929,26 @@ function renderMatchingBoard(section, part, questions, locked) {
     <div class="matching-board">
       <h4>Questions</h4>
       ${questions.map((question) => `
-        <div class="match-row ${resultClassFor(section, question)}">
+        <div class="match-row ${resultClassFor(section, question, part)}">
           <div class="match-prompt">
             <span class="question-number">№${escapeHtml(question.number)}</span>
             <span>${escapeHtml(question.prompt)}</span>
           </div>
-          ${renderInlineDropzone(section, question, locked)}
-          ${feedbackFor(section, question)}
+          ${renderInlineDropzone(section, { ...question, partId: part.id }, locked, "Drop answer", "", part)}
+          ${feedbackFor(section, question, part)}
         </div>
       `).join("")}
     </div>
   `;
 }
 
-function renderInlineDropzone(section, question, locked, placeholder = "Drop answer", className = "") {
-  const key = answerKey(section.id, question.number);
+function renderInlineDropzone(section, question, locked, placeholder = "Drop answer", className = "", part = null) {
+  const key = answerKey(section.id, question.number, question.partId || part?.id || question.id || null);
   const value = appState.answers[key] || "";
   const filledClass = value ? "is-filled" : "";
 
   return `
-    <button class="drop-zone ${escapeHtml(className)} ${filledClass} ${resultClassFor(section, question)}" type="button" data-drop-key="${escapeHtml(key)}" ${locked ? "disabled" : ""}>
+    <button class="drop-zone ${escapeHtml(className)} ${filledClass} ${resultClassFor(section, question, part)}" type="button" data-drop-key="${escapeHtml(key)}" ${locked ? "disabled" : ""}>
       <span>${value ? renderOptionLabel(value) : escapeHtml(placeholder)}</span>
       ${value && !locked ? `<small class="drop-clear" data-clear-drop="${escapeHtml(key)}" aria-label="Remove answer" title="Remove answer">&times;</small>` : ""}
     </button>
@@ -922,10 +956,10 @@ function renderInlineDropzone(section, question, locked, placeholder = "Drop ans
 }
 
 function renderQuestion(section, part, question, locked) {
-  const key = answerKey(section.id, question.number);
+  const key = answerKey(section.id, question.number, part.id);
   const value = appState.answers[key] ?? "";
-  const resultClass = resultClassFor(section, question);
-  const feedback = feedbackFor(section, question);
+  const resultClass = resultClassFor(section, question, part);
+  const feedback = feedbackFor(section, question, part);
 
   return `
     <div class="question ${resultClass}" data-question="${escapeHtml(question.number)}" data-type="${escapeHtml(part.type)}">
@@ -950,7 +984,7 @@ function renderQuestionInput(section, part, question, value, locked) {
           const checked = String(value) === String(option) ? "checked" : "";
           return `
               <label class="option-row">
-                <input type="radio" name="${escapeHtml(answerKey(section.id, question.number))}" value="${escapeHtml(option)}" ${checked} ${disabled} />
+                <input type="radio" name="${escapeHtml(answerKey(section.id, question.number, part.id))}" value="${escapeHtml(option)}" ${checked} ${disabled} />
                 <span>${escapeHtml(option)}</span>
               </label>
             `;
@@ -963,14 +997,14 @@ function renderQuestionInput(section, part, question, value, locked) {
   if (part.type === "matching" || part.type === "sentence_insert") {
     const options = question.options || part.options || [];
     return `
-      <select class="select-line" data-answer="${escapeHtml(answerKey(section.id, question.number))}" ${disabled}>
+      <select class="select-line" data-answer="${escapeHtml(answerKey(section.id, question.number, part.id))}" ${disabled}>
         <option value="">Choose an answer</option>
         ${options.map((option) => `<option value="${escapeHtml(option)}" ${String(value) === String(option) ? "selected" : ""}>${escapeHtml(option)}</option>`).join("")}
       </select>
     `;
   }
 
-  return `<input class="input-line" data-answer="${escapeHtml(answerKey(section.id, question.number))}" value="${escapeHtml(value)}" placeholder="Your answer" ${disabled} />`;
+  return `<input class="input-line" data-answer="${escapeHtml(answerKey(section.id, question.number, part.id))}" value="${escapeHtml(value)}" placeholder="Your answer" ${disabled} />`;
 }
 
 function renderWritingPart(section, part, locked) {
@@ -1227,7 +1261,7 @@ function checkSection(section) {
     if (part.type === "long_text") return;
     (part.questions || []).forEach((question) => {
       total += 1;
-      const userAnswer = appState.answers[answerKey(section.id, question.number)];
+      const userAnswer = appState.answers[answerKey(section.id, question.number, part.id)];
       if (isAnswerCorrect(userAnswer, question)) correct += 1;
     });
   });
@@ -1246,15 +1280,15 @@ function undoCheckSection(section) {
   renderExam();
 }
 
-function resultClassFor(section, question) {
+function resultClassFor(section, question, part = null) {
   if (!appState.checked[section.id]) return "";
-  const userAnswer = appState.answers[answerKey(section.id, question.number)];
+  const userAnswer = appState.answers[answerKey(section.id, question.number, part?.id || null)];
   return isAnswerCorrect(userAnswer, question) ? "is-correct" : "is-wrong";
 }
 
-function feedbackFor(section, question) {
+function feedbackFor(section, question, part = null) {
   if (!appState.checked[section.id]) return "";
-  const userAnswer = appState.answers[answerKey(section.id, question.number)];
+  const userAnswer = appState.answers[answerKey(section.id, question.number, part?.id || null)];
   const correct = correctValues(question).join(" / ");
 
   if (isAnswerCorrect(userAnswer, question)) {
@@ -1581,6 +1615,9 @@ function showResults(push = true, persist = true) {
   window.clearInterval(appState.timer.intervalId);
   dom.timerPanel.classList.add("is-hidden");
   dom.topbarExitBtn.classList.add("is-hidden");
+  dom.headerSettings?.classList.add("is-hidden");
+  dom.mobileTestsToggle?.classList.add("is-hidden");
+  closeTestsSidebar();
   dom.examScreen.classList.add("is-hidden");
   dom.resultsScreen.classList.remove("is-hidden");
   dom.startScreen.classList.add("is-hidden");
@@ -1647,8 +1684,8 @@ function reportAnswerClass(userAnswer, question) {
   return isAnswerCorrect(userAnswer, question) ? "correct" : "wrong";
 }
 
-function renderReportQuestion(section, question) {
-  const userAnswer = appState.answers[answerKey(section.id, question.number)] || "";
+function renderReportQuestion(section, part, question) {
+  const userAnswer = appState.answers[answerKey(section.id, question.number, part.id)] || "";
   const answerClass = reportAnswerClass(userAnswer, question);
   const correct = correctValues(question).filter(Boolean).join(" / ");
   const needsCorrectAnswer = answerClass !== "correct" && correct;
@@ -1686,7 +1723,7 @@ function renderReportPart(section, part) {
       <h3>${escapeHtml(part.title || part.id)}</h3>
       ${part.instructions ? `<p class="report-meta">${escapeHtml(part.instructions)}</p>` : ""}
       ${part.passage ? `<div class="report-task">${escapeHtml(part.passage).replaceAll("\n", "<br />")}</div>` : ""}
-      ${questions.map((question) => renderReportQuestion(section, question)).join("")}
+      ${questions.map((question) => renderReportQuestion(section, part, question)).join("")}
     </article>
   `;
 }
